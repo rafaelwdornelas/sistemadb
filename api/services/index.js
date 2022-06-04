@@ -5,6 +5,7 @@ const PaisServices = require("./PaisServices");
 const EnderecosServices = require("./EnderecosServices");
 const TelefonesServices = require("./TelefonesServices");
 const CnaesServices = require("./CnaesServices");
+const UnidadesServices = require("./UnidadesServices");
 
 module.exports = {
     ClientesServices: ClientesServices,
@@ -14,4 +15,5 @@ module.exports = {
     EnderecosServices: EnderecosServices,
     TelefonesServices: TelefonesServices,
     CnaesServices: CnaesServices,
+    UnidadesServices: UnidadesServices,
 };

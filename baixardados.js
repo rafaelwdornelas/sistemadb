@@ -28,11 +28,10 @@ connection.connect();
 
 function executeStatement() {
     const request = new Request(
-        `SELECT  
-	REPLACE(REPLACE([CC3_COD], '/', ''), '-', '')
-      ,[CC3_COD]
-      ,[CC3_DESC]
-  FROM [TOTVS12].[dbo].[CC3990]`,
+        `SELECT 
+        [AH_UNIMED]
+        ,[AH_DESCPO]
+    FROM [TOTVS12].[dbo].[SAH990]`,
         (err, rowCount) => {
             if (err) {
                 throw err;
@@ -44,9 +43,8 @@ function executeStatement() {
     // Emits a 'DoneInProc' event when completed.
     request.on("row", (columns) => {
         let row = {
-            id: columns[0].value,
-            CN_CODIGO: columns[1].value,
-            CN_DESCRICAO: columns[2].value.trim().toUpperCase(),
+            UN_CODIGO: columns[0].value,
+            UN_DESCRICAO: columns[1].value.trim().toUpperCase(),
         };
         let content = JSON.stringify(row);
         content += ",\n";
