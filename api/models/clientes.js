@@ -209,7 +209,7 @@ module.exports = (sequelize, DataTypes) => {
                 funcaoValidadora: function(dado) {
                     if (typeof dado != "boolean") {
                         throw new Error(
-                            "O campo CLI_ESTRANGEIRO deve ser uma boolean e não " +
+                            "O campo CLI_ESTRANGEIRO deve ser um boolean e não " +
                             typeof dado
                         );
                     }
@@ -347,30 +347,259 @@ module.exports = (sequelize, DataTypes) => {
                 },
             },
         }, // CNAE
-        CLI_NATUREZA: DataTypes.INTEGER, // Natureza da Operação
-        CLI_VENDEDOR: DataTypes.INTEGER, // Código do Vendedor Padrão
-        CLI_COMISSAO: DataTypes.FLOAT, // Comissão do Vendedor
-        CLI_FRETE_TIPO: { type: DataTypes.STRING(1), uppercase: true }, // Tipo de Frete Padrão do Cliente F - FOB , C - CIF
-        CLI_AIRRF: DataTypes.FLOAT, // IRRF Alicota
-        CLI_ISS_RECOLHE: DataTypes.BOOLEAN, // ISS Recolhe?
+        CLI_NATUREZA: {
+            type: DataTypes.INTEGER,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "number") {
+                        throw new Error(
+                            "O campo CLI_NATUREZA deve ser um number e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, // Natureza da Operação
+        CLI_VENDEDOR: {
+            type: DataTypes.INTEGER,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "number") {
+                        throw new Error(
+                            "O campo CLI_VENDEDOR deve ser um number e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, // Código do Vendedor Padrão
+        CLI_COMISSAO: {
+            type: DataTypes.FLOAT,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "number") {
+                        throw new Error(
+                            "O campo CLI_COMISSAO deve ser um number e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, // Comissão do Vendedor
+        CLI_FRETE_TIPO: {
+            type: DataTypes.STRING(1),
+            uppercase: true,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "string") {
+                        throw new Error(
+                            "O campo CLI_TIPO deve ser um string e não " + typeof dado
+                        );
+                    } else if (dado != "F" && dado != "C" && dado != "") {
+                        throw new Error("O tipo deve ser F ou C ou vazio");
+                    }
+                },
+            },
+        }, // Tipo de Frete Padrão do Cliente F - FOB , C - CIF
+        CLI_AIRRF: {
+            type: DataTypes.FLOAT,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "number") {
+                        throw new Error(
+                            "O campo CLI_AIRRF deve ser um number e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, // IRRF Alicota
+        CLI_ISS_RECOLHE: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_ISS_RECOLHE deve ser um boolean e não " +
+                            typeof dado
+                        );
+                    }
+                },
+            },
+        }, // ISS Recolhe?
         CLI_COD_SUFRAMA: { type: DataTypes.STRING(9), uppercase: true }, // Código do Suframa
         CLI_DESC_SUFRAMA: { type: DataTypes.STRING(1), uppercase: true }, // Desconto do Suframa?
-        CLI_ISS_PRECO: DataTypes.BOOLEAN, // ISS no Preço?
-        CLI_INSS_RECOLHE: DataTypes.BOOLEAN, // INSS Recolhe?
-        CLI_CONFINS_RECOLHE: DataTypes.BOOLEAN, // CONFINS Recolhe?
-        CLI_CSLL_RECOLHE: DataTypes.BOOLEAN, // CSLL Recolhe?
-        CLI_PIS_RECOLHE: DataTypes.BOOLEAN, // PIS Recolhe?
-        CLI_SIMPLESSC: DataTypes.BOOLEAN, // Optante pelo Simples/SC?
-        CLI_TARE: DataTypes.BOOLEAN, // Contribuinte TARE?
+        CLI_ISS_PRECO: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_ISS_PRECO deve ser um boolean e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, // ISS no Preço?
+        CLI_INSS_RECOLHE: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_INSS_RECOLHE deve ser um boolean e não " +
+                            typeof dado
+                        );
+                    }
+                },
+            },
+        }, // INSS Recolhe?
+
+        CLI_CONFINS_RECOLHE: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_CONFINS_RECOLHE deve ser um boolean e não " +
+                            typeof dado
+                        );
+                    }
+                },
+            },
+        }, // CONFINS Recolhe?
+        CLI_CSLL_RECOLHE: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_CSLL_RECOLHE deve ser um boolean e não " +
+                            typeof dado
+                        );
+                    }
+                },
+            },
+        }, // CSLL Recolhe?
+        CLI_PIS_RECOLHE: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_PIS_RECOLHE deve ser um boolean e não " +
+                            typeof dado
+                        );
+                    }
+                },
+            },
+        }, // PIS Recolhe?
+        CLI_SIMPLESSC: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_SIMPLESSC deve ser um boolean e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, // Optante pelo Simples/SC?
+        CLI_TARE: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_TARE deve ser um boolean e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, // Contribuinte TARE?
         CLI_FRETISS: { type: DataTypes.STRING(1), uppercase: true }, // Forma de retenção do ISS
         CLI_MABATIMENTO: DataTypes.STRING(1), // 1 - Cálculo do Sistema, 2 - Efetua Retenção,3 - Não Efetua Retenção (Modo de Abatimento de Imposto)
-        CLI_IRRF: DataTypes.BOOLEAN, // Recolhe IRRF?
-        CLI_ICMS: DataTypes.BOOLEAN, // Contribuinte do ICMS?
-        CLI_FINAL: DataTypes.BOOLEAN, //Controle para a NFe/NFCe para saber se o cliente é consumidor final
-        CLI_CERVEJA: DataTypes.BOOLEAN, //Controle para NFe/NFCe para saber se o cliente é microcervejaria
-        CLI_VMIRRF: DataTypes.BOOLEAN, // Valor minimo IRRF?
-        CLI_FOMEZERO: DataTypes.BOOLEAN, // Participação do Fome Zero?
-        CLI_SIMPLES: DataTypes.BOOLEAN, // Optante pelo Simples Nacional?
+        CLI_IRRF: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_IRRF deve ser um boolean e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, // Recolhe IRRF?
+        CLI_ICMS: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_ICMS deve ser um boolean e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, // Contribuinte do ICMS?
+        CLI_FINAL: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_FINAL deve ser um boolean e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, //Controle para a NFe/NFCe para saber se o cliente é consumidor final
+        CLI_CERVEJA: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_CERVEJA deve ser um boolean e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, //Controle para NFe/NFCe para saber se o cliente é microcervejaria
+        CLI_VMIRRF: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_VMIRRF deve ser um boolean e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, // Valor minimo IRRF?
+        CLI_FOMEZERO: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_FOMEZERO deve ser um boolean e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, // Participação do Fome Zero?
+        CLI_SIMPLES: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_SIMPLES deve ser um boolean e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, // Optante pelo Simples Nacional?
         CLI_TPJ: { type: DataTypes.STRING(1), uppercase: true }, // 1 - ME - Micro Empresa, 2 - EPP - Empresa de Pequeno Porte,3 - MEI - Microempreendedor Individual,4 - Não Optante (Tipo de Pessoa Juridica?)
         CLI_CTRANSPORTADORA: DataTypes.INTEGER, // Código da Transportadora
         CLI_FPAGAMENTO: DataTypes.INTEGER, // Forma de Pagamento Padrão
