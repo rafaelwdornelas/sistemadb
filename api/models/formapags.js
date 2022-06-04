@@ -20,9 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         modelName: "FORMAPAGS",
         createdAt: "CRIADO_EM",
         updatedAt: "ATUALIZADO_EM",
-        deletedAt: "DELETADO_EM",
         freezeTableName: true,
-        paranoid: true,
     });
     return FORMAPAG;
 };

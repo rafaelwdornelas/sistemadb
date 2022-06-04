@@ -47,10 +47,6 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.DATE,
             },
-            DELETADO_EM: {
-                allowNull: true,
-                type: Sequelize.DATE,
-            },
         });
     },
     async down(queryInterface) {
