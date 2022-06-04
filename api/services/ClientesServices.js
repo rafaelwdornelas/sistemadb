@@ -11,7 +11,7 @@ class ClientesServices extends Services {
             include: [
                 { model: database["TELEFONES"], as: "TELEFONES" },
                 { model: database["ENDERECOS"], as: "ENDERECOS" },
-                // { model: database["FORMAPAGS"] },
+                { model: database["FORMAPAGS"] },
             ],
             where: { id: id },
         });

@@ -97,10 +97,10 @@ router.get("/formapags/:id", authenticateJWT, Controller.pega);
  *              summary: 1 - Boleto , 2 - Cartão de Crédito , 3 - Cartão de Débito , 4 - Dinheiro
  *              type: string
  *            PAG_FDIAS:
- *              summary: Formula de dias de vencimento separe os dias por vírgula ex: 30,60
+ *              summary: Formula de dias de vencimento
  *              type: string
  *            PAG_FPORCENTAGEM:
- *              summary: Formula porcentagem do valor total para cada dia do campo PAG_FDIAS ex: 50,50
+ *              summary: Formula porcentagem do valor total do pedido
  *              type: string
  *            PAG_DESCONTO:
  *              summary: Desconto em porcentagem do valor total
@@ -149,10 +149,10 @@ router.post("/formapags/novo", authenticateJWT, Controller.cria);
  *              summary: 1 - Boleto , 2 - Cartão de Crédito , 3 - Cartão de Débito , 4 - Dinheiro
  *              type: string
  *            PAG_FDIAS:
- *              summary: Formula de dias de vencimento separe os dias por vírgula ex: 30,60
+ *              summary: Formula de dias de vencimento
  *              type: string
  *            PAG_FPORCENTAGEM:
- *              summary: Formula porcentagem do valor total para cada dia do campo PAG_FDIAS ex: 50,50
+ *              summary: Formula porcentagem do valor total do pedido
  *              type: string
  *            PAG_DESCONTO:
  *              summary: Desconto em porcentagem do valor total

@@ -3,11 +3,7 @@ const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
     class ENDERECOS extends Model {
         // eslint-disable-next-line no-unused-vars
-        static associate(models) {
-            // ENDERECOS.belongsTo(models.CLIENTES, {
-            //     foreignKey: "END_CLI",
-            // });
-        }
+        static associate(models) {}
     }
     ENDERECOS.init({
         END_CLI: DataTypes.INTEGER,

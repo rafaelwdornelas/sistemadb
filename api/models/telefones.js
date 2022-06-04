@@ -3,11 +3,7 @@ const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
     class TELEFONES extends Model {
         // eslint-disable-next-line no-unused-vars
-        static associate(models) {
-            TELEFONES.belongsTo(models.CLIENTES, {
-                foreignKey: "TEL_CLI",
-            });
-        }
+        static associate(models) {}
     }
     TELEFONES.init({
         TEL_CLI: DataTypes.INTEGER,

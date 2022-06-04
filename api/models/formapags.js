@@ -3,12 +3,7 @@ const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
     class FORMAPAG extends Model {
         // eslint-disable-next-line no-unused-vars
-        static associate(models) {
-            // FORMAPAG.hasMany(models.CLIENTES, {
-            //     as: "TABELA_PAGAMENTO",
-            //     foreignKey: "CLI_FPAGAMENTO",
-            // });
-        }
+        static associate(models) {}
     }
     FORMAPAG.init({
         PAG_NOME: { type: DataTypes.STRING(80), upercase: true },

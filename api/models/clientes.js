@@ -14,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
                 onDelete: "CASCADE",
                 as: "ENDERECOS",
             });
+            CLIENTES.belongsTo(models.FORMAPAGS, {
+                foreignKey: "CLI_FPAGAMENTO",
+            });
         }
     }
     CLIENTES.init({
