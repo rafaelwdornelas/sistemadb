@@ -25,7 +25,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Municipios
 - [x] CNAE
 - [x] Unidades
-- [ ] Formas de Pagamento
+- [x] Formas de Pagamento
 - [ ] Produtos
 - [ ] Produtos Fámilia
 - [ ] Tabela de Preços
