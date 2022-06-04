@@ -26,6 +26,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] CNAE
 - [x] Unidades
 - [x] Formas de Pagamento
+- [ ] Lojas
 - [ ] Produtos
 - [ ] Produtos Fámilia
 - [ ] Tabela de Preços
