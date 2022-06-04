@@ -18,7 +18,17 @@ module.exports = (sequelize, DataTypes) => {
     }
     CLIENTES.init({
         CLI_LOJA: DataTypes.STRING(1), // Código da loja
-        CLI_ATIVO: { type: DataTypes.STRING(1), uppercase: true }, // N = inativo, S = true
+        CLI_ATIVO: {
+            type: DataTypes.STRING(1),
+            uppercase: true,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (dado != "N" && dado != "S") {
+                        throw new Error("O Ativo deve ser N ou S");
+                    }
+                },
+            },
+        }, // N = inativo, S = true
         CLI_FAMILIA: DataTypes.INTEGER, //Familia de tipos de cliente
         CLI_FORNECEDOR: DataTypes.BOOLEAN,
         CLI_TRANSPORTADORA: DataTypes.BOOLEAN,
@@ -126,7 +136,19 @@ module.exports = (sequelize, DataTypes) => {
             },
         }, //Email do cliente para cobrança e envios de faturas
         CLI_SITE: { type: DataTypes.STRING(60), uppercase: true }, //Url do site
-        CLI_IE: { type: DataTypes.STRING(18), uppercase: true }, // Inscrição Estadual
+        CLI_IE: {
+            type: DataTypes.STRING(18),
+            uppercase: true,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (dado.length < 14) {
+                        throw new Error(
+                            "A Incrição Estadual deve ter no mínimo 14 caracteres"
+                        );
+                    }
+                },
+            },
+        }, // Inscrição Estadual
         CLI_IM: { type: DataTypes.STRING(18), uppercase: true }, // Inscrição Municipal
         CLI_IR: { type: DataTypes.STRING(18), uppercase: true }, // Inscrição Rural
         CLI_CNAE: { type: DataTypes.STRING(7), uppercase: true }, // CNAE
