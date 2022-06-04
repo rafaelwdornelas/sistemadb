@@ -257,7 +257,7 @@ module.exports = (sequelize, DataTypes) => {
             },
         }, //Email do cliente
         CLI_EMAIL_COB: {
-            type: DataTypes.STRING(60),
+            type: DataTypes.STRING(255),
             lowercase: true,
             validate: {
                 isEmail: {
@@ -274,7 +274,7 @@ module.exports = (sequelize, DataTypes) => {
             },
         }, //Email do cliente para cobrança e envios de faturas
         CLI_SITE: {
-            type: DataTypes.STRING(60),
+            type: DataTypes.STRING(255),
             uppercase: true,
             validate: {
                 funcaoValidadora: function(dado) {

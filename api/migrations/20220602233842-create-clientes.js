@@ -84,12 +84,12 @@ module.exports = {
                 allowNull: false,
             }, // Passaporte do cliente, caso o mesmo seja estrangeiro
             CLI_EMAIL: {
-                type: Sequelize.STRING(400),
+                type: Sequelize.STRING(255),
                 defaultValue: "",
                 allowNull: false,
             }, //Email do cliente
             CLI_EMAIL_COB: {
-                type: Sequelize.STRING(400),
+                type: Sequelize.STRING(255),
                 defaultValue: "",
                 allowNull: false,
             }, //Email do cliente para cobrança e envios de faturas
