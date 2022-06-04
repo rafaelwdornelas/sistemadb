@@ -4,13 +4,13 @@ module.exports = (sequelize, DataTypes) => {
     class ENDERECOS extends Model {
         // eslint-disable-next-line no-unused-vars
         static associate(models) {
-            ENDERECOS.belongsTo(models.CLIENTES, {
-                foreignKey: "END_CLI",
-            });
+            // ENDERECOS.belongsTo(models.CLIENTES, {
+            //     foreignKey: "END_CLI",
+            // });
         }
     }
     ENDERECOS.init({
-        END_CLI: { type: DataTypes.STRING, uppercase: true },
+        END_CLI: DataTypes.INTEGER,
         END_TIPO: DataTypes.INTEGER,
         END_CEP: DataTypes.STRING(10),
         END_RUA: { type: DataTypes.STRING(80), uppercase: true },

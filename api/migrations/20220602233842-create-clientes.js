@@ -22,6 +22,10 @@ module.exports = {
                 type: Sequelize.INTEGER,
                 defaultValue: 1,
                 allowNull: false,
+                references: {
+                    model: "CRI_FAMILIAS",
+                    key: "id",
+                },
             }, // Familia de tipos de clientes
             CLI_FORNECEDOR: {
                 type: Sequelize.BOOLEAN,
@@ -246,6 +250,10 @@ module.exports = {
             CLI_FPAGAMENTO: {
                 type: Sequelize.INTEGER,
                 allowNull: true,
+                references: {
+                    model: "FORMAPAGS",
+                    key: "id",
+                },
             }, // Forma de Pagamento Padrão
             CLI_TABELA: {
                 type: Sequelize.INTEGER,

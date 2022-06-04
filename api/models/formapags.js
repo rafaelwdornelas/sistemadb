@@ -4,7 +4,10 @@ module.exports = (sequelize, DataTypes) => {
     class FORMAPAG extends Model {
         // eslint-disable-next-line no-unused-vars
         static associate(models) {
-            // define association here
+            // FORMAPAG.hasMany(models.CLIENTES, {
+            //     as: "TABELA_PAGAMENTO",
+            //     foreignKey: "CLI_FPAGAMENTO",
+            // });
         }
     }
     FORMAPAG.init({

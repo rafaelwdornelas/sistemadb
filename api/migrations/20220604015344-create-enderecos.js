@@ -9,8 +9,12 @@ module.exports = {
                 type: Sequelize.INTEGER,
             },
             END_CLI: {
-                type: Sequelize.STRING,
+                type: Sequelize.INTEGER,
                 allowNull: false,
+                references: {
+                    model: "CLIENTES",
+                    key: "id",
+                },
             },
             END_TIPO: {
                 type: Sequelize.INTEGER,

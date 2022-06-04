@@ -11,6 +11,10 @@ module.exports = {
             TEL_CLI: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
+                references: {
+                    model: "CLIENTES",
+                    key: "id",
+                },
             },
             TEL_TIPO: {
                 type: Sequelize.INTEGER,
