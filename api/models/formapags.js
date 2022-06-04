@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
     FORMAPAG.init({
-        PAG_NOME: { type: DataTypes.STRING, upercase: true },
+        PAG_NOME: { type: DataTypes.STRING(80), upercase: true },
         PAG_ATIVO: DataTypes.BOOLEAN,
         PAG_TIPO: DataTypes.INTEGER,
         PAG_FDIAS: DataTypes.STRING,
