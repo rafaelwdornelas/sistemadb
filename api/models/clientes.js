@@ -17,6 +17,9 @@ module.exports = (sequelize, DataTypes) => {
             CLIENTES.belongsTo(models.FORMAPAGS, {
                 foreignKey: "CLI_FPAGAMENTO",
             });
+            CLIENTES.belongsTo(models.CRI_FAMILIAS, {
+                foreignKey: "CLI_FAMILIA",
+            });
         }
     }
     CLIENTES.init({

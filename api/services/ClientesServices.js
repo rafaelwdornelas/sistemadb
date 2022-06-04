@@ -12,6 +12,7 @@ class ClientesServices extends Services {
                 { model: database["TELEFONES"], as: "TELEFONES" },
                 { model: database["ENDERECOS"], as: "ENDERECOS" },
                 { model: database["FORMAPAGS"] },
+                { model: database["CRI_FAMILIAS"] },
             ],
             where: { id: id },
         });

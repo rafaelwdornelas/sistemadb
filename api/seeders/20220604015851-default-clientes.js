@@ -7,6 +7,8 @@ module.exports = {
             "CLIENTES", [{
                 CLI_LOJA: "1",
                 CLI_NOME: "CONSUMIDOR",
+                CLI_FAMILIA: 1,
+                CLI_FPAGAMENTO: 1,
                 CRIADO_EM: new Date(),
                 ATUALIZADO_EM: new Date(),
             }, ], {}
