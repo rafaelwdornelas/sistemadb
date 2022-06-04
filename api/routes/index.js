@@ -7,6 +7,7 @@ const municipios = require("./municipiosRoute");
 const pais = require("./paisRoute");
 const endererecos = require("./enderecosRoute");
 const telefones = require("./telefonesRoute");
+const cnaes = require("./cnaesRoute");
 
 module.exports = (app) => {
     app.use(
@@ -17,6 +18,7 @@ module.exports = (app) => {
         municipios,
         pais,
         endererecos,
-        telefones
+        telefones,
+        cnaes
     );
 };
