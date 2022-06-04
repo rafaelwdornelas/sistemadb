@@ -1,0 +1,23 @@
+{
+    "development": {
+        "username": "sa",
+        "password": "P@ssw0rdx",
+        "database": "ochent_dev",
+        "host": "localhost",
+        "dialect": "mssql"
+    },
+    "test": {
+        "username": "sa",
+        "password": "P@ssw0rdx",
+        "database": "ochent_test",
+        "host": "localhost",
+        "dialect": "mssql"
+    },
+    "production": {
+        "username": "sa",
+        "password": "P@ssw0rdx",
+        "database": "ochent_prod",
+        "host": "127.0.0.1",
+        "dialect": "mssql"
+    }
+}

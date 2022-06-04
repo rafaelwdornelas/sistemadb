@@ -1,0 +1,28 @@
+criar novatabela:
+yarn sequelize model:create --name NomeTabela --attributes campo:String
+
+criar seed
+yarn sequelize seed:generate --name nomeseed
+
+tipo de dados https://cursos.alura.com.br/course/orm-nodejs-api-sequelize-mysql/task/77011
+
+enviar atualização ao banco de dados
+yarn sequelize db:migrate --debug
+
+voltar atras a migração do banco
+yarn sequelize db:migrate:undo
+
+enviar seeds ao banco
+yarn sequelize db:seed:all --debug
+
+returar ultima seed
+yarn sequelize db:seed:all:undo
+
+restaurar para faze inicial
+yarn sequelize db:migrate:undo:all
+
+reverter somente uma migration específica.
+yarn sequelize db:migrate:undo:all --to XXXXXXXXXXXXXX-create-users.js
+
+Se desfazendo de todos a seeders gerados até o presente momento.
+yarn sequelize db:seed:undo:all
