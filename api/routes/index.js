@@ -9,6 +9,7 @@ const endererecos = require("./enderecosRoute");
 const telefones = require("./telefonesRoute");
 const cnaes = require("./cnaesRoute");
 const unidades = require("./unidadesRoute");
+const formapags = require("./formapagsRoute");
 
 module.exports = (app) => {
     app.use(
@@ -21,6 +22,7 @@ module.exports = (app) => {
         endererecos,
         telefones,
         cnaes,
-        unidades
+        unidades,
+        formapags
     );
 };

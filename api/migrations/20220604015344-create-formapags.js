@@ -22,7 +22,7 @@ module.exports = {
                 type: Sequelize.INTEGER,
                 defaultValue: 1,
                 allowNull: false,
-            },
+            }, // 1 - Boleto , 2 - Cartão de Crédito , 3 - Cartão de Débito , 4 - Dinheiro
             PAG_FDIAS: {
                 type: Sequelize.STRING,
             },

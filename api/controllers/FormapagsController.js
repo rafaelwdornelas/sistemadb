@@ -1,6 +1,6 @@
 /* eslint-disable indent */
-const { FormapagsServices } = require("../services");
-const formapagsServices = new FormapagsServices();
+const { FormaspagsServices } = require("../services");
+const formapagsServices = new FormaspagsServices();
 
 class EnderecosController {
     static async pegaTodos(req, res) {
@@ -8,8 +8,8 @@ class EnderecosController {
             const retorno = {
                 sucesso: true,
                 ...(await formapagsServices.pegaTodosOsRegistrosPaginacao({
-                    offset: req.body.inicio,
-                    limit: req.body.limit,
+                    offset: 0,
+                    limit: 1000,
                 })),
             };
             return res.status(200).json(retorno);
