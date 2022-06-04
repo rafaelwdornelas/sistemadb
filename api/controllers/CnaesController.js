@@ -2,7 +2,6 @@
 const { CnaesServices } = require("../services");
 const cnaesServices = new CnaesServices();
 const sequelize = require("sequelize");
-const { NUMBER } = require("sequelize");
 
 class CnaesController {
     static async pegaTodos(req, res) {
