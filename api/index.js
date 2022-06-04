@@ -38,7 +38,7 @@ const swaggerDefinition = {
     }, ],
 };
 
-fs.readFile("teste.css", "utf8", function(err, data) {
+fs.readFile("layout.css", "utf8", function(err, data) {
     if (err) throw err;
     var cssOptions = {
         customCss: data,
