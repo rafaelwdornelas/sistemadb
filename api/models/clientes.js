@@ -17,30 +17,81 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
     CLIENTES.init({
-        CLI_LOJA: DataTypes.STRING(1), // Código da loja
+        CLI_LOJA: {
+            type: DataTypes.STRING(1),
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "string") {
+                        throw new Error(
+                            "O campo CLI_LOJA deve ser uma string e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, // Código da loja
         CLI_ATIVO: {
             type: DataTypes.STRING(1),
             uppercase: true,
             validate: {
                 funcaoValidadora: function(dado) {
-                    if (dado != "N" && dado != "S") {
-                        throw new Error("O Ativo deve ser N ou S");
+                    console.log(typeof dado);
+                    if (typeof dado != "string") {
+                        throw new Error(
+                            "O campo CLI_ATIVO deve ser uma string e não " + typeof dado
+                        );
+                    } else if (dado != "N" && dado != "S") {
+                        throw new Error("O CLI_ATIVO deve ser N ou S");
                     }
                 },
             },
         }, // N = inativo, S = true
-        CLI_FAMILIA: DataTypes.INTEGER, //Familia de tipos de cliente
-        CLI_FORNECEDOR: DataTypes.BOOLEAN,
-        CLI_TRANSPORTADORA: DataTypes.BOOLEAN,
+        CLI_FAMILIA: {
+            type: DataTypes.INTEGER,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "number") {
+                        throw new Error(
+                            "O campo CLI_FAMILIA deve ser um number e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        }, //Familia de tipos de cliente
+        CLI_FORNECEDOR: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_FORNECEDOR deve ser um boolean e não " +
+                            typeof dado
+                        );
+                    }
+                },
+            },
+        }, //Fornecedor
+        CLI_TRANSPORTADORA: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo CLI_TRANSPORTADORA deve ser um boolean e não " +
+                            typeof dado
+                        );
+                    }
+                },
+            },
+        }, //Transportadora
         CLI_NOME: {
             type: DataTypes.STRING(60),
             uppercase: true,
             validate: {
                 funcaoValidadora: function(dado) {
                     if (dado.length < 3) {
-                        throw new Error("O nome deve ter no mínimo 3 caracteres");
+                        throw new Error("O CLI_NOME deve ter no mínimo 3 caracteres");
                     } else if (dado.length > 60) {
-                        throw new Error("O nome deve ter no máximo 60 caracteres");
+                        throw new Error("O CLI_NOME deve ter no máximo 60 caracteres");
                     }
                 },
             },
