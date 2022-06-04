@@ -7,7 +7,6 @@ class ClientesController {
     static async pegaTodosDados(req, res) {
         try {
             const { id } = req.params;
-            console.log(id);
             const retorno = await clientesServices.pegaTodosDados(id);
 
             return res.status(200).json(retorno);
@@ -98,7 +97,6 @@ class ClientesController {
     }
 
     static async buscaRegistroCount(req, res) {
-        console.log(req.body.busca);
         const where = {
             [sequelize.Op.or]: [{
                     CLI_NOME: {

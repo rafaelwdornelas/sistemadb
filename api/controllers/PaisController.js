@@ -5,8 +5,6 @@ const sequelize = require("sequelize");
 
 class PaisController {
     static async pegaTodos(req, res) {
-        console.log(req.body.busca, req.body.uf);
-
         try {
             const retorno = {
                 sucesso: true,
@@ -27,7 +25,6 @@ class PaisController {
     }
 
     static async buscaRegistroCount(req, res) {
-        console.log(req.body.busca);
         const where = {
             PAIS_NOME: {
                 [sequelize.Op.like]: `%${req.body.busca}%`,

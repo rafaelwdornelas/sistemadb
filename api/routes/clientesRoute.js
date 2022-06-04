@@ -14,7 +14,6 @@ const authenticateJWT = (req, res, next) => {
         // eslint-disable-next-line no-unused-vars
         jwt.verify(token, "P2ssw0rdxinf3ctxz", authenticateJWT, (err, user) => {
             if (err) {
-                console.log(err.message);
                 return res.status(403).json(err.message);
             }
 

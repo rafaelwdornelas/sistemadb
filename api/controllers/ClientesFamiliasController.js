@@ -61,7 +61,6 @@ class ClientesFamiliasController {
     }
 
     static async buscaRegistroCount(req, res) {
-        console.log(req.body.busca);
         const where = {
             NOME: {
                 [sequelize.Op.like]: `%${req.body.busca}%`,

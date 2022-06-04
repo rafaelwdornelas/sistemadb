@@ -40,7 +40,6 @@ module.exports = (sequelize, DataTypes) => {
             uppercase: true,
             validate: {
                 funcaoValidadora: function(dado) {
-                    console.log(typeof dado);
                     if (typeof dado != "string") {
                         throw new Error(
                             "O campo CLI_ATIVO deve ser uma string e não " + typeof dado

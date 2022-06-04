@@ -5,7 +5,6 @@ const sequelize = require("sequelize");
 
 class MunicipiosController {
     static async pegaTodos(req, res) {
-        console.log(req.body.busca, req.body.uf);
         const where = {
             MUN_UF: req.body.uf,
         };
@@ -29,7 +28,6 @@ class MunicipiosController {
     }
 
     static async buscaRegistroCount(req, res) {
-        console.log(req.body.busca, req.body.uf);
         const where = {
             MUN_DESC: {
                 [sequelize.Op.like]: `%${req.body.busca}%`,

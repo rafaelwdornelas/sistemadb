@@ -5,8 +5,6 @@ const sequelize = require("sequelize");
 
 class CnaesController {
     static async pegaTodos(req, res) {
-        console.log(req.body.busca, req.body.uf);
-
         try {
             const retorno = {
                 sucesso: true,
@@ -27,7 +25,6 @@ class CnaesController {
     }
 
     static async buscaRegistroCount(req, res) {
-        console.log(req.body.busca);
         const where = {
             [sequelize.Op.or]: [{
                     CN_DESCRICAO: {
