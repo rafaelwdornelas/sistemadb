@@ -2,19 +2,28 @@
 const { ClientesServices } = require("../services");
 const clientesServices = new ClientesServices();
 const sequelize = require("sequelize");
+const { globais } = require("../modules");
+const moduloglobais = new globais();
 
 class ClientesController {
     static async pegaTodosDados(req, res) {
         try {
             const { id } = req.params;
             const retorno = await clientesServices.pegaTodosDados(id);
-
+            moduloglobais.log(
+                "API: ClientesController.pegaTodosDados, ID:" + id,
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: ClientesController.pegaTodosDados ERROR: " + error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
@@ -30,12 +39,21 @@ class ClientesController {
                     limit: req.body.limit,
                 })),
             };
+            moduloglobais.log(
+                "API: ClientesController.pegaTodosOsRegistrosWherePaginacao",
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: ClientesController.pegaTodosOsRegistrosWherePaginacao ERROR: " +
+                error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
@@ -48,31 +66,48 @@ class ClientesController {
                 count: dados == null ? 0 : dados.length,
                 rows: dados,
             };
+            moduloglobais.log(
+                "API: ClientesController.listaRegistrosApagado",
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: ClientesController.listaRegistrosApagado ERROR: " + error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
 
     static async pegaApagado(req, res) {
-        const { id } = req.params;
         try {
+            const { id } = req.params;
             const dados = await clientesServices.consultaRegistroApagado(id);
             let retorno = {
                 sucesso: true,
                 count: dados == null ? 0 : 1,
                 row: dados,
             };
+            moduloglobais.log(
+                "API: ClientesController.consultaRegistroApagado, ID:" + id,
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: ClientesController.consultaRegistroApagado ERROR: " +
+                error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
@@ -86,12 +121,21 @@ class ClientesController {
                     limit: req.body.limit,
                 })),
             };
+            moduloglobais.log(
+                "API: ClientesController.pegaTodosOsRegistrosPaginacao",
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: ClientesController.pegaTodosOsRegistrosPaginacao ERROR: " +
+                error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
@@ -123,31 +167,49 @@ class ClientesController {
                     limit: req.body.limit,
                 })),
             };
+            moduloglobais.log(
+                "API: ClientesController.pegaTodosOsRegistrosWherePaginacao:Busca: " +
+                req.body.busca,
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: ClientesController.pegaTodosOsRegistrosWherePaginacao:Busca ERROR: " +
+                error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
 
     static async pega(req, res) {
-        const { id } = req.params;
         try {
+            const { id } = req.params;
             const dados = await clientesServices.pegaUmRegistro({ id });
             let retorno = {
                 sucesso: true,
                 count: dados == null ? 0 : 1,
                 row: dados,
             };
+            moduloglobais.log(
+                "API: ClientesController.pegaUmRegistro, ID:" + id,
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: ClientesController.pegaUmRegistro ERROR: " + error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
@@ -161,67 +223,96 @@ class ClientesController {
                 count: 1,
                 row: dados,
             };
+            moduloglobais.log("API: ClientesController.criaRegistro", "info");
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: ClientesController.criaRegistro ERROR: " + error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
 
     static async atualiza(req, res) {
-        const { id } = req.params;
-        const novasInfos = req.body;
         try {
+            const { id } = req.params;
+            const novasInfos = req.body;
             await clientesServices.atualizaRegistro(novasInfos, Number(id));
             let retorno = {
                 sucesso: true,
                 msg: `id ${id} atualizado`,
             };
+            moduloglobais.log(
+                "API: ClientesController.pegaUmRegistro, ID:" + id,
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: ClientesController.atualizaRegistro ERROR: " + error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
 
     static async apaga(req, res) {
-        const { id } = req.params;
         try {
+            const { id } = req.params;
             await clientesServices.apagaRegistro(Number(id));
             let retorno = {
                 sucesso: true,
                 msg: `id ${id} deletado`,
             };
+            moduloglobais.log(
+                "API: ClientesController.apagaRegistro, ID:" + id,
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: ClientesController.apagaRegistro ERROR: " + error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
 
     static async restaura(req, res) {
-        const { id } = req.params;
         try {
+            const { id } = req.params;
             await clientesServices.restauraRegistro(Number(id));
             let retorno = {
                 sucesso: true,
                 msg: `id ${id} restaurado`,
             };
+            moduloglobais.log(
+                "API: ClientesController.restauraRegistro, ID:" + id,
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: ClientesController.restauraRegistro ERROR: " + error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }

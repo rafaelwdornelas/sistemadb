@@ -6,6 +6,8 @@ const swaggerUi = require("swagger-ui-express");
 const app = express();
 const port = process.env.PORT || 3000;
 const fs = require("fs");
+const { globais } = require("./modules");
+const moduloglobais = new globais();
 
 const swaggerDefinition = {
     openapi: "3.0.0",
@@ -60,6 +62,9 @@ fs.readFile("layout.css", "utf8", function(err, data) {
 });
 
 routes(app);
-app.listen(port, () => console.log(`Servidor iniciado na porta: ${port}`));
+moduloglobais.log("Iniciando API...", "");
+app.listen(port, () =>
+    moduloglobais.log(`Servidor iniciado na porta: ${port}`, "success")
+);
 
 module.exports = app;
