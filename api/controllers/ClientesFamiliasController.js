@@ -153,8 +153,8 @@ class ClientesFamiliasController {
     }
 
     static async cria(req, res) {
-        const novoRegistro = req.body;
         try {
+            const novoRegistro = req.body;
             const dados = await clientesFamiliasServices.criaRegistro(novoRegistro);
             let retorno = {
                 sucesso: true,
@@ -231,8 +231,8 @@ class ClientesFamiliasController {
     }
 
     static async restaura(req, res) {
-        const { id } = req.params;
         try {
+            const { id } = req.params;
             await clientesFamiliasServices.restauraRegistro(Number(id));
             let retorno = {
                 sucesso: true,
