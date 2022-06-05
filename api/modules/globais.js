@@ -50,6 +50,9 @@ module.exports = globais;
 //Função para salvar logs de retorno em arquivo txt dentro da Pasta Retornos
 function SalvaLog(caminho, texto) {
     try {
+        if (!fs.existsSync("./logs/")) {
+            fs.mkdirSync("./logs/", { recursive: true });
+        }
         var logger = fs.createWriteStream(`./logs/${caminho}.log`, {
             flags: "a",
         });
