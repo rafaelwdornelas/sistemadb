@@ -23,7 +23,7 @@ class globais {
       "0"
     )}:${segundo.padStart(2, "0")}`;
 
-        if (process.env.LOG_ENABLED) {
+        if (process.env.LOG_ENABLED == 1) {
             if (process.env.LOG_ERROR_only == 0) {
                 SalvaLog(now.toISOString().split("T")[0], `${horario} - ${texto}`);
             } else if (process.env.LOG_ERROR_only == 1 && tipo == "error") {
