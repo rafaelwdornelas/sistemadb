@@ -166,6 +166,61 @@ module.exports = {
                 defaultValue: "",
                 allowNull: false,
             }, //Ramal do telefone
+            LJ_SMTP_HOST: {
+                type: Sequelize.STRING(255),
+                defaultValue: "",
+                allowNull: false,
+            }, //Servidor SMTP
+            LJ_SMTP_PORT: {
+                type: Sequelize.INTEGER,
+                defaultValue: 25,
+                allowNull: false,
+            }, //Porta do servidor SMTP
+            LJ_SMTP_NOME: {
+                type: Sequelize.STRING(255),
+                defaultValue: "",
+                allowNull: false,
+            }, //Nome de exibição no e-mail.
+            LJ_SMTP_AUTH_USER: {
+                type: Sequelize.STRING(255),
+                defaultValue: "",
+                allowNull: false,
+            }, //Usuário de autenticação
+            LJ_SMTP_AUTH_PASS: {
+                type: Sequelize.STRING(255),
+                defaultValue: "",
+                allowNull: false,
+            }, //Senha de autenticação
+            LJ_SMTP_SSL: {
+                type: Sequelize.BOOLEAN,
+                defaultValue: false,
+                allowNull: false,
+            }, //Usar SSL?
+            LJ_SMTP_TLS: {
+                type: Sequelize.BOOLEAN,
+                defaultValue: false,
+                allowNull: false,
+            }, //Usar TLS?
+            LJ_SMTP_AUTH: {
+                type: Sequelize.BOOLEAN,
+                defaultValue: false,
+                allowNull: false,
+            }, //Usar autenticação?
+            LJ_CERTIFICADO: {
+                type: Sequelize.TEXT,
+                defaultValue: "",
+                allowNull: false,
+            }, //Certificado digital
+            LJ_CERTIFICADO_KEY: {
+                type: Sequelize.STRING,
+                defaultValue: "",
+                allowNull: false,
+            }, //Chave privada do certificado
+            LJ_CERTIFICADO_PASS: {
+                type: Sequelize.STRING,
+                defaultValue: "",
+                allowNull: false,
+            }, //Senha do certificado
             CRIADO_EM: {
                 allowNull: false,
                 type: Sequelize.DATE,

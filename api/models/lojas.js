@@ -114,6 +114,39 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(45),
             uppercase: true,
         }, //Ramal do telefone
+        LJ_SMTP_HOST: {
+            type: DataTypes.STRING(255),
+        }, //Servidor SMTP
+        LJ_SMTP_PORT: {
+            type: DataTypes.INTEGER,
+        }, //Porta do servidor SMTP
+        LJ_SMTP_NOME: {
+            type: DataTypes.STRING(255),
+        }, //Nome de exibição no e-mail.
+        LJ_SMTP_AUTH_USER: {
+            type: DataTypes.STRING(255),
+        }, //Usuário de autenticação
+        LJ_SMTP_AUTH_PASS: {
+            type: DataTypes.STRING(255),
+        }, //Senha de autenticação
+        LJ_SMTP_SSL: {
+            type: DataTypes.BOOLEAN,
+        }, //Usar SSL?
+        LJ_SMTP_TLS: {
+            type: DataTypes.BOOLEAN,
+        }, //Usar TLS?
+        LJ_SMTP_AUTH: {
+            type: DataTypes.BOOLEAN,
+        }, //Usar autenticação?
+        LJ_CERTIFICADO: {
+            type: DataTypes.TEXT,
+        }, //Certificado digital
+        LJ_CERTIFICADO_KEY: {
+            type: DataTypes.STRING,
+        }, //Chave privada do certificado
+        LJ_CERTIFICADO_PASS: {
+            type: DataTypes.STRING,
+        }, //Senha do certificado
     }, {
         sequelize,
         modelName: "LOJAS",
