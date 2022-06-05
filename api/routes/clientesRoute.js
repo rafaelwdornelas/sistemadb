@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const Controller = require("../controllers/ClientesController");
 const JWTController = require("../controllers/JWTController");
+const LicencaController = require("../controllers/LicencaController");
 const router = Router();
 
 /**
@@ -44,7 +45,12 @@ const router = Router();
  *        description: Unauthorized
  *
  */
-router.post("/clientes", JWTController.Verifica, Controller.pegaTodos);
+router.post(
+    "/clientes",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.pegaTodos
+);
 /**
  * @openapi
  * /clientes/ativos:
