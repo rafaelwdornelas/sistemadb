@@ -9,9 +9,13 @@ module.exports = {
                 type: Sequelize.INTEGER,
             },
             CLI_LOJA: {
-                type: Sequelize.STRING(1),
-                defaultValue: "",
+                type: Sequelize.INTEGER,
+                defaultValue: 1,
                 allowNull: false,
+                references: {
+                    model: "LOJAS",
+                    key: "id",
+                },
             }, // Código da loja
             CLI_ATIVO: {
                 type: Sequelize.STRING(1),

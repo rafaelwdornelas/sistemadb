@@ -24,12 +24,12 @@ module.exports = (sequelize, DataTypes) => {
     }
     CLIENTES.init({
         CLI_LOJA: {
-            type: DataTypes.STRING(1),
+            type: DataTypes.INTEGER,
             validate: {
                 funcaoValidadora: function(dado) {
-                    if (typeof dado != "string") {
+                    if (typeof dado != "number") {
                         throw new Error(
-                            "O campo CLI_LOJA deve ser uma string e não " + typeof dado
+                            "O campo CLI_LOJA deve ser uma number e não " + typeof dado
                         );
                     }
                 },

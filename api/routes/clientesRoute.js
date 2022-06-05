@@ -179,7 +179,7 @@ router.get(
  *          properties:
  *            CLI_LOJA:
  *              summary: Código da Loja
- *              type: string
+ *              type: integer
  *              example: 1
  *            CLI_ATIVO:
  *              summary: N = inativo, S = ativo
@@ -403,7 +403,7 @@ router.post(
  *          properties:
  *            CLI_LOJA:
  *              summary: Código da Loja
- *              type: string
+ *              type: integer
  *              example: 1
  *            CLI_ATIVO:
  *              summary: N = inativo, S = ativo
