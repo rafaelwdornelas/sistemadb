@@ -209,7 +209,7 @@ module.exports = (sequelize, DataTypes) => {
                         throw new Error(
                             "O campo END_REGIAO deve ser um string e não " + typeof dado
                         );
-                    } else if (dado.length > 3) {
+                    } else if (dado.length > 60) {
                         throw new Error("O END_REGIAO deve ter no máximo 60 caracteres");
                     }
                 },
