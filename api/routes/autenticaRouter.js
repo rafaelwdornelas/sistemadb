@@ -1,7 +1,8 @@
 const { Router } = require("express");
 const router = Router();
 const jwt = require("jsonwebtoken");
-
+require("dotenv").config();
+const secret = process.env.JWT_SECRET || "secret";
 /**
  * @swagger
  * tags:
@@ -27,9 +28,9 @@ router.post("/login", (req, res) => {
     const user = "notronsite@gmail.com" || req.body.email;
 
     // generate an access token
-    const accessToken = jwt.sign({ username: user, role: "admin" },
-        "P2ssw0rdxinf3ctxz", { expiresIn: "365d" }
-    );
+    const accessToken = jwt.sign({ username: user, role: "admin" }, secret, {
+        expiresIn: "365d",
+    });
 
     res.json({
         accessToken,

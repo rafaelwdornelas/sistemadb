@@ -1,13 +1,13 @@
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
 class JWTController {
     static async Verifica(req, res, next) {
-        const url = req.get("host");
         const authHeader = req.headers.authorization;
-        if (url === "localhost:37778" || url === "207.244.230.240:4000") {
+        if (process.env.AUTH_REQUIRED == 0) {
             next();
         } else if (authHeader) {
             const token = authHeader.split(" ")[1];
-            const secret = "P2ssw0rdxinf3ctxz";
+            const secret = process.env.JWT_SECRET || "secret";
             try {
                 // eslint-disable-next-line no-unused-vars
                 await jwt.verify(token, secret, (err, user) => {
