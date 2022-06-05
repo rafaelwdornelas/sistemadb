@@ -11,7 +11,7 @@ class ClientesController {
             const { id } = req.params;
             const retorno = await clientesServices.pegaTodosDados(id);
             moduloglobais.log(
-                "API: ClientesController.pegaTodosDados, ID:" + id,
+                "API: clientesServices.pegaTodosDados, ID:" + id,
                 "info"
             );
             return res.status(200).json(retorno);
@@ -21,7 +21,7 @@ class ClientesController {
                 msg: error.message,
             };
             moduloglobais.log(
-                "API: ClientesController.pegaTodosDados ERROR: " + error.message,
+                "API: clientesServices.pegaTodosDados ERROR: " + error.message,
                 "error"
             );
             return res.status(500).json(retorno);
@@ -40,7 +40,7 @@ class ClientesController {
                 })),
             };
             moduloglobais.log(
-                "API: ClientesController.pegaTodosOsRegistrosWherePaginacao",
+                "API: clientesServices.pegaTodosOsRegistrosWherePaginacao",
                 "info"
             );
             return res.status(200).json(retorno);
@@ -50,7 +50,7 @@ class ClientesController {
                 msg: error.message,
             };
             moduloglobais.log(
-                "API: ClientesController.pegaTodosOsRegistrosWherePaginacao ERROR: " +
+                "API: clientesServices.pegaTodosOsRegistrosWherePaginacao ERROR: " +
                 error.message,
                 "error"
             );
@@ -66,10 +66,7 @@ class ClientesController {
                 count: dados == null ? 0 : dados.length,
                 rows: dados,
             };
-            moduloglobais.log(
-                "API: ClientesController.listaRegistrosApagado",
-                "info"
-            );
+            moduloglobais.log("API: clientesServices.listaRegistrosApagado", "info");
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
@@ -77,7 +74,7 @@ class ClientesController {
                 msg: error.message,
             };
             moduloglobais.log(
-                "API: ClientesController.listaRegistrosApagado ERROR: " + error.message,
+                "API: clientesServices.listaRegistrosApagado ERROR: " + error.message,
                 "error"
             );
             return res.status(500).json(retorno);
@@ -94,7 +91,7 @@ class ClientesController {
                 row: dados,
             };
             moduloglobais.log(
-                "API: ClientesController.consultaRegistroApagado, ID:" + id,
+                "API: clientesServices.consultaRegistroApagado, ID:" + id,
                 "info"
             );
             return res.status(200).json(retorno);
@@ -104,8 +101,7 @@ class ClientesController {
                 msg: error.message,
             };
             moduloglobais.log(
-                "API: ClientesController.consultaRegistroApagado ERROR: " +
-                error.message,
+                "API: clientesServices.consultaRegistroApagado ERROR: " + error.message,
                 "error"
             );
             return res.status(500).json(retorno);
@@ -122,7 +118,7 @@ class ClientesController {
                 })),
             };
             moduloglobais.log(
-                "API: ClientesController.pegaTodosOsRegistrosPaginacao",
+                "API: clientesServices.pegaTodosOsRegistrosPaginacao",
                 "info"
             );
             return res.status(200).json(retorno);
@@ -132,7 +128,7 @@ class ClientesController {
                 msg: error.message,
             };
             moduloglobais.log(
-                "API: ClientesController.pegaTodosOsRegistrosPaginacao ERROR: " +
+                "API: clientesServices.pegaTodosOsRegistrosPaginacao ERROR: " +
                 error.message,
                 "error"
             );
@@ -168,7 +164,7 @@ class ClientesController {
                 })),
             };
             moduloglobais.log(
-                "API: ClientesController.pegaTodosOsRegistrosWherePaginacao:Busca: " +
+                "API: clientesServices.pegaTodosOsRegistrosWherePaginacao, Busca: " +
                 req.body.busca,
                 "info"
             );
@@ -179,7 +175,7 @@ class ClientesController {
                 msg: error.message,
             };
             moduloglobais.log(
-                "API: ClientesController.pegaTodosOsRegistrosWherePaginacao:Busca ERROR: " +
+                "API: clientesServices.pegaTodosOsRegistrosWherePaginacao, Busca ERROR: " +
                 error.message,
                 "error"
             );
@@ -197,7 +193,7 @@ class ClientesController {
                 row: dados,
             };
             moduloglobais.log(
-                "API: ClientesController.pegaUmRegistro, ID:" + id,
+                "API: clientesServices.pegaUmRegistro, ID:" + id,
                 "info"
             );
             return res.status(200).json(retorno);
@@ -207,7 +203,7 @@ class ClientesController {
                 msg: error.message,
             };
             moduloglobais.log(
-                "API: ClientesController.pegaUmRegistro ERROR: " + error.message,
+                "API: clientesServices.pegaUmRegistro ERROR: " + error.message,
                 "error"
             );
             return res.status(500).json(retorno);
@@ -223,7 +219,7 @@ class ClientesController {
                 count: 1,
                 row: dados,
             };
-            moduloglobais.log("API: ClientesController.criaRegistro", "info");
+            moduloglobais.log("API: clientesServices.criaRegistro", "info");
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
@@ -231,7 +227,7 @@ class ClientesController {
                 msg: error.message,
             };
             moduloglobais.log(
-                "API: ClientesController.criaRegistro ERROR: " + error.message,
+                "API: clientesServices.criaRegistro ERROR: " + error.message,
                 "error"
             );
             return res.status(500).json(retorno);
@@ -248,7 +244,7 @@ class ClientesController {
                 msg: `id ${id} atualizado`,
             };
             moduloglobais.log(
-                "API: ClientesController.pegaUmRegistro, ID:" + id,
+                "API: clientesServices.pegaUmRegistro, ID:" + id,
                 "info"
             );
             return res.status(200).json(retorno);
@@ -258,7 +254,7 @@ class ClientesController {
                 msg: error.message,
             };
             moduloglobais.log(
-                "API: ClientesController.atualizaRegistro ERROR: " + error.message,
+                "API: clientesServices.atualizaRegistro ERROR: " + error.message,
                 "error"
             );
             return res.status(500).json(retorno);
@@ -274,7 +270,7 @@ class ClientesController {
                 msg: `id ${id} deletado`,
             };
             moduloglobais.log(
-                "API: ClientesController.apagaRegistro, ID:" + id,
+                "API: clientesServices.apagaRegistro, ID:" + id,
                 "info"
             );
             return res.status(200).json(retorno);
@@ -284,7 +280,7 @@ class ClientesController {
                 msg: error.message,
             };
             moduloglobais.log(
-                "API: ClientesController.apagaRegistro ERROR: " + error.message,
+                "API: clientesServices.apagaRegistro ERROR: " + error.message,
                 "error"
             );
             return res.status(500).json(retorno);
@@ -300,7 +296,7 @@ class ClientesController {
                 msg: `id ${id} restaurado`,
             };
             moduloglobais.log(
-                "API: ClientesController.restauraRegistro, ID:" + id,
+                "API: clientesServices.restauraRegistro, ID:" + id,
                 "info"
             );
             return res.status(200).json(retorno);
@@ -310,7 +306,7 @@ class ClientesController {
                 msg: error.message,
             };
             moduloglobais.log(
-                "API: ClientesController.restauraRegistro ERROR: " + error.message,
+                "API: clientesServices.restauraRegistro ERROR: " + error.message,
                 "error"
             );
             return res.status(500).json(retorno);
