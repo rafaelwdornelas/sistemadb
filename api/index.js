@@ -55,11 +55,7 @@ fs.readFile("layout.css", "utf8", function(err, data) {
         res.send(swaggerDocs);
     });
 
-    app.use(
-        "/api-docs",
-        swaggerUi.serve,
-        swaggerUi.setup(swaggerDocs, cssOptions)
-    );
+    app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocs, cssOptions));
 });
 
 routes(app);

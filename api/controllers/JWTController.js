@@ -3,7 +3,7 @@ class JWTController {
     static async Verifica(req, res, next) {
         const url = req.get("host");
         const authHeader = req.headers.authorization;
-        if (url === "localhost2:37778") {
+        if (url === "localhost:37778" || url === "207.244.230.240:4000") {
             next();
         } else if (authHeader) {
             const token = authHeader.split(" ")[1];
