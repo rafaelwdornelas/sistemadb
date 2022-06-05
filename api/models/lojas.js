@@ -45,16 +45,16 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
         }, //Regime especial de tributação usado na NF-e/NFC-e, referece ao W22g(cRegTrib) na documentação do SEFAZ. Onde: 1=Microempresa Municipal; 2=Estimativa; 3=Sociedade de Profissionais; 4=Cooperativa; 5=Microempresário Individual (MEI); 6=Microempresário e Empresa de Pequeno Porte
         LJ_ID_CSC_PROD: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(255),
         }, //ID do código de segurança do contribuinte para emissão no ambiente de produção da SEFAZ, disponivél através do portal da Receita do seu estado.
         LJ_CSC_PROD: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(255),
         }, //Código de segurança do contribuinte para emissão no ambiente de produção da SEFAZ, disponivél através do portal da Receita do seu estado.
         LJ_ID_CSC_HOMOL: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(255),
         }, //ID do código de segurança do contribuinte para emissão no ambiente de homologação da SEFAZ, disponivél através do portal da Receita do seu estado.
         LJ_CSC_HOMOL: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(255),
         }, //Código de segurança do contribuinte para emissão no ambiente de homologação da SEFAZ, disponivél através do portal da Receita do seu estado.
         LJ_EMAIL: {
             type: DataTypes.STRING(255),
@@ -112,7 +112,6 @@ module.exports = (sequelize, DataTypes) => {
         }, //Número do telefone
         LJ_TEL_RAMAL: {
             type: DataTypes.STRING(45),
-            uppercase: true,
         }, //Ramal do telefone
         LJ_SMTP_HOST: {
             type: DataTypes.STRING(255),
@@ -142,10 +141,13 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT,
         }, //Certificado digital
         LJ_CERTIFICADO_KEY: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(80),
         }, //Chave privada do certificado
         LJ_CERTIFICADO_PASS: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(80),
+        }, //Senha do certificado
+        LJ_LICENCADEUSO: {
+            type: DataTypes.TEXT,
         }, //Senha do certificado
     }, {
         sequelize,
