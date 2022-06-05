@@ -4,10 +4,6 @@ const fs = require("fs");
 require("dotenv").config();
 
 class globais {
-    constructor(name) {
-        this.name = name;
-    }
-
     //Função para aguaradar em milisegundos
     sleep(ms) {
         return new Promise((resolve) => setTimeout(resolve, ms));
