@@ -8,9 +8,43 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
     CRI_FAMILIA.init({
-        NOME: { type: DataTypes.STRING, uppercase: true },
-        DESCONTO: DataTypes.FLOAT,
-        RESTRITO: DataTypes.BOOLEAN,
+        NOME: {
+            type: DataTypes.STRING,
+            uppercase: true,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "string") {
+                        throw new Error(
+                            "O campo NOME deve ser um string e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        },
+        DESCONTO: {
+            type: DataTypes.FLOAT,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "number") {
+                        throw new Error(
+                            "O campo DESCONTO deve ser um número e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        },
+        RESTRITO: {
+            type: DataTypes.BOOLEAN,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "boolean") {
+                        throw new Error(
+                            "O campo RESTRITO deve ser um boolean e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        },
     }, {
         sequelize,
         modelName: "CRI_FAMILIAS",
