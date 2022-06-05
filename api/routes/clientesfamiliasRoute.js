@@ -1,28 +1,6 @@
 const { Router } = require("express");
 const Controller = require("../controllers/ClientesFamiliasController");
-const jwt = require("jsonwebtoken");
-
-const authenticateJWT = (req, res, next) => {
-    const url = req.get("host");
-    const authHeader = req.headers.authorization;
-    if (url === "localhost:37778") {
-        next();
-    } else if (authHeader) {
-        const token = authHeader.split(" ")[1];
-
-        // eslint-disable-next-line no-unused-vars
-        jwt.verify(token, "P2ssw0rdxinf3ctxz", authenticateJWT, (err, user) => {
-            if (err) {
-                return res.status(403).json(err.message);
-            }
-
-            //req.user = user;   se quiser enviar o user para o controller
-            next();
-        });
-    } else {
-        res.sendStatus(401);
-    }
-};
+const JWTController = require("../controllers/JWTController");
 
 const router = Router();
 
@@ -49,7 +27,7 @@ const router = Router();
  *        description: Unauthorized
  *
  */
-router.get("/clifamilias", authenticateJWT, Controller.pegaTodos);
+router.get("/clifamilias", JWTController.Verifica, Controller.pegaTodos);
 
 /**
  * @openapi
@@ -67,7 +45,11 @@ router.get("/clifamilias", authenticateJWT, Controller.pegaTodos);
  *        description: Unauthorized
  *
  */
-router.get("/clifamilias/apagados", authenticateJWT, Controller.pegaApagados);
+router.get(
+    "/clifamilias/apagados",
+    JWTController.Verifica,
+    Controller.pegaApagados
+);
 
 /**
  * @openapi
@@ -94,7 +76,7 @@ router.get("/clifamilias/apagados", authenticateJWT, Controller.pegaApagados);
  */
 router.get(
     "/clifamilias/apagados/:id",
-    authenticateJWT,
+    JWTController.Verifica,
     Controller.pegaApagado
 );
 /**
@@ -120,7 +102,7 @@ router.get(
  *        description: Unauthorized
  *
  */
-router.get("/clifamilias/:id", authenticateJWT, Controller.pega);
+router.get("/clifamilias/:id", JWTController.Verifica, Controller.pega);
 
 /**
  * @openapi
@@ -155,7 +137,7 @@ router.get("/clifamilias/:id", authenticateJWT, Controller.pega);
  *        description: Unauthorized
  *
  */
-router.post("/clifamilias/novo", authenticateJWT, Controller.cria);
+router.post("/clifamilias/novo", JWTController.Verifica, Controller.cria);
 /**
  * @openapi
  * /clifamilias/{id}/restaura:
@@ -179,7 +161,11 @@ router.post("/clifamilias/novo", authenticateJWT, Controller.cria);
  *        description: Unauthorized
  *
  */
-router.post("/clifamilias/:id/restaura", authenticateJWT, Controller.restaura);
+router.post(
+    "/clifamilias/:id/restaura",
+    JWTController.Verifica,
+    Controller.restaura
+);
 /**
  * @openapi
  * /clifamilias/{id}:
@@ -220,7 +206,7 @@ router.post("/clifamilias/:id/restaura", authenticateJWT, Controller.restaura);
  *        description: Unauthorized
  *
  */
-router.put("/clifamilias/:id", authenticateJWT, Controller.atualiza);
+router.put("/clifamilias/:id", JWTController.Verifica, Controller.atualiza);
 /**
  * @openapi
  * /clifamilias/{id}:
@@ -244,7 +230,7 @@ router.put("/clifamilias/:id", authenticateJWT, Controller.atualiza);
  *        description: Unauthorized
  *
  */
-router.delete("/clifamilias/:id", authenticateJWT, Controller.apaga);
+router.delete("/clifamilias/:id", JWTController.Verifica, Controller.apaga);
 
 /**
  * @openapi
@@ -283,7 +269,7 @@ router.delete("/clifamilias/:id", authenticateJWT, Controller.apaga);
  */
 router.post(
     "/clifamilias/busca",
-    authenticateJWT,
+    JWTController.Verifica,
     Controller.buscaRegistroCount
 );
 

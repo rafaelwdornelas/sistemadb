@@ -26,3 +26,6 @@ yarn sequelize db:migrate:undo:all --to XXXXXXXXXXXXXX-create-users.js
 
 Se desfazendo de todos a seeders gerados até o presente momento.
 yarn sequelize db:seed:undo:all
+
+//enviar minha porta local para um servidor linux com encaminhamento de porta
+ssh -R 4000:localhost:37778 root@207.244.230.240

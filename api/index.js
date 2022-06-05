@@ -9,17 +9,16 @@ const fs = require("fs");
 const swaggerDefinition = {
     openapi: "3.0.0",
     info: {
-        title: "Sistema DB API",
+        title: "CoreByte ERP  - DB",
         version: "1.0.0",
         description: "API documentation",
         contact: {
-            name: "Sistema DB",
-            url: "https://www.sistemadb.com.br",
-            email: "contato@sistemadb.com.br",
+            name: "CoreByte ERP",
+            url: "https://www.corebyteerp.com.br",
+            email: "contato@corebyteerp.com.br",
         },
     },
     termsOfService: "http://swagger.io/terms/",
-    //host: "localhost:3000",
     schemes: ["http", "https"],
     consumes: ["application/json"],
     produces: ["application/json"],

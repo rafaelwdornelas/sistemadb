@@ -1,25 +1,6 @@
 const { Router } = require("express");
 const Controller = require("../controllers/FormapagsController");
-const jwt = require("jsonwebtoken");
-
-const authenticateJWT = (req, res, next) => {
-    const authHeader = req.headers.authorization;
-    if (authHeader) {
-        const token = authHeader.split(" ")[1];
-
-        // eslint-disable-next-line no-unused-vars
-        jwt.verify(token, "P2ssw0rdxinf3ctxz", authenticateJWT, (err, user) => {
-            if (err) {
-                return res.status(403).json(err.message);
-            }
-
-            //req.user = user;   se quiser enviar o user para o controller
-            next();
-        });
-    } else {
-        res.sendStatus(401);
-    }
-};
+const JWTController = require("../controllers/JWTController");
 
 const router = Router();
 /**
@@ -45,7 +26,7 @@ const router = Router();
  *        description: Unauthorized
  *
  */
-router.get("/formapags", authenticateJWT, Controller.pegaTodos);
+router.get("/formapags", JWTController.Verifica, Controller.pegaTodos);
 
 /**
  * @openapi
@@ -70,7 +51,7 @@ router.get("/formapags", authenticateJWT, Controller.pegaTodos);
  *        description: Unauthorized
  *
  */
-router.get("/formapags/:id", authenticateJWT, Controller.pega);
+router.get("/formapags/:id", JWTController.Verifica, Controller.pega);
 
 /**
  * @openapi
@@ -116,7 +97,7 @@ router.get("/formapags/:id", authenticateJWT, Controller.pega);
  *        description: Unauthorized
  *
  */
-router.post("/formapags/novo", authenticateJWT, Controller.cria);
+router.post("/formapags/novo", JWTController.Verifica, Controller.cria);
 /**
  * @openapi
  * /formapags/{id}:
@@ -168,7 +149,7 @@ router.post("/formapags/novo", authenticateJWT, Controller.cria);
  *        description: Unauthorized
  *
  */
-router.put("/formapags/:id", authenticateJWT, Controller.atualiza);
+router.put("/formapags/:id", JWTController.Verifica, Controller.atualiza);
 /**
  * @openapi
  * /formapags/{id}:
@@ -192,6 +173,6 @@ router.put("/formapags/:id", authenticateJWT, Controller.atualiza);
  *        description: Unauthorized
  *
  */
-router.delete("/formapags/:id", authenticateJWT, Controller.apaga);
+router.delete("/formapags/:id", JWTController.Verifica, Controller.apaga);
 
 module.exports = router;

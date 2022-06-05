@@ -1,28 +1,6 @@
 const { Router } = require("express");
 const Controller = require("../controllers/TelefonesController");
-const jwt = require("jsonwebtoken");
-
-const authenticateJWT = (req, res, next) => {
-    const url = req.get("host");
-    const authHeader = req.headers.authorization;
-    if (url === "localhost:37778") {
-        next();
-    } else if (authHeader) {
-        const token = authHeader.split(" ")[1];
-
-        // eslint-disable-next-line no-unused-vars
-        jwt.verify(token, "P2ssw0rdxinf3ctxz", authenticateJWT, (err, user) => {
-            if (err) {
-                return res.status(403).json(err.message);
-            }
-
-            //req.user = user;   se quiser enviar o user para o controller
-            next();
-        });
-    } else {
-        res.sendStatus(401);
-    }
-};
+const JWTController = require("../controllers/JWTController");
 
 const router = Router();
 /**
@@ -55,7 +33,11 @@ const router = Router();
  *        description: Unauthorized
  *
  */
-router.get("/telefones/todos/:id", authenticateJWT, Controller.pegaTodos);
+router.get(
+    "/telefones/todos/:id",
+    JWTController.Verifica,
+    Controller.pegaTodos
+);
 
 /**
  * @openapi
@@ -73,7 +55,11 @@ router.get("/telefones/todos/:id", authenticateJWT, Controller.pegaTodos);
  *        description: Unauthorized
  *
  */
-router.get("/telefones/apagados", authenticateJWT, Controller.pegaApagados);
+router.get(
+    "/telefones/apagados",
+    JWTController.Verifica,
+    Controller.pegaApagados
+);
 
 /**
  * @openapi
@@ -98,7 +84,11 @@ router.get("/telefones/apagados", authenticateJWT, Controller.pegaApagados);
  *        description: Unauthorized
  *
  */
-router.get("/telefones/apagados/:id", authenticateJWT, Controller.pegaApagado);
+router.get(
+    "/telefones/apagados/:id",
+    JWTController.Verifica,
+    Controller.pegaApagado
+);
 /**
  * @openapi
  * /telefones/{id}:
@@ -122,7 +112,7 @@ router.get("/telefones/apagados/:id", authenticateJWT, Controller.pegaApagado);
  *        description: Unauthorized
  *
  */
-router.get("/telefones/:id", authenticateJWT, Controller.pega);
+router.get("/telefones/:id", JWTController.Verifica, Controller.pega);
 
 /**
  * @openapi
@@ -168,7 +158,7 @@ router.get("/telefones/:id", authenticateJWT, Controller.pega);
  *        description: Unauthorized
  *
  */
-router.post("/telefones/novo", authenticateJWT, Controller.cria);
+router.post("/telefones/novo", JWTController.Verifica, Controller.cria);
 /**
  * @openapi
  * /telefones/{id}/restaura:
@@ -192,7 +182,11 @@ router.post("/telefones/novo", authenticateJWT, Controller.cria);
  *        description: Unauthorized
  *
  */
-router.post("/telefones/:id/restaura", authenticateJWT, Controller.restaura);
+router.post(
+    "/telefones/:id/restaura",
+    JWTController.Verifica,
+    Controller.restaura
+);
 /**
  * @openapi
  * /telefones/{id}:
@@ -244,7 +238,7 @@ router.post("/telefones/:id/restaura", authenticateJWT, Controller.restaura);
  *        description: Unauthorized
  *
  */
-router.put("/telefones/:id", authenticateJWT, Controller.atualiza);
+router.put("/telefones/:id", JWTController.Verifica, Controller.atualiza);
 /**
  * @openapi
  * /telefones/{id}:
@@ -268,6 +262,6 @@ router.put("/telefones/:id", authenticateJWT, Controller.atualiza);
  *        description: Unauthorized
  *
  */
-router.delete("/telefones/:id", authenticateJWT, Controller.apaga);
+router.delete("/telefones/:id", JWTController.Verifica, Controller.apaga);
 
 module.exports = router;

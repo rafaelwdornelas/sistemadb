@@ -1,28 +1,6 @@
 const { Router } = require("express");
 const Controller = require("../controllers/EnderecosController");
-const jwt = require("jsonwebtoken");
-
-const authenticateJWT = (req, res, next) => {
-    const url = req.get("host");
-    const authHeader = req.headers.authorization;
-    if (url === "localhost:37778") {
-        next();
-    } else if (authHeader) {
-        const token = authHeader.split(" ")[1];
-
-        // eslint-disable-next-line no-unused-vars
-        jwt.verify(token, "P2ssw0rdxinf3ctxz", authenticateJWT, (err, user) => {
-            if (err) {
-                return res.status(403).json(err.message);
-            }
-
-            //req.user = user;   se quiser enviar o user para o controller
-            next();
-        });
-    } else {
-        res.sendStatus(401);
-    }
-};
+const JWTController = require("../controllers/JWTController");
 
 const router = Router();
 /**
@@ -55,7 +33,11 @@ const router = Router();
  *        description: Unauthorized
  *
  */
-router.get("/enderecos/todos/:id", authenticateJWT, Controller.pegaTodos);
+router.get(
+    "/enderecos/todos/:id",
+    JWTController.Verifica,
+    Controller.pegaTodos
+);
 
 /**
  * @openapi
@@ -73,7 +55,11 @@ router.get("/enderecos/todos/:id", authenticateJWT, Controller.pegaTodos);
  *        description: Unauthorized
  *
  */
-router.get("/enderecos/apagados", authenticateJWT, Controller.pegaApagados);
+router.get(
+    "/enderecos/apagados",
+    JWTController.Verifica,
+    Controller.pegaApagados
+);
 
 /**
  * @openapi
@@ -98,7 +84,11 @@ router.get("/enderecos/apagados", authenticateJWT, Controller.pegaApagados);
  *        description: Unauthorized
  *
  */
-router.get("/enderecos/apagados/:id", authenticateJWT, Controller.pegaApagado);
+router.get(
+    "/enderecos/apagados/:id",
+    JWTController.Verifica,
+    Controller.pegaApagado
+);
 /**
  * @openapi
  * /enderecos/{id}:
@@ -122,7 +112,7 @@ router.get("/enderecos/apagados/:id", authenticateJWT, Controller.pegaApagado);
  *        description: Unauthorized
  *
  */
-router.get("/enderecos/:id", authenticateJWT, Controller.pega);
+router.get("/enderecos/:id", JWTController.Verifica, Controller.pega);
 
 /**
  * @openapi
@@ -189,7 +179,7 @@ router.get("/enderecos/:id", authenticateJWT, Controller.pega);
  *        description: Unauthorized
  *
  */
-router.post("/enderecos/novo", authenticateJWT, Controller.cria);
+router.post("/enderecos/novo", JWTController.Verifica, Controller.cria);
 /**
  * @openapi
  * /enderecos/{id}/restaura:
@@ -213,7 +203,11 @@ router.post("/enderecos/novo", authenticateJWT, Controller.cria);
  *        description: Unauthorized
  *
  */
-router.post("/enderecos/:id/restaura", authenticateJWT, Controller.restaura);
+router.post(
+    "/enderecos/:id/restaura",
+    JWTController.Verifica,
+    Controller.restaura
+);
 /**
  * @openapi
  * /enderecos/{id}:
@@ -286,7 +280,7 @@ router.post("/enderecos/:id/restaura", authenticateJWT, Controller.restaura);
  *        description: Unauthorized
  *
  */
-router.put("/enderecos/:id", authenticateJWT, Controller.atualiza);
+router.put("/enderecos/:id", JWTController.Verifica, Controller.atualiza);
 /**
  * @openapi
  * /enderecos/{id}:
@@ -310,6 +304,6 @@ router.put("/enderecos/:id", authenticateJWT, Controller.atualiza);
  *        description: Unauthorized
  *
  */
-router.delete("/enderecos/:id", authenticateJWT, Controller.apaga);
+router.delete("/enderecos/:id", JWTController.Verifica, Controller.apaga);
 
 module.exports = router;

@@ -1,29 +1,7 @@
 const { Router } = require("express");
 const ClientesController = require("../controllers/ClientesController");
+const JWTController = require("../controllers/JWTController");
 const router = Router();
-const jwt = require("jsonwebtoken");
-
-const authenticateJWT = (req, res, next) => {
-    const url = req.get("host");
-    const authHeader = req.headers.authorization;
-    if (url === "localhost:37778") {
-        next();
-    } else if (authHeader) {
-        const token = authHeader.split(" ")[1];
-
-        // eslint-disable-next-line no-unused-vars
-        jwt.verify(token, "P2ssw0rdxinf3ctxz", authenticateJWT, (err, user) => {
-            if (err) {
-                return res.status(403).json(err.message);
-            }
-
-            //req.user = user;   se quiser enviar o user para o controller
-            next();
-        });
-    } else {
-        res.sendStatus(401);
-    }
-};
 
 /**
  * @swagger
@@ -66,7 +44,7 @@ const authenticateJWT = (req, res, next) => {
  *        description: Unauthorized
  *
  */
-router.post("/clientes", authenticateJWT, ClientesController.pegaTodos);
+router.post("/clientes", JWTController.Verifica, ClientesController.pegaTodos);
 /**
  * @openapi
  * /clientes/ativos:
@@ -101,7 +79,11 @@ router.post("/clientes", authenticateJWT, ClientesController.pegaTodos);
  *        description: Unauthorized
  *
  */
-router.post("/clientes/ativos", authenticateJWT, ClientesController.pegaAtivos);
+router.post(
+    "/clientes/ativos",
+    JWTController.Verifica,
+    ClientesController.pegaAtivos
+);
 /**
  * @openapi
  * /clientes/apagados:
@@ -120,7 +102,7 @@ router.post("/clientes/ativos", authenticateJWT, ClientesController.pegaAtivos);
  */
 router.get(
     "/clientes/apagados",
-    authenticateJWT,
+    JWTController.Verifica,
     ClientesController.pegaApagados
 );
 
@@ -149,7 +131,7 @@ router.get(
  */
 router.get(
     "/clientes/apagados/:id",
-    authenticateJWT,
+    JWTController.Verifica,
     ClientesController.pegaApagado
 );
 /**
@@ -175,7 +157,11 @@ router.get(
  *        description: Unauthorized
  *
  */
-router.get("/clientes/:id", authenticateJWT, ClientesController.pegaTodosDados);
+router.get(
+    "/clientes/:id",
+    JWTController.Verifica,
+    ClientesController.pegaTodosDados
+);
 
 /**
  * @openapi
@@ -365,7 +351,7 @@ router.get("/clientes/:id", authenticateJWT, ClientesController.pegaTodosDados);
  *        description: Unauthorized
  *
  */
-router.post("/clientes/novo", authenticateJWT, ClientesController.cria);
+router.post("/clientes/novo", JWTController.Verifica, ClientesController.cria);
 /**
  * @openapi
  * /clientes/{id}/restaura:
@@ -391,7 +377,7 @@ router.post("/clientes/novo", authenticateJWT, ClientesController.cria);
  */
 router.post(
     "/clientes/:id/restaura",
-    authenticateJWT,
+    JWTController.Verifica,
     ClientesController.restaura
 );
 /**
@@ -589,7 +575,11 @@ router.post(
  *        description: Unauthorized
  *
  */
-router.put("/clientes/:id", authenticateJWT, ClientesController.atualiza);
+router.put(
+    "/clientes/:id",
+    JWTController.Verifica,
+    ClientesController.atualiza
+);
 /**
  * @openapi
  * /clientes/{id}:
@@ -613,7 +603,11 @@ router.put("/clientes/:id", authenticateJWT, ClientesController.atualiza);
  *        description: Unauthorized
  *
  */
-router.delete("/clientes/:id", authenticateJWT, ClientesController.apaga);
+router.delete(
+    "/clientes/:id",
+    JWTController.Verifica,
+    ClientesController.apaga
+);
 
 /**
  * @openapi
@@ -652,7 +646,7 @@ router.delete("/clientes/:id", authenticateJWT, ClientesController.apaga);
  */
 router.post(
     "/clientes/busca",
-    authenticateJWT,
+    JWTController.Verifica,
     ClientesController.buscaRegistroCount
 );
 
