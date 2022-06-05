@@ -1,6 +1,7 @@
 /* eslint-disable indent */
 const chalk = require("chalk");
 const fs = require("fs");
+require("dotenv").config();
 
 class globais {
     constructor(name) {
@@ -22,7 +23,13 @@ class globais {
       "0"
     )}:${segundo.padStart(2, "0")}`;
 
-        SalvaLog(now.toISOString().split("T")[0], `${horario} - ${texto}`);
+        if (process.env.LOG_ENABLED) {
+            if (process.env.LOG_ERROR_only == 0) {
+                SalvaLog(now.toISOString().split("T")[0], `${horario} - ${texto}`);
+            } else if (process.env.LOG_ERROR_only == 1 && tipo == "error") {
+                SalvaLog(now.toISOString().split("T")[0], `${horario} - ${texto}`);
+            }
+        }
 
         switch (tipo) {
             case "info":
