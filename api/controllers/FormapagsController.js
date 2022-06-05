@@ -1,8 +1,10 @@
 /* eslint-disable indent */
 const { FormaspagsServices } = require("../services");
 const formapagsServices = new FormaspagsServices();
+const { globais } = require("../modules");
+const moduloglobais = new globais();
 
-class EnderecosController {
+class FormaspagsController {
     static async pegaTodos(req, res) {
         try {
             const retorno = {
@@ -12,31 +14,48 @@ class EnderecosController {
                     limit: 1000,
                 })),
             };
+            moduloglobais.log(
+                "API: formapagsServices.pegaTodosOsRegistrosPaginacao",
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: formapagsServices.pegaTodosOsRegistrosPaginacao ERROR: " +
+                error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
 
     static async pega(req, res) {
-        const { id } = req.params;
         try {
+            const { id } = req.params;
             const dados = await formapagsServices.pegaUmRegistro({ id });
             let retorno = {
                 sucesso: true,
                 count: dados == null ? 0 : 1,
                 row: dados,
             };
+            moduloglobais.log(
+                "API: formapagsServices.pegaUmRegistro, ID: " + id,
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: formapagsServices.pegaUmRegistro ERROR: " + error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
@@ -50,52 +69,73 @@ class EnderecosController {
                 count: 1,
                 row: dados,
             };
+            moduloglobais.log("API: formapagsServices.pegaUmRegistro", "info");
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: formapagsServices.criaRegistro ERROR: " + error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
 
     static async atualiza(req, res) {
-        const { id } = req.params;
-        const novasInfos = req.body;
         try {
+            const { id } = req.params;
+            const novasInfos = req.body;
             await formapagsServices.atualizaRegistro(novasInfos, Number(id));
             let retorno = {
                 sucesso: true,
                 msg: `id ${id} atualizado`,
             };
+            moduloglobais.log(
+                "API: formapagsServices.atualizaRegistro, ID: " + id,
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: formapagsServices.atualizaRegistro ERROR: " + error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
 
     static async apaga(req, res) {
-        const { id } = req.params;
         try {
+            const { id } = req.params;
             await formapagsServices.apagaRegistro(Number(id));
             let retorno = {
                 sucesso: true,
                 msg: `id ${id} deletado`,
             };
+            moduloglobais.log(
+                "API: formapagsServices.apagaRegistro, ID: " + id,
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: formapagsServices.apagaRegistro ERROR: " + error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
 }
 
-module.exports = EnderecosController;
+module.exports = FormaspagsController;
