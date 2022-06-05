@@ -2,6 +2,8 @@
 const { CnaesServices } = require("../services");
 const cnaesServices = new CnaesServices();
 const sequelize = require("sequelize");
+const { globais } = require("../modules");
+const moduloglobais = new globais();
 
 class CnaesController {
     static async pegaTodos(req, res) {
@@ -14,31 +16,40 @@ class CnaesController {
                     order: ["id"],
                 })),
             };
+            moduloglobais.log(
+                "API: cnaesServices.pegaTodosOsRegistrosPaginacao",
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: cnaesServices.pegaTodosOsRegistrosPaginacao ERROR: " +
+                error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
 
     static async buscaRegistroCount(req, res) {
-        const where = {
-            [sequelize.Op.or]: [{
-                    CN_DESCRICAO: {
-                        [sequelize.Op.like]: `%${req.body.busca}%`,
-                    },
-                },
-                {
-                    CN_CODIGO: {
-                        [sequelize.Op.like]: `%${req.body.busca}%`,
-                    },
-                },
-            ],
-        };
         try {
+            const where = {
+                [sequelize.Op.or]: [{
+                        CN_DESCRICAO: {
+                            [sequelize.Op.like]: `%${req.body.busca}%`,
+                        },
+                    },
+                    {
+                        CN_CODIGO: {
+                            [sequelize.Op.like]: `%${req.body.busca}%`,
+                        },
+                    },
+                ],
+            };
             const retorno = {
                 sucesso: true,
                 ...(await cnaesServices.pegaTodosOsRegistrosWherePaginacao(where, {
@@ -47,12 +58,22 @@ class CnaesController {
                     order: ["id"],
                 })),
             };
+            moduloglobais.log(
+                "API: cnaesServices.pegaTodosOsRegistrosWherePaginacao Busca: " +
+                req.body.busca,
+                "info"
+            );
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
                 sucesso: false,
                 msg: error.message,
             };
+            moduloglobais.log(
+                "API: cnaesServices.pegaTodosOsRegistrosWherePaginacao Busca ERROR: " +
+                error.message,
+                "error"
+            );
             return res.status(500).json(retorno);
         }
     }
