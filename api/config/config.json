@@ -4,7 +4,8 @@
         "password": "P@ssw0rdx",
         "database": "ochent_dev",
         "host": "localhost",
-        "dialect": "mssql"
+        "dialect": "mssql",
+        "logging": false
     },
     "test": {
         "username": "sa",
