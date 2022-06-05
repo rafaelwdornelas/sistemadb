@@ -63,22 +63,22 @@ module.exports = {
                 allowNull: true,
             }, //Regime especial de tributação usado na NF-e/NFC-e, referece ao W22g(cRegTrib) na documentação do SEFAZ. Onde: 1=Microempresa Municipal; 2=Estimativa; 3=Sociedade de Profissionais; 4=Cooperativa; 5=Microempresário Individual (MEI); 6=Microempresário e Empresa de Pequeno Porte
             LJ_ID_CSC_PROD: {
-                type: Sequelize.STRING,
+                type: Sequelize.STRING(255),
                 defaultValue: "",
                 allowNull: false,
             }, //ID do código de segurança do contribuinte para emissão no ambiente de produção da SEFAZ, disponivél através do portal da Receita do seu estado.
             LJ_CSC_PROD: {
-                type: Sequelize.STRING,
+                type: Sequelize.STRING(255),
                 defaultValue: "",
                 allowNull: false,
             }, //Código de segurança do contribuinte para emissão no ambiente de produção da SEFAZ, disponivél através do portal da Receita do seu estado.
             LJ_ID_CSC_HOMOL: {
-                type: Sequelize.STRING,
+                type: Sequelize.STRING(255),
                 defaultValue: "",
                 allowNull: false,
             }, //ID do código de segurança do contribuinte para emissão no ambiente de homologação da SEFAZ, disponivél através do portal da Receita do seu estado.
             LJ_CSC_HOMOL: {
-                type: Sequelize.STRING,
+                type: Sequelize.STRING(255),
                 defaultValue: "",
                 allowNull: false,
             }, //Código de segurança do contribuinte para emissão no ambiente de homologação da SEFAZ, disponivél através do portal da Receita do seu estado.
@@ -212,12 +212,17 @@ module.exports = {
                 allowNull: false,
             }, //Certificado digital
             LJ_CERTIFICADO_KEY: {
-                type: Sequelize.STRING,
+                type: Sequelize.STRING(80),
                 defaultValue: "",
                 allowNull: false,
             }, //Chave privada do certificado
             LJ_CERTIFICADO_PASS: {
-                type: Sequelize.STRING,
+                type: Sequelize.STRING(80),
+                defaultValue: "",
+                allowNull: false,
+            }, //Senha do certificado
+            LJ_LICENCADEUSO: {
+                type: Sequelize.TEXT,
                 defaultValue: "",
                 allowNull: false,
             }, //Senha do certificado
