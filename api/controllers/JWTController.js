@@ -15,7 +15,7 @@ class JWTController {
                 await jwt.verify(token, secret, (err, user) => {
                     if (err) {
                         moduloglobais.log("JWT: Verify ERROR: " + err.message, "error");
-                        return res.status(403).json(err.message);
+                        return res.status(401).json(err.message);
                     }
                     //req.user = user;   se quiser enviar o user para o controller
                     next();
