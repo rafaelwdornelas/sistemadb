@@ -5,20 +5,13 @@ module.exports = {
         password: process.env.DB_PASSWORD,
         database: process.env.DB_DATABASE,
         host: process.env.DB_HOST,
-        dialect: "mssql",
-    },
-    test: {
-        username: "root",
-        password: null,
-        database: "database_test",
-        host: "127.0.0.1",
-        dialect: "mysql",
-    },
-    production: {
-        username: "root",
-        password: null,
-        database: "database_production",
-        host: "127.0.0.1",
-        dialect: "mysql",
+        dialect: process.env.DB_DIALECT,
+        logging: process.env.SEQUELIZE_SHOW_SQL == 1 ? true : false,
+        pool: {
+            max: parseInt(process.env.DB_POOL_MAX),
+            min: parseInt(process.env.DB_POOL_MIN),
+            acquire: parseInt(process.env.DB_POOL_ACQUIRE),
+            idle: parseInt(process.env.DB_POOL_IDLE),
+        },
     },
 };
