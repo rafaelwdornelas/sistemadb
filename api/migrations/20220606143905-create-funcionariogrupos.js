@@ -13,6 +13,10 @@ module.exports = {
             },
             FUNGR_LOJA: {
                 type: Sequelize.INTEGER,
+                references: {
+                    model: "LOJAS",
+                    key: "id",
+                },
             },
             CRIADO_EM: {
                 allowNull: false,
