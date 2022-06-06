@@ -301,4 +301,33 @@ router.get(
     Controller.adicionalicenca
 );
 
+/**
+ * @openapi
+ * /lojas/licenca/verifica/{id}:
+ *  get:
+ *    summary: Licença Nova
+ *    description: Adiciona uma nova licença a uma loja especifica informando o número de dias
+ *    tags: [Lojas]
+ *    parameters:
+ *      - name: id
+ *        description: Informe o ID da loja.
+ *        required: true
+ *        in: path
+ *        schema:
+ *         type: integer
+ *    responses:
+ *      '200':
+ *        description: Uma resposta bem-sucedida
+ *      '500':
+ *        description: Uma resposta de erro
+ *      '401':
+ *        description: Unauthorized
+ *
+ */
+router.get(
+    "/lojas/licenca/verifica/:id",
+    JWTController.Verifica,
+    Controller.verificalicenca
+);
+
 module.exports = router;

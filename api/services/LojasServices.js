@@ -34,6 +34,33 @@ class LojasServices extends Services {
             return false;
         }
     }
+
+    async verificalicenca(id) {
+        let lojainfos = await database[this.nomeDoModelo].findOne({ id: id });
+        if (lojainfos) {
+            lojainfos = lojainfos.dataValues;
+            let licenca = lojainfos.LJ_LICENCADEUSO;
+            let LICENCADEUSO = await modulocrypto.descrypt(licenca);
+            if (LICENCADEUSO) {
+                LICENCADEUSO = JSON.parse(LICENCADEUSO);
+                var d = new Date(LICENCADEUSO.DataLimite),
+                    dformat = [
+                        (d.getMonth() + 1).toString().padStart(2, "0"),
+                        d.getDate().toString().padStart(2, "0"),
+                        d.getFullYear(),
+                    ].join("/") +
+                    " " + [
+                        d.getHours().toString().padStart(2, "0"),
+                        d.getMinutes().toString().padStart(2, "0"),
+                        d.getSeconds().toString().padStart(2, "0"),
+                    ].join(":");
+                LICENCADEUSO.DataLimite = dformat;
+                return LICENCADEUSO;
+            }
+        } else {
+            return false;
+        }
+    }
 }
 
 module.exports = LojasServices;

@@ -262,6 +262,32 @@ class LojasController {
             return res.status(500).json(retorno);
         }
     }
+
+    static async verificalicenca(req, res) {
+        try {
+            const { id } = req.params;
+            const dados = await lojasServices.verificalicenca(Number(id));
+            let retorno = {
+                sucesso: true,
+                row: dados,
+            };
+            moduloglobais.log(
+                "API: lojasServices.verificalicenca, ID: " + id,
+                "info"
+            );
+            return res.status(200).json(retorno);
+        } catch (error) {
+            let retorno = {
+                sucesso: false,
+                msg: error.message,
+            };
+            moduloglobais.log(
+                "API: lojasServices.verificalicenca ERROR: " + error.message,
+                "error"
+            );
+            return res.status(500).json(retorno);
+        }
+    }
 }
 
 module.exports = LojasController;
