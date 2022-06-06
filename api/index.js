@@ -45,6 +45,7 @@ fs.readFile("layout.css", "utf8", function(err, data) {
     var cssOptions = {
         customCss: data,
         customSiteTitle: "Sistema DB API",
+        explorer: false,
     };
 
     const options = {
@@ -58,7 +59,19 @@ fs.readFile("layout.css", "utf8", function(err, data) {
         res.send(swaggerDocs);
     });
 
-    app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocs, cssOptions));
+    if (process.env.SWAGGERUICSS == "1") {
+        app.use(
+            "/",
+            swaggerUi.serve,
+            swaggerUi.setup(swaggerDocs, cssOptions, { docExpansion: "none" })
+        );
+    } else {
+        app.use(
+            "/",
+            swaggerUi.serve,
+            swaggerUi.setup(swaggerDocs, false, { docExpansion: "none" })
+        );
+    }
 });
 
 routes(app);
