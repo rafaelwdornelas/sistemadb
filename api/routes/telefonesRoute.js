@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const Controller = require("../controllers/TelefonesController");
 const JWTController = require("../controllers/JWTController");
+const LicencaController = require("../controllers/LicencaController");
 
 const router = Router();
 /**
@@ -158,7 +159,12 @@ router.get("/telefones/:id", JWTController.Verifica, Controller.pega);
  *        description: Unauthorized
  *
  */
-router.post("/telefones/novo", JWTController.Verifica, Controller.cria);
+router.post(
+    "/telefones/novo",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.cria
+);
 /**
  * @openapi
  * /telefones/{id}/restaura:
@@ -184,6 +190,7 @@ router.post("/telefones/novo", JWTController.Verifica, Controller.cria);
  */
 router.post(
     "/telefones/:id/restaura",
+    LicencaController.Verifica,
     JWTController.Verifica,
     Controller.restaura
 );
@@ -238,7 +245,12 @@ router.post(
  *        description: Unauthorized
  *
  */
-router.put("/telefones/:id", JWTController.Verifica, Controller.atualiza);
+router.put(
+    "/telefones/:id",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.atualiza
+);
 /**
  * @openapi
  * /telefones/{id}:
@@ -262,6 +274,11 @@ router.put("/telefones/:id", JWTController.Verifica, Controller.atualiza);
  *        description: Unauthorized
  *
  */
-router.delete("/telefones/:id", JWTController.Verifica, Controller.apaga);
+router.delete(
+    "/telefones/:id",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.apaga
+);
 
 module.exports = router;

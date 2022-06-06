@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const Controller = require("../controllers/ClientesFamiliasController");
 const JWTController = require("../controllers/JWTController");
+const LicencaController = require("../controllers/LicencaController");
 
 const router = Router();
 
@@ -137,7 +138,12 @@ router.get("/clifamilias/:id", JWTController.Verifica, Controller.pega);
  *        description: Unauthorized
  *
  */
-router.post("/clifamilias/novo", JWTController.Verifica, Controller.cria);
+router.post(
+    "/clifamilias/novo",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.cria
+);
 /**
  * @openapi
  * /clifamilias/{id}/restaura:
@@ -163,6 +169,7 @@ router.post("/clifamilias/novo", JWTController.Verifica, Controller.cria);
  */
 router.post(
     "/clifamilias/:id/restaura",
+    LicencaController.Verifica,
     JWTController.Verifica,
     Controller.restaura
 );
@@ -206,7 +213,12 @@ router.post(
  *        description: Unauthorized
  *
  */
-router.put("/clifamilias/:id", JWTController.Verifica, Controller.atualiza);
+router.put(
+    "/clifamilias/:id",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.atualiza
+);
 /**
  * @openapi
  * /clifamilias/{id}:
@@ -230,7 +242,12 @@ router.put("/clifamilias/:id", JWTController.Verifica, Controller.atualiza);
  *        description: Unauthorized
  *
  */
-router.delete("/clifamilias/:id", JWTController.Verifica, Controller.apaga);
+router.delete(
+    "/clifamilias/:id",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.apaga
+);
 
 /**
  * @openapi

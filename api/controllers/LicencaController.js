@@ -18,7 +18,10 @@ class LicencaController {
                 let hoje = new Date();
                 hoje = hoje.getTime();
                 if (LojaInfors.LJ_NOME != dados.RazaoSocial) {
-                    moduloglobais.log("LicencaController: Loja não autorizada", "error");
+                    moduloglobais.log(
+                        "LicencaController: Não foi possível identificar a empresa",
+                        "error"
+                    );
                     return res.status(401).json("Não foi possível identificar a empresa");
                 } else if (hoje > dados.DataLimite) {
                     moduloglobais.log("LicencaController: Sua licença expirou", "error");

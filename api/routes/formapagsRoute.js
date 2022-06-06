@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const Controller = require("../controllers/FormapagsController");
 const JWTController = require("../controllers/JWTController");
+const LicencaController = require("../controllers/LicencaController");
 
 const router = Router();
 /**
@@ -97,7 +98,12 @@ router.get("/formapags/:id", JWTController.Verifica, Controller.pega);
  *        description: Unauthorized
  *
  */
-router.post("/formapags/novo", JWTController.Verifica, Controller.cria);
+router.post(
+    "/formapags/novo",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.cria
+);
 /**
  * @openapi
  * /formapags/{id}:
@@ -149,7 +155,12 @@ router.post("/formapags/novo", JWTController.Verifica, Controller.cria);
  *        description: Unauthorized
  *
  */
-router.put("/formapags/:id", JWTController.Verifica, Controller.atualiza);
+router.put(
+    "/formapags/:id",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.atualiza
+);
 /**
  * @openapi
  * /formapags/{id}:
@@ -173,6 +184,11 @@ router.put("/formapags/:id", JWTController.Verifica, Controller.atualiza);
  *        description: Unauthorized
  *
  */
-router.delete("/formapags/:id", JWTController.Verifica, Controller.apaga);
+router.delete(
+    "/formapags/:id",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.apaga
+);
 
 module.exports = router;

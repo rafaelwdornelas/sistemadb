@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const Controller = require("../controllers/EnderecosController");
 const JWTController = require("../controllers/JWTController");
+const LicencaController = require("../controllers/LicencaController");
 
 const router = Router();
 /**
@@ -179,7 +180,12 @@ router.get("/enderecos/:id", JWTController.Verifica, Controller.pega);
  *        description: Unauthorized
  *
  */
-router.post("/enderecos/novo", JWTController.Verifica, Controller.cria);
+router.post(
+    "/enderecos/novo",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.cria
+);
 /**
  * @openapi
  * /enderecos/{id}/restaura:
@@ -205,6 +211,7 @@ router.post("/enderecos/novo", JWTController.Verifica, Controller.cria);
  */
 router.post(
     "/enderecos/:id/restaura",
+    LicencaController.Verifica,
     JWTController.Verifica,
     Controller.restaura
 );
@@ -280,7 +287,12 @@ router.post(
  *        description: Unauthorized
  *
  */
-router.put("/enderecos/:id", JWTController.Verifica, Controller.atualiza);
+router.put(
+    "/enderecos/:id",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.atualiza
+);
 /**
  * @openapi
  * /enderecos/{id}:
@@ -304,6 +316,11 @@ router.put("/enderecos/:id", JWTController.Verifica, Controller.atualiza);
  *        description: Unauthorized
  *
  */
-router.delete("/enderecos/:id", JWTController.Verifica, Controller.apaga);
+router.delete(
+    "/enderecos/:id",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.apaga
+);
 
 module.exports = router;

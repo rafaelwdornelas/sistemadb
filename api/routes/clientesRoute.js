@@ -45,12 +45,7 @@ const router = Router();
  *        description: Unauthorized
  *
  */
-router.post(
-    "/clientes",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.pegaTodos
-);
+router.post("/clientes", JWTController.Verifica, Controller.pegaTodos);
 /**
  * @openapi
  * /clientes/ativos:
@@ -349,7 +344,12 @@ router.get("/clientes/:id", JWTController.Verifica, Controller.pegaTodosDados);
  *        description: Unauthorized
  *
  */
-router.post("/clientes/novo", JWTController.Verifica, Controller.cria);
+router.post(
+    "/clientes/novo",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.cria
+);
 /**
  * @openapi
  * /clientes/{id}/restaura:
@@ -375,6 +375,7 @@ router.post("/clientes/novo", JWTController.Verifica, Controller.cria);
  */
 router.post(
     "/clientes/:id/restaura",
+    LicencaController.Verifica,
     JWTController.Verifica,
     Controller.restaura
 );
@@ -573,7 +574,12 @@ router.post(
  *        description: Unauthorized
  *
  */
-router.put("/clientes/:id", JWTController.Verifica, Controller.atualiza);
+router.put(
+    "/clientes/:id",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.atualiza
+);
 /**
  * @openapi
  * /clientes/{id}:
@@ -597,7 +603,12 @@ router.put("/clientes/:id", JWTController.Verifica, Controller.atualiza);
  *        description: Unauthorized
  *
  */
-router.delete("/clientes/:id", JWTController.Verifica, Controller.apaga);
+router.delete(
+    "/clientes/:id",
+    LicencaController.Verifica,
+    JWTController.Verifica,
+    Controller.apaga
+);
 
 /**
  * @openapi
