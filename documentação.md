@@ -32,7 +32,7 @@ ssh -R 4000:localhost:37778 root@207.244.230.240
 
 docker
 criar imagem:
-docker build -t rafaelwdornelas/api .
+docker-compose up
 
 iniciar a imagem
 docker run --name apisistema -rm -p 80:37778 -d rafaelwdornelas/api

@@ -43,6 +43,8 @@ class LojasServices extends Services {
             let LICENCADEUSO = await modulocrypto.descrypt(licenca);
             if (LICENCADEUSO) {
                 LICENCADEUSO = JSON.parse(LICENCADEUSO);
+                let hoje = new Date();
+                hoje = hoje.getTime();
                 var d = new Date(LICENCADEUSO.DataLimite),
                     dformat = [
                         (d.getMonth() + 1).toString().padStart(2, "0"),
@@ -54,6 +56,11 @@ class LojasServices extends Services {
                         d.getMinutes().toString().padStart(2, "0"),
                         d.getSeconds().toString().padStart(2, "0"),
                     ].join(":");
+                if (hoje > LICENCADEUSO.DataLimite) {
+                    LICENCADEUSO.validade = "Licença Vencida";
+                } else {
+                    LICENCADEUSO.validade = "Licença Válida";
+                }
                 LICENCADEUSO.DataLimite = dformat;
                 return LICENCADEUSO;
             }

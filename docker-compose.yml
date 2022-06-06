@@ -1,0 +1,11 @@
+version: "3" ## especifica a versão do docker-compose file
+
+services: ## Define um serviço
+  app: ## nome do serviço
+    container_name: corebyte-erp-api ## nome do container
+    build: . ## localização do dockerfile
+    command: sh -c "npx sequelize db:migrate && npx sequelize db:seed:all --debug && npm start" ## comando a executar
+    ports:
+      - "37778:37778" ## redirecionamento de porta quando chegar alguma requisição na porta 3000 chama o container na porta 3000
+    volumes:
+      - .:/usr/app ## monitoro a pasta atual . e envio as alterações para /usr/app

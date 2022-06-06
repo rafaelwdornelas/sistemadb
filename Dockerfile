@@ -1,10 +1,8 @@
-FROM node:18-alpine
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
-WORKDIR /home/node/app
+FROM node:alpine
+WORKDIR /usr/app
 COPY package*.json ./
-RUN npm install
+RUN npm install && npm cache clean --force
 COPY . .
-COPY --chown=node:node . .
-USER node
+COPY .sequelizerc .
 EXPOSE 37778
-CMD ["npm", "start"]
+#CMD ["npm", "start"]
