@@ -1,7 +1,7 @@
 const { crypto, globais } = require("../modules");
+const { LojasServices } = require("../services");
 const modulocrypto = new crypto();
 const moduloglobais = new globais();
-const { LojasServices } = require("../services");
 const lojasServices = new LojasServices();
 class LicencaController {
     static async Verifica(req, res, next) {
