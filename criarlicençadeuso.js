@@ -13,4 +13,6 @@ const modulocrypto = new crypto();
     dados = JSON.stringify(dados);
     let LICENCADEUSO = await modulocrypto.encrypt(dados);
     console.log(LICENCADEUSO);
+    let descript = await modulocrypto.descrypt(LICENCADEUSO);
+    console.log(descript);
 })();
