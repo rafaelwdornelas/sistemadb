@@ -57,19 +57,15 @@ class LojasController {
 
     static async pegaTodos(req, res) {
         try {
-            const { id } = req.params;
-            const where = {
-                END_CLI: id,
-            };
             const retorno = {
                 sucesso: true,
-                ...(await lojasServices.pegaTodosOsRegistrosWherePaginacao(where, {
+                ...(await lojasServices.pegaTodosOsRegistrosPaginacao({
                     offset: req.body.inicio,
                     limit: req.body.limit,
                 })),
             };
             moduloglobais.log(
-                "API: lojasServices.pegaTodosOsRegistrosWherePaginacao, ID: " + id,
+                "API: lojasServices.pegaTodosOsRegistrosPaginacao",
                 "info"
             );
             return res.status(200).json(retorno);
@@ -79,7 +75,7 @@ class LojasController {
                 msg: error.message,
             };
             moduloglobais.log(
-                "API: lojasServices.pegaTodosOsRegistrosWherePaginacao ERROR: " +
+                "API: lojasServices.pegaTodosOsRegistrosPaginacao ERROR: " +
                 error.message,
                 "error"
             );

@@ -10,6 +10,7 @@ const telefones = require("./telefonesRoute");
 const cnaes = require("./cnaesRoute");
 const unidades = require("./unidadesRoute");
 const formapags = require("./formapagsRoute");
+const lojas = require("./lojasRoute");
 
 module.exports = (app) => {
     app.use(
@@ -23,6 +24,7 @@ module.exports = (app) => {
         telefones,
         cnaes,
         unidades,
-        formapags
+        formapags,
+        lojas
     );
 };
