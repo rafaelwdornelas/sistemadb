@@ -305,8 +305,8 @@ router.get(
  * @openapi
  * /lojas/licenca/verifica/{id}:
  *  get:
- *    summary: Licença Nova
- *    description: Adiciona uma nova licença a uma loja especifica informando o número de dias
+ *    summary: Licença Verifica
+ *    description: Verifica a licença de uma loja
  *    tags: [Lojas]
  *    parameters:
  *      - name: id
