@@ -161,13 +161,28 @@ class LojasController {
     static async apaga(req, res) {
         try {
             const { id } = req.params;
-            await lojasServices.apagaRegistro(Number(id));
-            let retorno = {
-                sucesso: true,
-                msg: `id ${id} deletado`,
-            };
-            moduloglobais.log("API: lojasServices.apagaRegistro, ID: " + id, "info");
-            return res.status(200).json(retorno);
+            if (id == 1) {
+                let retorno = {
+                    sucesso: false,
+                    msg: "Não é possível apagar o registro padrão",
+                };
+                moduloglobais.log(
+                    "API: lojasServices.apagaRegistro, ID: " + id,
+                    "error"
+                );
+                return res.status(500).json(retorno);
+            } else {
+                await lojasServices.apagaRegistro(Number(id));
+                let retorno = {
+                    sucesso: true,
+                    msg: `id ${id} deletado`,
+                };
+                moduloglobais.log(
+                    "API: lojasServices.apagaRegistro, ID: " + id,
+                    "info"
+                );
+                return res.status(200).json(retorno);
+            }
         } catch (error) {
             let retorno = {
                 sucesso: false,
@@ -201,6 +216,47 @@ class LojasController {
             };
             moduloglobais.log(
                 "API: lojasServices.restauraRegistro ERROR: " + error.message,
+                "error"
+            );
+            return res.status(500).json(retorno);
+        }
+    }
+
+    static async adicionalicenca(req, res) {
+        try {
+            const { id, dias } = req.params;
+            const status = await lojasServices.adicionalicenca(
+                Number(id),
+                Number(dias)
+            );
+            if (status == true) {
+                let retorno = {
+                    sucesso: true,
+                    msg: `Loja ${id} adicionado ${dias} dias`,
+                };
+                moduloglobais.log(
+                    "API: lojasServices.adicionalicenca, ID: " + id,
+                    "info"
+                );
+                return res.status(200).json(retorno);
+            } else {
+                let retorno = {
+                    sucesso: false,
+                    msg: `Loja ${id} não adicionado ${dias} dias`,
+                };
+                moduloglobais.log(
+                    "API: lojasServices.adicionalicenca, ID: " + id,
+                    "error"
+                );
+                return res.status(500).json(retorno);
+            }
+        } catch (error) {
+            let retorno = {
+                sucesso: false,
+                msg: error.message,
+            };
+            moduloglobais.log(
+                "API: lojasServices.adicionalicenca ERROR: " + error.message,
                 "error"
             );
             return res.status(500).json(retorno);

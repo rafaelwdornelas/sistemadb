@@ -266,4 +266,39 @@ router.delete(
     Controller.apaga
 );
 
+/**
+ * @openapi
+ * /lojas/licenca/nova/{id}/{dias}:
+ *  get:
+ *    summary: Licença Nova
+ *    description: Adiciona uma nova licença a uma loja especifica informando o número de dias
+ *    tags: [Lojas]
+ *    parameters:
+ *      - name: id
+ *        description: Informe o ID da loja.
+ *        required: true
+ *        in: path
+ *        schema:
+ *         type: integer
+ *      - name: dias
+ *        description: Informe a quantidade de dias para adicionar a licença.
+ *        required: true
+ *        in: path
+ *        schema:
+ *         type: integer
+ *    responses:
+ *      '200':
+ *        description: Uma resposta bem-sucedida
+ *      '500':
+ *        description: Uma resposta de erro
+ *      '401':
+ *        description: Unauthorized
+ *
+ */
+router.get(
+    "/lojas/licenca/nova/:id/:dias",
+    JWTController.Verifica,
+    Controller.adicionalicenca
+);
+
 module.exports = router;
