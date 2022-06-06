@@ -13,6 +13,10 @@ module.exports = {
             },
             FUNCG_GRUPO: {
                 type: Sequelize.INTEGER,
+                references: {
+                    model: "FUNCIONARIOGRUPOS",
+                    key: "id",
+                },
             },
             FUNCG_SALARIO: {
                 type: Sequelize.FLOAT,

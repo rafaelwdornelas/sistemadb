@@ -8,8 +8,32 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
     FUNCIONARIOGRUPOS.init({
-        FUNGR_NOME: DataTypes.STRING,
-        FUNGR_CENTRO_CUSTOS: DataTypes.INTEGER,
+        FUNGR_NOME: {
+            type: DataTypes.STRING,
+            uppercase: true,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "string") {
+                        throw new Error(
+                            "O campo FUNGR_NOME deve ser uma string e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        },
+        FUNGR_LOJA: {
+            type: DataTypes.INTEGER,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "number") {
+                        throw new Error(
+                            "O campo FUNGR_CENTRO_CUSTOS deve ser uma number e não " +
+                            typeof dado
+                        );
+                    }
+                },
+            },
+        },
     }, {
         sequelize,
         modelName: "FUNCIONARIOGRUPOS",

@@ -11,7 +11,7 @@ module.exports = {
             FUNGR_NOME: {
                 type: Sequelize.STRING,
             },
-            FUNGR_CENTRO_CUSTOS: {
+            FUNGR_LOJA: {
                 type: Sequelize.INTEGER,
             },
             CRIADO_EM: {

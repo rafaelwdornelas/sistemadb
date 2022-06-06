@@ -8,9 +8,43 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
     FUNCIONARIOCARGO.init({
-        FUNCG_NOME: DataTypes.STRING,
-        FUNCG_GRUPO: DataTypes.INTEGER,
-        FUNCG_SALARIO: DataTypes.FLOAT,
+        FUNCG_NOME: {
+            type: DataTypes.STRING,
+            uppercase: true,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "string") {
+                        throw new Error(
+                            "O campo FUNCG_NOME deve ser uma string e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        },
+        FUNCG_GRUPO: {
+            type: DataTypes.INTEGER,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "number") {
+                        throw new Error(
+                            "O campo FUNCG_GRUPO deve ser uma number e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        },
+        FUNCG_SALARIO: {
+            type: DataTypes.FLOAT,
+            validate: {
+                funcaoValidadora: function(dado) {
+                    if (typeof dado != "number") {
+                        throw new Error(
+                            "O campo FUNCG_SALARIO deve ser um number e não " + typeof dado
+                        );
+                    }
+                },
+            },
+        },
     }, {
         sequelize,
         modelName: "FUNCIONARIOCARGO",

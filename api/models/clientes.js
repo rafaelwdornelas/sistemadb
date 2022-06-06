@@ -159,7 +159,6 @@ module.exports = (sequelize, DataTypes) => {
         }, // F - Fisica, J - Juridica
         CLI_CPF_CNPJ: {
             type: DataTypes.STRING(14),
-            uppercase: true,
             validate: {
                 funcaoValidadora: function(dado) {
                     if (typeof dado != "string") {
@@ -167,10 +166,12 @@ module.exports = (sequelize, DataTypes) => {
                             "O campo CLI_CPF_CNPJ deve ser um string e não " + typeof dado
                         );
                     } else if (dado.length < 11 && dado.length > 0) {
-                        throw new Error("O CPF/CNPJ deve ter no mínimo 11 caracteres");
+                        throw new Error(
+                            "O campo CLI_CPF_CNPJ deve ter no mínimo 11 caracteres"
+                        );
                     } else if (dado.length > 14) {
                         throw new Error(
-                            "O nome CPF/CNPJ deve ter no máximo 14 caracteres"
+                            "O campo CLI_CPF_CNPJ deve ter no máximo 14 caracteres"
                         );
                     }
                 },
