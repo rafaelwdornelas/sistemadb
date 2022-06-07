@@ -27,6 +27,10 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Unidades
 - [x] Formas de Pagamento
 - [x] Lojas
+- [x] Manipulação do Banco de Dados
+- [x] Autenticação JWT
+- [x] Grupo de Funcionários
+- [x] Cargos de Funcionários
 - [ ] Produtos
 - [ ] Produtos Fámilia
 - [ ] Tabela de Preços
@@ -45,16 +49,6 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 git clone https://github.com/rafaelwdornelas/sistemadb.git
 ```
 
-- Fez a instalação da biblioteca do banco de dados que escolheu dentro do pojeto da seguinte mandeira:
-
-```
-$ yarn add pg pg-hstore # Postgres
-$ yarn add  mysql2
-$ yarn add  mariadb
-$ yarn add  sqlite3
-$ yarn add  tedious # Microsoft SQL Server
-```
-
 - Fez a instalação das bibliotecas do projeto:
 
 ```
@@ -65,16 +59,10 @@ yarn install
 
 ## 💻 Funções Iniciais do Bando de Dados:
 
-- Criar todas as tabelas do Banco de dados:
+- Criar o banco de dados, tabelas e dados inicias:
 
 ```
-yarn sequelize db:migrate --debug
-```
-
-- Enviando todos os registros padrões para dentro das tabelas já criadas:
-
-```
-yarn sequelize db:seed:all --debug
+node iniciabancodedados.js
 ```
 
 ## 💻 Iniciando a API:
