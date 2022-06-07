@@ -13,18 +13,11 @@ const router = Router();
 
 /**
  * @openapi
- * /funcionariogrupoas:
+ * /funcionariogrupos:
  *  get:
  *    summary: Todos
  *    description: Pega todos grupos de Funcionarios
  *    tags: [Funcionario Grupos]
- *    parameters:
- *      - name: id
- *        description: Informe cógido do cliente.
- *        required: true
- *        in: path
- *        schema:
- *         type: integer
  *    responses:
  *      '200':
  *        description: Uma resposta bem-sucedida
@@ -34,11 +27,11 @@ const router = Router();
  *        description: Unauthorized
  *
  */
-router.get("/funcionariogrupoas", JWTController.Verifica, Controller.pegaTodos);
+router.get("/funcionariogrupos", JWTController.Verifica, Controller.pegaTodos);
 
 /**
  * @openapi
- * /funcionariogrupoas/apagados:
+ * /funcionariogrupos/apagados:
  *  get:
  *    summary: Todos apagados
  *    description: Retorna todos os endereços apagados
@@ -53,14 +46,14 @@ router.get("/funcionariogrupoas", JWTController.Verifica, Controller.pegaTodos);
  *
  */
 router.get(
-    "/funcionariogrupoas/apagados",
+    "/funcionariogrupos/apagados",
     JWTController.Verifica,
     Controller.pegaApagados
 );
 
 /**
  * @openapi
- * /funcionariogrupoas/apagados/{id}:
+ * /funcionariogrupos/apagados/{id}:
  *  get:
  *    summary: Visualiza apagado
  *    description: Visualiza um endereço apagado
@@ -82,13 +75,13 @@ router.get(
  *
  */
 router.get(
-    "/funcionariogrupoas/apagados/:id",
+    "/funcionariogrupos/apagados/:id",
     JWTController.Verifica,
     Controller.pegaApagado
 );
 /**
  * @openapi
- * /funcionariogrupoas/{id}:
+ * /funcionariogrupos/{id}:
  *  get:
  *    summary: Visualiza
  *    description: Vizualiza o dado de um endereço pelo ID
@@ -109,11 +102,11 @@ router.get(
  *        description: Unauthorized
  *
  */
-router.get("/funcionariogrupoas/:id", JWTController.Verifica, Controller.pega);
+router.get("/funcionariogrupos/:id", JWTController.Verifica, Controller.pega);
 
 /**
  * @openapi
- * /funcionariogrupoas/novo:
+ * /funcionariogrupos/novo:
  *  post:
  *    summary: Cadastra
  *    description: Cadastra um novo endereço
@@ -177,14 +170,14 @@ router.get("/funcionariogrupoas/:id", JWTController.Verifica, Controller.pega);
  *
  */
 router.post(
-    "/funcionariogrupoas/novo",
+    "/funcionariogrupos/novo",
     LicencaController.Verifica,
     JWTController.Verifica,
     Controller.cria
 );
 /**
  * @openapi
- * /funcionariogrupoas/{id}/restaura:
+ * /funcionariogrupos/{id}/restaura:
  *  post:
  *    summary: Restaura Deletado
  *    description: Restaura o cadastro de uma Família Deletada
@@ -206,14 +199,14 @@ router.post(
  *
  */
 router.post(
-    "/funcionariogrupoas/:id/restaura",
+    "/funcionariogrupos/:id/restaura",
     LicencaController.Verifica,
     JWTController.Verifica,
     Controller.restaura
 );
 /**
  * @openapi
- * /funcionariogrupoas/{id}:
+ * /funcionariogrupos/{id}:
  *  put:
  *    summary: Altera
  *    description: Altera registro de um endereço
@@ -284,14 +277,14 @@ router.post(
  *
  */
 router.put(
-    "/funcionariogrupoas/:id",
+    "/funcionariogrupos/:id",
     LicencaController.Verifica,
     JWTController.Verifica,
     Controller.atualiza
 );
 /**
  * @openapi
- * /funcionariogrupoas/{id}:
+ * /funcionariogrupos/{id}:
  *  delete:
  *    summary: Deleta
  *    description: Deleta um endereço
@@ -313,7 +306,7 @@ router.put(
  *
  */
 router.delete(
-    "/funcionariogrupoas/:id",
+    "/funcionariogrupos/:id",
     LicencaController.Verifica,
     JWTController.Verifica,
     Controller.apaga
