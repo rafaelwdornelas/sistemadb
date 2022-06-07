@@ -52,7 +52,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(8),
         }, //Data de demissao do funcionario YYYYMMDD
         FUN_RECEB_BANCO: {
-            type: DataTypes.INTEGER(80),
+            type: DataTypes.INTEGER,
         }, //Recebe banco do funcionario
         FUN_RECEB_AG: {
             type: DataTypes.STRING(10),

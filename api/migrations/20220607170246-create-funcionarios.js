@@ -74,7 +74,7 @@ module.exports = {
                 allowNull: false,
             }, //Data de demissao do funcionario YYYYMMDD
             FUN_RECEB_BANCO: {
-                type: Sequelize.INTEGER(80),
+                type: Sequelize.INTEGER,
                 defaultValue: "",
                 allowNull: false,
             }, //Recebe banco do funcionario

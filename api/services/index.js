@@ -10,6 +10,7 @@ const FormaspagsServices = require("./FormaspagsServices");
 const LojasServices = require("./LojasServices");
 const FuncionarioGruposServices = require("./FuncionarioGruposServices");
 const FuncionarioCargosServices = require("./FuncionarioCargosServices");
+const FuncionariosServices = require("./FuncionariosServices");
 
 module.exports = {
     ClientesServices: ClientesServices,
@@ -24,4 +25,5 @@ module.exports = {
     LojasServices: LojasServices,
     FuncionarioGruposServices: FuncionarioGruposServices,
     FuncionarioCargosServices: FuncionarioCargosServices,
+    FuncionariosServices: FuncionariosServices,
 };
