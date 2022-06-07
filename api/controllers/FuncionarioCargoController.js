@@ -4,7 +4,61 @@ const funcionariocargosServices = new FuncionarioCargosServices();
 const { globais } = require("../modules");
 const moduloglobais = new globais();
 
-class FuncionarioCargosController {
+class FuncionarioCargoController {
+    static async pegaApagados(req, res) {
+        try {
+            const dados = await funcionariocargosServices.listaRegistrosApagado();
+            let retorno = {
+                sucesso: true,
+                count: dados == null ? 0 : dados.length,
+                rows: dados,
+            };
+            moduloglobais.log(
+                "API: funcionariocargosServices.listaRegistrosApagado",
+                "info"
+            );
+            return res.status(200).json(retorno);
+        } catch (error) {
+            let retorno = {
+                sucesso: false,
+                msg: error.message,
+            };
+            moduloglobais.log(
+                "API: funcionariocargosServices.listaRegistrosApagado ERROR: " +
+                error.message,
+                "error"
+            );
+            return res.status(500).json(retorno);
+        }
+    }
+
+    static async pegaApagado(req, res) {
+        try {
+            const { id } = req.params;
+            const dados = await funcionariocargosServices.consultaRegistroApagado(id);
+            let retorno = {
+                sucesso: true,
+                count: dados == null ? 0 : 1,
+                row: dados,
+            };
+            moduloglobais.log(
+                "API: funcionariocargosServices.consultaRegistroApagado, ID: " + id,
+                "info"
+            );
+            return res.status(200).json(retorno);
+        } catch (error) {
+            let retorno = {
+                sucesso: false,
+                msg: error.message,
+            };
+            moduloglobais.log(
+                "API: funcionariocargosServices.consultaRegistroApagado ERROR: " +
+                error.message,
+                "error"
+            );
+            return res.status(500).json(retorno);
+        }
+    }
     static async pegaTodos(req, res) {
         try {
             const retorno = {
@@ -140,6 +194,33 @@ class FuncionarioCargosController {
             return res.status(500).json(retorno);
         }
     }
+
+    static async restaura(req, res) {
+        try {
+            const { id } = req.params;
+            await funcionariocargosServices.restauraRegistro(Number(id));
+            let retorno = {
+                sucesso: true,
+                msg: `id ${id} restaurado`,
+            };
+            moduloglobais.log(
+                "API: funcionariocargosServices.restauraRegistro, ID: " + id,
+                "info"
+            );
+            return res.status(200).json(retorno);
+        } catch (error) {
+            let retorno = {
+                sucesso: false,
+                msg: error.message,
+            };
+            moduloglobais.log(
+                "API: funcionariocargosServices.restauraRegistro ERROR: " +
+                error.message,
+                "error"
+            );
+            return res.status(500).json(retorno);
+        }
+    }
 }
 
-module.exports = FuncionarioCargosController;
+module.exports = FuncionarioCargoController;

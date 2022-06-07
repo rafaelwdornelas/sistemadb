@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const Controller = require("../controllers/FuncionarioGruposController");
+const Controller = require("../controllers/FuncionarioCargoController");
 const JWTController = require("../controllers/JWTController");
 const LicencaController = require("../controllers/LicencaController");
 
@@ -7,17 +7,17 @@ const router = Router();
 /**
  * @swagger
  * tags:
- *   name: Funcionario Grupos
+ *   name: Funcionario Cargos
  *   description: Manipulação de Grupo de Funcionários
  */
 
 /**
  * @openapi
- * /funcionariogrupos:
+ * /funcionariocargos:
  *  get:
  *    summary: Todos
- *    description: Pega todos grupos de Funcionarios
- *    tags: [Funcionario Grupos]
+ *    description: Pega todos cargos de Funcionarios
+ *    tags: [Funcionario Cargos]
  *    responses:
  *      '200':
  *        description: Uma resposta bem-sucedida
@@ -27,15 +27,15 @@ const router = Router();
  *        description: Unauthorized
  *
  */
-router.get("/funcionariogrupos", JWTController.Verifica, Controller.pegaTodos);
+router.get("/funcionariocargos", JWTController.Verifica, Controller.pegaTodos);
 
 /**
  * @openapi
- * /funcionariogrupos/apagados:
+ * /funcionariocargos/apagados:
  *  get:
  *    summary: Todos apagados
- *    description: Retorna todos os grupos apagados
- *    tags: [Funcionario Grupos]
+ *    description: Retorna todos os cargos apagados
+ *    tags: [Funcionario Cargos]
  *    responses:
  *      '200':
  *        description: Uma resposta bem-sucedida
@@ -46,18 +46,18 @@ router.get("/funcionariogrupos", JWTController.Verifica, Controller.pegaTodos);
  *
  */
 router.get(
-    "/funcionariogrupos/apagados",
+    "/funcionariocargos/apagados",
     JWTController.Verifica,
     Controller.pegaApagados
 );
 
 /**
  * @openapi
- * /funcionariogrupos/apagados/{id}:
+ * /funcionariocargos/apagados/{id}:
  *  get:
  *    summary: Visualiza apagado
- *    description: Visualiza um grupo apagado
- *    tags: [Funcionario Grupos]
+ *    description: Visualiza um cargo apagado
+ *    tags: [Funcionario Cargos]
  *    parameters:
  *      - name: id
  *        description: Informe o ID.
@@ -75,17 +75,17 @@ router.get(
  *
  */
 router.get(
-    "/funcionariogrupos/apagados/:id",
+    "/funcionariocargos/apagados/:id",
     JWTController.Verifica,
     Controller.pegaApagado
 );
 /**
  * @openapi
- * /funcionariogrupos/{id}:
+ * /funcionariocargos/{id}:
  *  get:
  *    summary: Visualiza
- *    description: Vizualiza o dado de um grupo pelo ID
- *    tags: [Funcionario Grupos]
+ *    description: Vizualiza o dado de um cargo pelo ID
+ *    tags: [Funcionario Cargos]
  *    parameters:
  *      - name: id
  *        description: Informe o ID.
@@ -102,15 +102,15 @@ router.get(
  *        description: Unauthorized
  *
  */
-router.get("/funcionariogrupos/:id", JWTController.Verifica, Controller.pega);
+router.get("/funcionariocargos/:id", JWTController.Verifica, Controller.pega);
 
 /**
  * @openapi
- * /funcionariogrupos/novo:
+ * /funcionariocargos/novo:
  *  post:
  *    summary: Cadastra
- *    description: Cadastra um novo grupo
- *    tags: [Funcionario Grupos]
+ *    description: Cadastra um novo cargo
+ *    tags: [Funcionario Cargos]
  *    requestBody:
  *      required: true
  *      content:
@@ -118,12 +118,15 @@ router.get("/funcionariogrupos/:id", JWTController.Verifica, Controller.pega);
  *        schema:
  *          type: object
  *          properties:
- *            FUNGR_NOME:
- *              summary: Nome do grupo
- *              type: String
- *            FUNGR_LOJA:
- *              summary: id da loja do grupo
+ *            FUNCG_NOME:
+ *              summary: Nome do Cargo
+ *              type: string
+ *            FUNCG_GRUPO:
+ *              summary: id do Grupo de Funcionários
  *              type: integer
+ *            FUNCG_SALARIO:
+ *              summary: salario do Cargo padrão
+ *              type: number
  *    responses:
  *      '200':
  *        description: Uma resposta bem-sucedida
@@ -134,18 +137,18 @@ router.get("/funcionariogrupos/:id", JWTController.Verifica, Controller.pega);
  *
  */
 router.post(
-    "/funcionariogrupos/novo",
+    "/funcionariocargos/novo",
     LicencaController.Verifica,
     JWTController.Verifica,
     Controller.cria
 );
 /**
  * @openapi
- * /funcionariogrupos/{id}/restaura:
+ * /funcionariocargos/{id}/restaura:
  *  post:
  *    summary: Restaura Deletado
- *    description: Restaura o cadastro de uma Família Deletada
- *    tags: [Funcionario Grupos]
+ *    description: Restaura o cadastro de em cargo Deletado
+ *    tags: [Funcionario Cargos]
  *    parameters:
  *      - name: id
  *        description: Informe o ID no Família
@@ -163,18 +166,18 @@ router.post(
  *
  */
 router.post(
-    "/funcionariogrupos/:id/restaura",
+    "/funcionariocargos/:id/restaura",
     LicencaController.Verifica,
     JWTController.Verifica,
     Controller.restaura
 );
 /**
  * @openapi
- * /funcionariogrupos/{id}:
+ * /funcionariocargos/{id}:
  *  put:
  *    summary: Altera
- *    description: Altera registro de um grupo
- *    tags: [Funcionario Grupos]
+ *    description: Altera registro de um cargo
+ *    tags: [Funcionario Cargos]
  *    parameters:
  *      - name: id
  *        description: Informe o ID no Família.
@@ -189,12 +192,15 @@ router.post(
  *        schema:
  *          type: object
  *          properties:
- *            FUNGR_NOME:
- *              summary: Nome do grupo
- *              type: String
- *            FUNGR_LOJA:
- *              summary: id da loja do grupo
+ *            FUNCG_NOME:
+ *              summary: Nome do Cargo
+ *              type: string
+ *            FUNCG_GRUPO:
+ *              summary: id do Grupo de Funcionários
  *              type: integer
+ *            FUNCG_SALARIO:
+ *              summary: salario do Cargo
+ *              type: number
  *    responses:
  *      '200':
  *        description: Uma resposta bem-sucedida
@@ -205,21 +211,21 @@ router.post(
  *
  */
 router.put(
-    "/funcionariogrupos/:id",
+    "/funcionariocargos/:id",
     LicencaController.Verifica,
     JWTController.Verifica,
     Controller.atualiza
 );
 /**
  * @openapi
- * /funcionariogrupos/{id}:
+ * /funcionariocargos/{id}:
  *  delete:
  *    summary: Deleta
- *    description: Deleta um grupo
- *    tags: [Funcionario Grupos]
+ *    description: Deleta um cargo
+ *    tags: [Funcionario Cargos]
  *    parameters:
  *      - name: id
- *        description: Informe o ID da Família.
+ *        description: Informe o ID do cargo.
  *        required: true
  *        in: path
  *        schema:
@@ -234,7 +240,7 @@ router.put(
  *
  */
 router.delete(
-    "/funcionariogrupos/:id",
+    "/funcionariocargos/:id",
     LicencaController.Verifica,
     JWTController.Verifica,
     Controller.apaga

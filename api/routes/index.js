@@ -12,6 +12,7 @@ const unidades = require("./unidadesRoute");
 const formapags = require("./formapagsRoute");
 const lojas = require("./lojasRoute");
 const funcionariogrupos = require("./funcionariogruposRoute");
+const funcionariocargos = require("./funcionariocargosRoute");
 const bancodedados = require("./bancodedados");
 
 module.exports = (app) => {
@@ -29,6 +30,7 @@ module.exports = (app) => {
         formapags,
         lojas,
         funcionariogrupos,
+        funcionariocargos,
         bancodedados
     );
 };
