@@ -130,4 +130,45 @@ router.get(
     }
 );
 
+/**
+ * @openapi
+ * /bancodedados/atualizaseeds:
+ *  get:
+ *    summary: Alimenta Tabelas
+ *    description: Carrega os dados iniciais das tabelas do banco de dados
+ *    tags: [Banco de Dados]
+ *    responses:
+ *      '200':
+ *        description: Uma resposta bem-sucedida
+ *      '500':
+ *        description: Uma resposta de erro
+ *      '401':
+ *        description: Unauthorized
+ *
+ */
+router.get(
+    "/bancodedados/atualizaseeds",
+    JWTController.Verifica,
+    async(req, res) => {
+        try {
+            let retorno = await dbmanager.seedinicial();
+            console.log(retorno);
+            moduloglobais.log("API: dbmanager.seedinicial", "info");
+            return res.status(200).json({
+                sucesso: true,
+                mensagem: retorno,
+            });
+        } catch (error) {
+            let retorno = {
+                sucesso: false,
+                msg: error.message,
+            };
+            moduloglobais.log(
+                "API: dbmanager.seedinicial ERROR: " + error.message,
+                "error"
+            );
+            return res.status(500).json(retorno);
+        }
+    }
+);
 module.exports = router;
