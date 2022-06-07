@@ -23,6 +23,7 @@
         "sequelize": "^6.20.1",
         "sequelize-cli": "^6.4.1",
         "sequelize-transforms": "^2.0.0",
+        "shelljs": "^0.8.5",
         "swagger-jsdoc": "^6.2.1",
         "swagger-ui-express": "^4.4.0",
         "tedious": "^14.5.0"
