@@ -5,6 +5,60 @@ const { globais } = require("../modules");
 const moduloglobais = new globais();
 
 class FuncionarioGruposController {
+    static async pegaApagados(req, res) {
+        try {
+            const dados = await funcionariogruposServices.listaRegistrosApagado();
+            let retorno = {
+                sucesso: true,
+                count: dados == null ? 0 : dados.length,
+                rows: dados,
+            };
+            moduloglobais.log(
+                "API: funcionariogruposServices.listaRegistrosApagado",
+                "info"
+            );
+            return res.status(200).json(retorno);
+        } catch (error) {
+            let retorno = {
+                sucesso: false,
+                msg: error.message,
+            };
+            moduloglobais.log(
+                "API: funcionariogruposServices.listaRegistrosApagado ERROR: " +
+                error.message,
+                "error"
+            );
+            return res.status(500).json(retorno);
+        }
+    }
+
+    static async pegaApagado(req, res) {
+        try {
+            const { id } = req.params;
+            const dados = await funcionariogruposServices.consultaRegistroApagado(id);
+            let retorno = {
+                sucesso: true,
+                count: dados == null ? 0 : 1,
+                row: dados,
+            };
+            moduloglobais.log(
+                "API: funcionariogruposServices.consultaRegistroApagado, ID: " + id,
+                "info"
+            );
+            return res.status(200).json(retorno);
+        } catch (error) {
+            let retorno = {
+                sucesso: false,
+                msg: error.message,
+            };
+            moduloglobais.log(
+                "API: funcionariogruposServices.consultaRegistroApagado ERROR: " +
+                error.message,
+                "error"
+            );
+            return res.status(500).json(retorno);
+        }
+    }
     static async pegaTodos(req, res) {
         try {
             const retorno = {
@@ -135,6 +189,33 @@ class FuncionarioGruposController {
             };
             moduloglobais.log(
                 "API: funcionariogruposServices.apagaRegistro ERROR: " + error.message,
+                "error"
+            );
+            return res.status(500).json(retorno);
+        }
+    }
+
+    static async restaura(req, res) {
+        try {
+            const { id } = req.params;
+            await funcionariogruposServices.restauraRegistro(Number(id));
+            let retorno = {
+                sucesso: true,
+                msg: `id ${id} restaurado`,
+            };
+            moduloglobais.log(
+                "API: funcionariogruposServices.restauraRegistro, ID: " + id,
+                "info"
+            );
+            return res.status(200).json(retorno);
+        } catch (error) {
+            let retorno = {
+                sucesso: false,
+                msg: error.message,
+            };
+            moduloglobais.log(
+                "API: funcionariogruposServices.restauraRegistro ERROR: " +
+                error.message,
                 "error"
             );
             return res.status(500).json(retorno);
