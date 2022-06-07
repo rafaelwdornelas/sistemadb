@@ -31,6 +31,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Autenticação JWT
 - [x] Grupo de Funcionários
 - [x] Cargos de Funcionários
+- [x] Funcionários
 - [ ] Produtos
 - [ ] Produtos Fámilia
 - [ ] Tabela de Preços
