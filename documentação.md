@@ -33,5 +33,3 @@ ssh -R 4000:localhost:37778 root@207.244.230.240
 git add .
 git commit -m "mudança "
 git push
-
-teste
