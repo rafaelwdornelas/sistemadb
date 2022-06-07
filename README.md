@@ -49,7 +49,13 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 git clone https://github.com/rafaelwdornelas/sistemadb.git
 ```
 
-- Fez a instalação das bibliotecas do projeto:
+- Entre na pasta do projeto:
+
+```
+cd sistemadb
+```
+
+- Faça a instalação das bibliotecas do projeto:
 
 ```
 yarn install
