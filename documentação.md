@@ -30,15 +30,8 @@ yarn sequelize db:seed:undo:all
 //enviar minha porta local para um servidor linux com encaminhamento de porta
 ssh -R 4000:localhost:37778 root@207.244.230.240
 
-docker
-criar imagem:
-docker-compose up
+git add .
+git commit -m "mudança "
+git push
 
-iniciar a imagem
-docker run --name apisistema -rm -p 80:37778 -d rafaelwdornelas/api
-
-deletar container
-docker rm nomedocontainer
-
-deletar imagem
-docker rmi nomedaimagem
+teste
