@@ -171,4 +171,46 @@ router.get(
         }
     }
 );
+
+/**
+ * @openapi
+ * /bancodedados/listaseeds:
+ *  get:
+ *    summary: Lista Seeds
+ *    description: Lista toda a pasta de seeds
+ *    tags: [Banco de Dados]
+ *    responses:
+ *      '200':
+ *        description: Uma resposta bem-sucedida
+ *      '500':
+ *        description: Uma resposta de erro
+ *      '401':
+ *        description: Unauthorized
+ *
+ */
+router.get(
+    "/bancodedados/listaseeds",
+    JWTController.Verifica,
+    async(req, res) => {
+        try {
+            let retorno = await dbmanager.seedlist();
+            console.log(retorno);
+            moduloglobais.log("API: dbmanager.seedlist", "info");
+            return res.status(200).json({
+                sucesso: true,
+                mensagem: retorno,
+            });
+        } catch (error) {
+            let retorno = {
+                sucesso: false,
+                msg: error.message,
+            };
+            moduloglobais.log(
+                "API: dbmanager.seedlist ERROR: " + error.message,
+                "error"
+            );
+            return res.status(500).json(retorno);
+        }
+    }
+);
 module.exports = router;
