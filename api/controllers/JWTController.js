@@ -6,6 +6,10 @@ class JWTController {
     static async Verifica(req, res, next) {
         const authHeader = req.headers.authorization;
         if (process.env.AUTH_REQUIRED == 0) {
+            req.jwtdados = {
+                username: "admin",
+                role: "admin",
+            };
             next();
         } else if (authHeader) {
             const token = authHeader.split(" ")[1];
