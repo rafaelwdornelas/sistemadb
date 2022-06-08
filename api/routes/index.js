@@ -15,6 +15,7 @@ const funcionariogrupos = require("./funcionariogruposRoute");
 const funcionariocargos = require("./funcionariocargosRoute");
 const bancodedados = require("./bancodedados");
 const funcionarios = require("./funcionariosRoute");
+const usuarios = require("./usuariosRoute");
 
 module.exports = (app) => {
     app.use(
@@ -33,6 +34,7 @@ module.exports = (app) => {
         funcionariogrupos,
         funcionariocargos,
         bancodedados,
-        funcionarios
+        funcionarios,
+        usuarios
     );
 };
