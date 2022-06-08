@@ -4,7 +4,14 @@ module.exports = (sequelize, DataTypes) => {
     class FUNCIONARIOS extends Model {
         // eslint-disable-next-line no-unused-vars
         static associate(models) {
-            // define association here
+            FUNCIONARIOS.hasMany(models.FUNCIONARIOGRUPOS, {
+                foreignKey: "id",
+                as: "FUNCIONARIOGRUPO",
+            });
+            FUNCIONARIOS.hasMany(models.FUNCIONARIOCARGOS, {
+                foreignKey: "id",
+                as: "FUNCIONARIOCARGO",
+            });
         }
     }
     FUNCIONARIOS.init({

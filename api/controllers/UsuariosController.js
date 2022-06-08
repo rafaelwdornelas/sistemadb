@@ -7,9 +7,9 @@ const moduloglobais = new globais();
 class UsuariosController {
     static async login(user, senha) {
         try {
-            const retorno = await usuariosServices.getUsuario(user, senha);
+            const retorno = await usuariosServices.getLogin(user, senha);
             moduloglobais.log(
-                "API: clientesServices.getUsuario, ID:" + user + " senha:" + senha,
+                "API: clientesServices.getLogin, ID:" + user + " senha:" + senha,
                 "info"
             );
             return retorno;
@@ -19,7 +19,7 @@ class UsuariosController {
                 msg: error.message,
             };
             moduloglobais.log(
-                "API: clientesServices.getUsuario ERROR: " + error.message,
+                "API: clientesServices.getLogin ERROR: " + error.message,
                 "error"
             );
             return retorno;
@@ -105,16 +105,13 @@ class UsuariosController {
     static async pega(req, res) {
         try {
             const { id } = req.params;
-            const dados = await usuariosServices.pegaUmRegistro({ id });
+            const dados = await usuariosServices.getUsuario(id);
             let retorno = {
                 sucesso: true,
                 count: dados == null ? 0 : 1,
                 row: dados,
             };
-            moduloglobais.log(
-                "API: usuariosServices.pegaUmRegistro, ID: " + id,
-                "info"
-            );
+            moduloglobais.log("API: usuariosServices.getUsuario, ID: " + id, "info");
             return res.status(200).json(retorno);
         } catch (error) {
             let retorno = {
@@ -122,7 +119,7 @@ class UsuariosController {
                 msg: error.message,
             };
             moduloglobais.log(
-                "API: usuariosServices.pegaUmRegistro ERROR: " + error.message,
+                "API: usuariosServices.getUsuario ERROR: " + error.message,
                 "error"
             );
             return res.status(500).json(retorno);

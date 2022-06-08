@@ -4,17 +4,40 @@ class FuncionariosServices extends Services {
     constructor() {
         super("USUARIOS");
     }
-    async getUsuario(username, senha) {
-        console.log("username: " + username, "senha: " + senha);
+    async getUsuario(id) {
         try {
-            return await database[this.nomeDoModelo].findAll({
-                include: [{ model: database["FUNCIONARIOS"], as: "FUNCIONARIO" }],
+            return await database[this.nomeDoModelo].findOne({
+                include: [{
+                    model: database["FUNCIONARIOS"],
+                    as: "FUNCIONARIO",
+                    include: [{
+                            model: database["FUNCIONARIOGRUPOS"],
+                            as: "FUNCIONARIOGRUPO",
+                        },
+                        {
+                            model: database["FUNCIONARIOCARGOS"],
+                            as: "FUNCIONARIOCARGO",
+                        },
+                    ],
+                }, ],
+                where: {
+                    id: id,
+                },
+            });
+        } catch (error) {
+            throw new Error(error.message);
+        }
+    }
+    async getLogin(username, senha) {
+        try {
+            return await database[this.nomeDoModelo].findOne({
                 where: {
                     USERNAME: username,
                     SENHA: senha,
                 },
             });
         } catch (error) {
+            console.log(error);
             throw new Error(error.message);
         }
     }
