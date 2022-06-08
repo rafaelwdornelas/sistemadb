@@ -69,6 +69,7 @@ class sequelizemanager {
                                 msg: "Arquivo já existe",
                             });
                         }
+                        console.log(retornos.length, arquivos.length);
                         if (retornos.length === arquivos.length) {
                             resolve(retornos);
                         }

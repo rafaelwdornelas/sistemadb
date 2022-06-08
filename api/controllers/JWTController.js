@@ -11,15 +11,17 @@ class JWTController {
             const token = authHeader.split(" ")[1];
             const secret = process.env.JWT_SECRET || "secret";
             try {
-                // eslint-disable-next-line no-unused-vars
-                await jwt.verify(token, secret, (err, user) => {
-                    if (err) {
-                        moduloglobais.log("JWT: Verify ERROR: " + err.message, "error");
-                        return res.status(401).json(err.message);
-                    }
-                    //req.user = user;   se quiser enviar o user para o controller
-                    next();
-                });
+                let decoded;
+                try {
+                    decoded = await jwt.verify(token, secret);
+                } catch (error) {
+                    moduloglobais.log("JWT: Verify ERROR: " + error.message, "error");
+                    return res.status(401);
+                }
+
+                console.log("JWT: Verify OK");
+                req.jwtdados = decoded;
+                next();
             } catch (error) {
                 moduloglobais.log("JWT: Verify ERROR: " + error.message, "error");
                 res.sendStatus(401);

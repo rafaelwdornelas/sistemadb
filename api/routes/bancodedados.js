@@ -29,7 +29,14 @@ const moduloglobais = new globais();
  *
  */
 router.get("/bancodedados/create", JWTController.Verifica, async(req, res) => {
+    console.log("JWT Dados:", req.jwtdados);
     try {
+        if (req.jwtdados.role != "admin") {
+            return res.status(401).json({
+                sucesso: false,
+                mensagem: "Acesso apenas para administradores",
+            });
+        }
         let retorno = await dbmanager.createdatabase();
         console.log(retorno);
         moduloglobais.log("API: dbmanager.createdatabase", "info");
@@ -67,7 +74,14 @@ router.get("/bancodedados/create", JWTController.Verifica, async(req, res) => {
  *
  */
 router.get("/bancodedados/delete", JWTController.Verifica, async(req, res) => {
+    console.log("JWT Dados:", req.jwtdados);
     try {
+        if (req.jwtdados.role != "admin") {
+            return res.status(401).json({
+                sucesso: false,
+                mensagem: "Acesso apenas para administradores",
+            });
+        }
         let retorno = await dbmanager.dropdatabase();
         console.log(retorno);
         moduloglobais.log("API: dbmanager.dropdatabase", "info");
@@ -108,7 +122,14 @@ router.get(
     "/bancodedados/createtables",
     JWTController.Verifica,
     async(req, res) => {
+        console.log("JWT Dados:", req.jwtdados);
         try {
+            if (req.jwtdados.role != "admin") {
+                return res.status(401).json({
+                    sucesso: false,
+                    mensagem: "Acesso apenas para administradores",
+                });
+            }
             let retorno = await dbmanager.createtables();
             console.log(retorno);
             moduloglobais.log("API: dbmanager.createtables", "info");
@@ -150,7 +171,14 @@ router.get(
     "/bancodedados/atualizaseeds",
     JWTController.Verifica,
     async(req, res) => {
+        console.log("JWT Dados:", req.jwtdados);
         try {
+            if (req.jwtdados.role != "admin") {
+                return res.status(401).json({
+                    sucesso: false,
+                    mensagem: "Acesso apenas para administradores",
+                });
+            }
             let retorno = await dbmanager.seedinicial();
             console.log(retorno);
             moduloglobais.log("API: dbmanager.seedinicial", "info");
@@ -192,7 +220,14 @@ router.get(
     "/bancodedados/listaseeds",
     JWTController.Verifica,
     async(req, res) => {
+        console.log("JWT Dados:", req.jwtdados);
         try {
+            if (req.jwtdados.role != "admin") {
+                return res.status(401).json({
+                    sucesso: false,
+                    mensagem: "Acesso apenas para administradores",
+                });
+            }
             let retorno = await dbmanager.seedlist();
             console.log(retorno);
             moduloglobais.log("API: dbmanager.seedlist", "info");
