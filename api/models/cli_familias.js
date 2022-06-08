@@ -1,13 +1,13 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-    class CRI_FAMILIA extends Model {
+    class CLI_FAMILIA extends Model {
         // eslint-disable-next-line no-unused-vars
         static associate(models) {
             // define association here
         }
     }
-    CRI_FAMILIA.init({
+    CLI_FAMILIA.init({
         NOME: {
             type: DataTypes.STRING,
             uppercase: true,
@@ -47,12 +47,12 @@ module.exports = (sequelize, DataTypes) => {
         },
     }, {
         sequelize,
-        modelName: "CRI_FAMILIAS",
+        modelName: "CLI_FAMILIAS",
         createdAt: "CRIADO_EM",
         updatedAt: "ATUALIZADO_EM",
         deletedAt: "DELETADO_EM",
         freezeTableName: true,
         paranoid: true,
     });
-    return CRI_FAMILIA;
+    return CLI_FAMILIA;
 };

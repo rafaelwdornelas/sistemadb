@@ -1,7 +1,7 @@
 const Services = require("./Services");
 class ClientesFamiliasServices extends Services {
     constructor() {
-        super("CRI_FAMILIAS");
+        super("CLI_FAMILIAS");
     }
 }
 

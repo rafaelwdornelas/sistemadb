@@ -3,7 +3,7 @@
 module.exports = {
     async up(queryInterface) {
         await queryInterface.bulkInsert(
-            "CRI_FAMILIAS", [{
+            "CLI_FAMILIAS", [{
                 NOME: "GERAL",
                 CRIADO_EM: new Date(),
                 ATUALIZADO_EM: new Date(),
@@ -12,6 +12,6 @@ module.exports = {
     },
 
     async down(queryInterface) {
-        await queryInterface.bulkDelete("CRI_FAMILIAS", null, { truncate: true });
+        await queryInterface.bulkDelete("CLI_FAMILIAS", null, { truncate: true });
     },
 };

@@ -27,7 +27,7 @@ module.exports = {
                 defaultValue: 1,
                 allowNull: false,
                 references: {
-                    model: "CRI_FAMILIAS",
+                    model: "CLI_FAMILIAS",
                     key: "id",
                 },
             }, // Familia de tipos de clientes
