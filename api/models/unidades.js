@@ -44,6 +44,7 @@ module.exports = (sequelize, DataTypes) => {
         sequelize,
         modelName: "UNIDADES",
         timestamps: false,
+        freezeTableName: true,
     });
     UNIDADES.removeAttribute("id");
     return UNIDADES;

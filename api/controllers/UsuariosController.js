@@ -5,6 +5,26 @@ const { globais } = require("../modules");
 const moduloglobais = new globais();
 
 class UsuariosController {
+    static async login(user, senha) {
+        try {
+            const retorno = await usuariosServices.getUsuario(user, senha);
+            moduloglobais.log(
+                "API: clientesServices.getUsuario, ID:" + user + " senha:" + senha,
+                "info"
+            );
+            return retorno;
+        } catch (error) {
+            let retorno = {
+                sucesso: false,
+                msg: error.message,
+            };
+            moduloglobais.log(
+                "API: clientesServices.getUsuario ERROR: " + error.message,
+                "error"
+            );
+            return retorno;
+        }
+    }
     static async pegaApagados(req, res) {
         try {
             const dados = await usuariosServices.listaRegistrosApagado();

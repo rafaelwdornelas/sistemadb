@@ -114,10 +114,10 @@ router.get("/usuarios/:id", JWTController.Verifica, Controller.pega);
  *          properties:
  *            USERNAME:
  *              summary: Nome de usuário
- *              type: String
+ *              type: string
  *            SENHA:
  *              summary: Senha
- *              type: String
+ *              type: string
  *            COD_FUNCIONARIO:
  *              summary: Código do funcionário
  *              type: integer
@@ -188,10 +188,10 @@ router.post(
  *          properties:
  *            USERNAME:
  *              summary: Nome de usuário
- *              type: String
+ *              type: string
  *            SENHA:
  *              summary: Senha
- *              type: String
+ *              type: string
  *            COD_FUNCIONARIO:
  *              summary: Código do funcionário
  *              type: integer

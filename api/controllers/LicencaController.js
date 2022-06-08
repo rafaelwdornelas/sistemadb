@@ -31,6 +31,7 @@ class LicencaController {
                 }
             })
             .catch((error) => {
+                console.log(error);
                 moduloglobais.log("LicencaController: Error: " + error, "error");
                 return res.status(401).json(error.message);
             });

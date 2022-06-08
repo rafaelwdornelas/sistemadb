@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }, {
         sequelize,
         modelName: "USUARIOS",
+        createdAt: "CRIADO_EM",
+        updatedAt: "ATUALIZADO_EM",
+        deletedAt: "DELETADO_EM",
+        freezeTableName: true,
+        paranoid: true,
     });
     return USUARIOS;
 };

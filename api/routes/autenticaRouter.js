@@ -3,6 +3,7 @@ const router = Router();
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const secret = process.env.JWT_SECRET || "secret";
+const usuariosController = require("../controllers/usuariosController");
 /**
  * @swagger
  * tags:
@@ -35,7 +36,7 @@ const secret = process.env.JWT_SECRET || "secret";
  *      '500':
  *        description: Uma resposta de erro
  */
-router.post("/login", (req, res) => {
+router.post("/login", async(req, res) => {
     const user = req.body.USERNAME;
     const senha = req.body.SENHA;
 
@@ -49,9 +50,24 @@ router.post("/login", (req, res) => {
             accessToken,
         });
     } else {
-        res.status(401).json({
-            error: "Usuário ou senha inválidos",
-        });
+        const retorno = await usuariosController.login(user, senha);
+        let tempretorno = JSON.stringify(retorno);
+        console.log(tempretorno);
+        if (tempretorno.indexOf("USERNAME") > -1) {
+            // generate an access token
+            const accessToken = jwt.sign({ username: user, role: "user", dados: retorno },
+                secret, {
+                    expiresIn: "365d",
+                }
+            );
+            res.json({
+                accessToken,
+            });
+        } else {
+            res.status(401).json({
+                error: "Usuário ou senha inválidos",
+            });
+        }
     }
 });
 
