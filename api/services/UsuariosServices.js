@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 const Services = require("./Services");
 const database = require("../models");
 class FuncionariosServices extends Services {
