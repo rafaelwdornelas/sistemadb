@@ -69,7 +69,6 @@ class sequelizemanager {
                                 msg: "Arquivo já existe",
                             });
                         }
-                        console.log(retornos.length, arquivos.length);
                         if (retornos.length === arquivos.length) {
                             resolve(retornos);
                         }
@@ -94,7 +93,7 @@ class sequelizemanager {
     async seedlist() {
         try {
             const dir = "./api/seeders/";
-            let files = fs.readdirSync(dir);
+            let files = await fs.readdirSync(dir);
             return files;
         } catch (error) {
             return error.message;

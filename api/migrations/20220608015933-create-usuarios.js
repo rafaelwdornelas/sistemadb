@@ -10,9 +10,12 @@ module.exports = {
             },
             USERNAME: {
                 type: Sequelize.STRING,
+                allowNull: false,
+                unique: true, //NÃO PODE TER DUPLICADO
             },
             SENHA: {
                 type: Sequelize.STRING,
+                allowNull: false,
             },
             COD_FUNCIONARIO: {
                 type: Sequelize.INTEGER,
