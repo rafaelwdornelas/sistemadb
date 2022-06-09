@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const routes = require("./routes");
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
@@ -73,7 +74,7 @@ fs.readFile("layout.css", "utf8", function(err, data) {
         );
     }
 });
-
+app.use(cors());
 routes(app);
 moduloglobais.log("Iniciando API...", "");
 app.listen(port, () =>

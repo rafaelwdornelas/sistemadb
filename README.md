@@ -32,9 +32,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Grupo de Funcionários
 - [x] Cargos de Funcionários
 - [x] Funcionários
-- [ ] Usuários
+- [x] Usuários
+- [x] Produtos Fámilias
 - [ ] Produtos
-- [ ] Produtos Fámilia
 - [ ] Tabela de Preços
 - [ ] ...
 
