@@ -47,9 +47,9 @@ router.get("/clifamilias", JWTController.Verifica, Controller.pegaTodos);
  *
  */
 router.get(
-    "/clifamilias/apagados",
-    JWTController.Verifica,
-    Controller.pegaApagados
+  "/clifamilias/apagados",
+  JWTController.Verifica,
+  Controller.pegaApagados
 );
 
 /**
@@ -76,9 +76,9 @@ router.get(
  *
  */
 router.get(
-    "/clifamilias/apagados/:id",
-    JWTController.Verifica,
-    Controller.pegaApagado
+  "/clifamilias/apagados/:id",
+  JWTController.Verifica,
+  Controller.pegaApagado
 );
 /**
  * @openapi
@@ -139,10 +139,10 @@ router.get("/clifamilias/:id", JWTController.Verifica, Controller.pega);
  *
  */
 router.post(
-    "/clifamilias/novo",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.cria
+  "/clifamilias/novo",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.cria
 );
 /**
  * @openapi
@@ -168,10 +168,10 @@ router.post(
  *
  */
 router.post(
-    "/clifamilias/:id/restaura",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.restaura
+  "/clifamilias/:id/restaura",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.restaura
 );
 /**
  * @openapi
@@ -214,10 +214,10 @@ router.post(
  *
  */
 router.put(
-    "/clifamilias/:id",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.atualiza
+  "/clifamilias/:id",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.atualiza
 );
 /**
  * @openapi
@@ -243,10 +243,10 @@ router.put(
  *
  */
 router.delete(
-    "/clifamilias/:id",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.apaga
+  "/clifamilias/:id",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.apaga
 );
 
 /**
@@ -285,9 +285,9 @@ router.delete(
  *
  */
 router.post(
-    "/clifamilias/busca",
-    JWTController.Verifica,
-    Controller.buscaRegistroCount
+  "/clifamilias/busca",
+  JWTController.Verifica,
+  Controller.buscaRegistroCount
 );
 
 module.exports = router;

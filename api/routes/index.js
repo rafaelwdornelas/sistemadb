@@ -19,24 +19,24 @@ const usuarios = require("./usuariosRoute");
 const prodfamilias = require("./prodfamiliasRoute");
 
 module.exports = (app) => {
-    app.use(
-        bodyParser.json(),
-        clientes,
-        clientesfamilias,
-        autentica,
-        municipios,
-        pais,
-        endererecos,
-        telefones,
-        cnaes,
-        unidades,
-        formapags,
-        lojas,
-        funcionariogrupos,
-        funcionariocargos,
-        bancodedados,
-        funcionarios,
-        usuarios,
-        prodfamilias
-    );
+  app.use(
+    bodyParser.json(),
+    clientes,
+    clientesfamilias,
+    autentica,
+    municipios,
+    pais,
+    endererecos,
+    telefones,
+    cnaes,
+    unidades,
+    formapags,
+    lojas,
+    funcionariogrupos,
+    funcionariocargos,
+    bancodedados,
+    funcionarios,
+    usuarios,
+    prodfamilias
+  );
 };

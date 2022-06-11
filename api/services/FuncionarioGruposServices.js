@@ -1,8 +1,8 @@
 const Services = require("./Services");
 class FuncionarioGruposServices extends Services {
-    constructor() {
-        super("FUNCIONARIOGRUPOS");
-    }
+  constructor() {
+    super("FUNCIONARIOGRUPOS");
+  }
 }
 
 module.exports = FuncionarioGruposServices;

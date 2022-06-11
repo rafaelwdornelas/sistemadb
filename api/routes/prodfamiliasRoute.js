@@ -46,9 +46,9 @@ router.get("/prodfamilias", JWTController.Verifica, Controller.pegaTodos);
  *
  */
 router.get(
-    "/prodfamilias/apagados",
-    JWTController.Verifica,
-    Controller.pegaApagados
+  "/prodfamilias/apagados",
+  JWTController.Verifica,
+  Controller.pegaApagados
 );
 
 /**
@@ -75,9 +75,9 @@ router.get(
  *
  */
 router.get(
-    "/prodfamilias/apagados/:id",
-    JWTController.Verifica,
-    Controller.pegaApagado
+  "/prodfamilias/apagados/:id",
+  JWTController.Verifica,
+  Controller.pegaApagado
 );
 /**
  * @openapi
@@ -131,10 +131,10 @@ router.get("/prodfamilias/:id", JWTController.Verifica, Controller.pega);
  *
  */
 router.post(
-    "/prodfamilias/novo",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.cria
+  "/prodfamilias/novo",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.cria
 );
 /**
  * @openapi
@@ -160,10 +160,10 @@ router.post(
  *
  */
 router.post(
-    "/prodfamilias/:id/restaura",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.restaura
+  "/prodfamilias/:id/restaura",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.restaura
 );
 /**
  * @openapi
@@ -199,10 +199,10 @@ router.post(
  *
  */
 router.put(
-    "/prodfamilias/:id",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.atualiza
+  "/prodfamilias/:id",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.atualiza
 );
 /**
  * @openapi
@@ -228,10 +228,10 @@ router.put(
  *
  */
 router.delete(
-    "/prodfamilias/:id",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.apaga
+  "/prodfamilias/:id",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.apaga
 );
 
 module.exports = router;

@@ -99,10 +99,10 @@ router.get("/formapags/:id", JWTController.Verifica, Controller.pega);
  *
  */
 router.post(
-    "/formapags/novo",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.cria
+  "/formapags/novo",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.cria
 );
 /**
  * @openapi
@@ -156,10 +156,10 @@ router.post(
  *
  */
 router.put(
-    "/formapags/:id",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.atualiza
+  "/formapags/:id",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.atualiza
 );
 /**
  * @openapi
@@ -185,10 +185,10 @@ router.put(
  *
  */
 router.delete(
-    "/formapags/:id",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.apaga
+  "/formapags/:id",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.apaga
 );
 
 module.exports = router;

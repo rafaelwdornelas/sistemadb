@@ -1,8 +1,8 @@
 const Services = require("./Services");
 class EnderecosServices extends Services {
-    constructor() {
-        super("UNIDADES");
-    }
+  constructor() {
+    super("UNIDADES");
+  }
 }
 
 module.exports = EnderecosServices;

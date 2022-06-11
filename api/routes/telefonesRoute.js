@@ -35,9 +35,9 @@ const router = Router();
  *
  */
 router.get(
-    "/telefones/todos/:id",
-    JWTController.Verifica,
-    Controller.pegaTodos
+  "/telefones/todos/:id",
+  JWTController.Verifica,
+  Controller.pegaTodos
 );
 
 /**
@@ -57,9 +57,9 @@ router.get(
  *
  */
 router.get(
-    "/telefones/apagados",
-    JWTController.Verifica,
-    Controller.pegaApagados
+  "/telefones/apagados",
+  JWTController.Verifica,
+  Controller.pegaApagados
 );
 
 /**
@@ -86,9 +86,9 @@ router.get(
  *
  */
 router.get(
-    "/telefones/apagados/:id",
-    JWTController.Verifica,
-    Controller.pegaApagado
+  "/telefones/apagados/:id",
+  JWTController.Verifica,
+  Controller.pegaApagado
 );
 /**
  * @openapi
@@ -160,10 +160,10 @@ router.get("/telefones/:id", JWTController.Verifica, Controller.pega);
  *
  */
 router.post(
-    "/telefones/novo",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.cria
+  "/telefones/novo",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.cria
 );
 /**
  * @openapi
@@ -189,10 +189,10 @@ router.post(
  *
  */
 router.post(
-    "/telefones/:id/restaura",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.restaura
+  "/telefones/:id/restaura",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.restaura
 );
 /**
  * @openapi
@@ -246,10 +246,10 @@ router.post(
  *
  */
 router.put(
-    "/telefones/:id",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.atualiza
+  "/telefones/:id",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.atualiza
 );
 /**
  * @openapi
@@ -275,10 +275,10 @@ router.put(
  *
  */
 router.delete(
-    "/telefones/:id",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.apaga
+  "/telefones/:id",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.apaga
 );
 
 module.exports = router;

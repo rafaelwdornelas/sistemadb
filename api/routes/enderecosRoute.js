@@ -35,9 +35,9 @@ const router = Router();
  *
  */
 router.get(
-    "/enderecos/todos/:id",
-    JWTController.Verifica,
-    Controller.pegaTodos
+  "/enderecos/todos/:id",
+  JWTController.Verifica,
+  Controller.pegaTodos
 );
 
 /**
@@ -57,9 +57,9 @@ router.get(
  *
  */
 router.get(
-    "/enderecos/apagados",
-    JWTController.Verifica,
-    Controller.pegaApagados
+  "/enderecos/apagados",
+  JWTController.Verifica,
+  Controller.pegaApagados
 );
 
 /**
@@ -86,9 +86,9 @@ router.get(
  *
  */
 router.get(
-    "/enderecos/apagados/:id",
-    JWTController.Verifica,
-    Controller.pegaApagado
+  "/enderecos/apagados/:id",
+  JWTController.Verifica,
+  Controller.pegaApagado
 );
 /**
  * @openapi
@@ -181,10 +181,10 @@ router.get("/enderecos/:id", JWTController.Verifica, Controller.pega);
  *
  */
 router.post(
-    "/enderecos/novo",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.cria
+  "/enderecos/novo",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.cria
 );
 /**
  * @openapi
@@ -210,10 +210,10 @@ router.post(
  *
  */
 router.post(
-    "/enderecos/:id/restaura",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.restaura
+  "/enderecos/:id/restaura",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.restaura
 );
 /**
  * @openapi
@@ -288,10 +288,10 @@ router.post(
  *
  */
 router.put(
-    "/enderecos/:id",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.atualiza
+  "/enderecos/:id",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.atualiza
 );
 /**
  * @openapi
@@ -317,10 +317,10 @@ router.put(
  *
  */
 router.delete(
-    "/enderecos/:id",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.apaga
+  "/enderecos/:id",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.apaga
 );
 
 module.exports = router;

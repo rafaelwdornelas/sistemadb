@@ -46,9 +46,9 @@ router.get("/funcionarios", JWTController.Verifica, Controller.pegaTodos);
  *
  */
 router.get(
-    "/funcionarios/apagados",
-    JWTController.Verifica,
-    Controller.pegaApagados
+  "/funcionarios/apagados",
+  JWTController.Verifica,
+  Controller.pegaApagados
 );
 
 /**
@@ -75,9 +75,9 @@ router.get(
  *
  */
 router.get(
-    "/funcionarios/apagados/:id",
-    JWTController.Verifica,
-    Controller.pegaApagado
+  "/funcionarios/apagados/:id",
+  JWTController.Verifica,
+  Controller.pegaApagado
 );
 /**
  * @openapi
@@ -254,10 +254,10 @@ router.get("/funcionarios/:id", JWTController.Verifica, Controller.pega);
  *
  */
 router.post(
-    "/funcionarios/novo",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.cria
+  "/funcionarios/novo",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.cria
 );
 /**
  * @openapi
@@ -283,10 +283,10 @@ router.post(
  *
  */
 router.post(
-    "/funcionarios/:id/restaura",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.restaura
+  "/funcionarios/:id/restaura",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.restaura
 );
 /**
  * @openapi
@@ -445,10 +445,10 @@ router.post(
  *
  */
 router.put(
-    "/funcionarios/:id",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.atualiza
+  "/funcionarios/:id",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.atualiza
 );
 /**
  * @openapi
@@ -474,10 +474,10 @@ router.put(
  *
  */
 router.delete(
-    "/funcionarios/:id",
-    LicencaController.Verifica,
-    JWTController.Verifica,
-    Controller.apaga
+  "/funcionarios/:id",
+  LicencaController.Verifica,
+  JWTController.Verifica,
+  Controller.apaga
 );
 
 module.exports = router;
