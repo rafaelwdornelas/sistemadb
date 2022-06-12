@@ -10,18 +10,22 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  USUARIOS.init({
-    USERNAME: DataTypes.STRING,
-    SENHA: DataTypes.STRING,
-    COD_FUNCIONARIO: DataTypes.INTEGER,
-  }, {
-    sequelize,
-    modelName: "USUARIOS",
-    createdAt: "CRIADO_EM",
-    updatedAt: "ATUALIZADO_EM",
-    deletedAt: "DELETADO_EM",
-    freezeTableName: true,
-    paranoid: true,
-  });
+  USUARIOS.init(
+    {
+      USERNAME: DataTypes.STRING,
+      SENHA: DataTypes.STRING,
+      COD_FUNCIONARIO: DataTypes.INTEGER,
+      REFRESHTOKEN: DataTypes.TEXT,
+    },
+    {
+      sequelize,
+      modelName: "USUARIOS",
+      createdAt: "CRIADO_EM",
+      updatedAt: "ATUALIZADO_EM",
+      deletedAt: "DELETADO_EM",
+      freezeTableName: true,
+      paranoid: true,
+    }
+  );
   return USUARIOS;
 };

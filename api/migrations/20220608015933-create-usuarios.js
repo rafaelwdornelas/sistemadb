@@ -25,6 +25,10 @@ module.exports = {
           key: "id",
         },
       },
+      REFRESHTOKEN: {
+        type: Sequelize.TEXT,
+        allowNull: true,
+      },
       CRIADO_EM: {
         allowNull: false,
         type: Sequelize.DATE,

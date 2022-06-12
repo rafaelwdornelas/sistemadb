@@ -20,7 +20,7 @@ class JWTController {
           decoded = await jwt.verify(token, secret);
         } catch (error) {
           moduloglobais.log("JWT: Verify ERROR: " + error.message, "error");
-          return res.status(401);
+          return res.status(401).json({ error: error.message });
         }
 
         console.log("JWT: Verify OK");
@@ -28,11 +28,11 @@ class JWTController {
         next();
       } catch (error) {
         moduloglobais.log("JWT: Verify ERROR: " + error.message, "error");
-        res.sendStatus(401);
+        res.sendStatus(401).json({ error: error.message });
       }
     } else {
       moduloglobais.log("JWT: Verify ERROR: Sem assinatura", "error");
-      res.sendStatus(401);
+      res.sendStatus(401).json({ error: "Sem assinatura" });
     }
   }
 }
