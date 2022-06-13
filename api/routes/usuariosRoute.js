@@ -6,6 +6,13 @@ const LicencaController = require("../controllers/LicencaController");
 const router = Router();
 
 /**
+ * @swagger
+ * tags:
+ *   name: Usuarios
+ *   description: Manipulação de Usuarios
+ */
+
+/**
  * @openapi
  * /usuarios:
  *  get:

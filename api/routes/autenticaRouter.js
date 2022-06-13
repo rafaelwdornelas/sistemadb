@@ -10,16 +10,17 @@ const moduloglobais = new globais();
 /**
  * @swagger
  * tags:
- *   name: Usuarios
- *   description: Manipulação de Usuarios
+ *   name: Autenticação
+ *   description: Processos de Autenticação
  */
 
 /**
  * @openapi
  * /login:
  *  post:
+ *    summary: Login
  *    description: Autenticação de Usuário
- *    tags: [Usuarios]
+ *    tags: [Autenticação]
  *    requestBody:
  *      required: true
  *      content:
@@ -99,8 +100,9 @@ router.post("/login", async (req, res) => {
  * @openapi
  * /login/auth/me:
  *  get:
- *    description: Carrega dados do usuário logado
- *    tags: [Usuarios]
+ *    summary: Informações do usuário
+ *    description: Carrega informação do usuário logado
+ *    tags: [Autenticação]
  *    responses:
  *      '200':
  *        description: Uma resposta bem-sucedida
@@ -142,8 +144,9 @@ router.get("/login/auth/me", async (req, res) => {
  * @openapi
  * /login/auth/refresh:
  *  get:
+ *    summary: Atualiza Token
  *    description: Atualizar token de acesso utilizando o refresh token
- *    tags: [Usuarios]
+ *    tags: [Autenticação]
  *    responses:
  *      '200':
  *        description: Uma resposta bem-sucedida
