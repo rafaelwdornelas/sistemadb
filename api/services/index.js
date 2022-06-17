@@ -13,6 +13,9 @@ const FuncionarioCargosServices = require("./FuncionarioCargosServices");
 const FuncionariosServices = require("./FuncionariosServices");
 const UsuariosServices = require("./UsuariosServices");
 const ProdfamiliasServices = require("./ProdfamiliasServices");
+const ProdutosServices = require("./ProdutosServices");
+const EstoquesServices = require("./EstoquesServices");
+const ArmazensServices = require("./ArmazensServices");
 
 module.exports = {
   ClientesServices: ClientesServices,
@@ -30,4 +33,7 @@ module.exports = {
   FuncionariosServices: FuncionariosServices,
   UsuariosServices: UsuariosServices,
   ProdfamiliasServices: ProdfamiliasServices,
+  ProdutosServices: ProdutosServices,
+  EstoquesServices: EstoquesServices,
+  ArmazensServices: ArmazensServices,
 };
