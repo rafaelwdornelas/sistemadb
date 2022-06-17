@@ -36,16 +36,18 @@ const swaggerDefinition = {
       },
     },
   },
-  security: [{
-    bearerAuth: [],
-  }, ],
+  security: [
+    {
+      bearerAuth: [],
+    },
+  ],
 };
 
-fs.readFile("layout.css", "utf8", function(err, data) {
+fs.readFile("layout.css", "utf8", function (err, data) {
   if (err) throw err;
   var cssOptions = {
     customCss: data,
-    customSiteTitle: "Sistema DB API",
+    customSiteTitle: "CoreByte ERP - API",
     explorer: false,
   };
 
