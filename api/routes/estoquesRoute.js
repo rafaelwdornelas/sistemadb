@@ -60,7 +60,7 @@ router.get(
  *    tags: [Estoques de Produtos]
  *    parameters:
  *      - name: id
- *        description: Informe o ID.
+ *        description: Informe o ID do estoque de produto.
  *        required: true
  *        in: path
  *        schema:
@@ -88,7 +88,7 @@ router.get(
  *    tags: [Estoques de Produtos]
  *    parameters:
  *      - name: id
- *        description: Informe o ID.
+ *        description: Informe o ID do estoque de produto.
  *        required: true
  *        in: path
  *        schema:
@@ -118,8 +118,23 @@ router.get("/estoques/:id", JWTController.Verifica, Controller.pega);
  *        schema:
  *          type: object
  *          properties:
- *            PROD_NOME:
- *              summary: Nome da família
+ *            ARMAZEM:
+ *              summary: Armazém do estoque de produto
+ *              type: integer
+ *            PRODUTO:
+ *              summary: Código do produto
+ *              type: integer
+ *            QUANTIDADE:
+ *              summary: Quantidade do estoque de produto
+ *              type: number
+ *            FABRICACAO:
+ *              summary: Data de fabricação do produto
+ *              type: string
+ *            VALIDADE:
+ *              summary: Data de validade do produto
+ *              type: string
+ *            LOTE:
+ *              summary: Lote do produto
  *              type: string
  *    responses:
  *      '200':
@@ -145,7 +160,7 @@ router.post(
  *    tags: [Estoques de Produtos]
  *    parameters:
  *      - name: id
- *        description: Informe o ID no Família
+ *        description: Informe o ID do estoque de produto.
  *        required: true
  *        in: path
  *        schema:
@@ -174,7 +189,7 @@ router.post(
  *    tags: [Estoques de Produtos]
  *    parameters:
  *      - name: id
- *        description: Informe o ID no Família.
+ *        description: Informe o ID do estoque de produto.
  *        required: true
  *        in: path
  *        schema:
@@ -186,8 +201,23 @@ router.post(
  *        schema:
  *          type: object
  *          properties:
- *            PROD_NOME:
- *              summary: Nome da família
+ *            ARMAZEM:
+ *              summary: Armazém do estoque de produto
+ *              type: integer
+ *            PRODUTO:
+ *              summary: Código do produto
+ *              type: integer
+ *            QUANTIDADE:
+ *              summary: Quantidade do estoque de produto
+ *              type: number
+ *            FABRICACAO:
+ *              summary: Data de fabricação do produto
+ *              type: string
+ *            VALIDADE:
+ *              summary: Data de validade do produto
+ *              type: string
+ *            LOTE:
+ *              summary: Lote do produto
  *              type: string
  *    responses:
  *      '200':
@@ -213,7 +243,7 @@ router.put(
  *    tags: [Estoques de Produtos]
  *    parameters:
  *      - name: id
- *        description: Informe o ID da Família.
+ *        description: Informe o ID do estoque de produto.
  *        required: true
  *        in: path
  *        schema:
