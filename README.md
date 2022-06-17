@@ -35,7 +35,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Usuários
 - [x] Produtos Fámilias
 - [x] Produtos Estoques
-- [ ] Produtos Armazens
+- [x] Produtos Armazens
 - [ ] Produtos
 - [ ] Tabela de Preços
 - [ ] ...
