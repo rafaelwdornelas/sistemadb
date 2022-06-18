@@ -22,6 +22,16 @@ const swaggerDefinition = {
       email: "contato@corebyteerp.com.br",
     },
   },
+  /*  servers: [
+    {
+      url: "http://127.0.0.1:37778",
+      description: "Localhost",
+    },
+    {
+      url: "http://207.244.230.240:37778",
+      description: "CoreByte ERP",
+    },
+  ], */
   termsOfService: "http://swagger.io/terms/",
   schemes: ["http", "https"],
   consumes: ["application/json"],
