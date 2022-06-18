@@ -52,10 +52,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       }, //Data de atualizacao do registro
-      DELETADO_EM: {
-        allowNull: true,
-        type: Sequelize.DATE,
-      }, //Data de exclusao do registro
     });
   },
   async down(queryInterface) {

@@ -94,9 +94,7 @@ module.exports = (sequelize, DataTypes) => {
       modelName: "ESTOQUES",
       createdAt: "CRIADO_EM",
       updatedAt: "ATUALIZADO_EM",
-      deletedAt: "DELETADO_EM",
       freezeTableName: true,
-      paranoid: true,
     }
   );
   return ESTOQUES;

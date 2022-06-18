@@ -5,62 +5,13 @@ const { globais } = require("../modules");
 const moduloglobais = new globais();
 
 class EstoquesController {
-  static async pegaApagados(req, res) {
-    try {
-      const dados = await estoquesServices.listaRegistrosApagado();
-      let retorno = {
-        sucesso: true,
-        count: dados == null ? 0 : dados.length,
-        rows: dados,
-      };
-      moduloglobais.log("API: estoquesServices.listaRegistrosApagado", "info");
-      return res.status(200).json(retorno);
-    } catch (error) {
-      let retorno = {
-        sucesso: false,
-        msg: error.message,
-      };
-      moduloglobais.log(
-        "API: estoquesServices.listaRegistrosApagado ERROR: " + error.message,
-        "error"
-      );
-      return res.status(500).json(retorno);
-    }
-  }
-
-  static async pegaApagado(req, res) {
-    try {
-      const { id } = req.params;
-      const dados = await estoquesServices.consultaRegistroApagado(id);
-      let retorno = {
-        sucesso: true,
-        count: dados == null ? 0 : 1,
-        row: dados,
-      };
-      moduloglobais.log(
-        "API: estoquesServices.consultaRegistroApagado, ID: " + id,
-        "info"
-      );
-      return res.status(200).json(retorno);
-    } catch (error) {
-      let retorno = {
-        sucesso: false,
-        msg: error.message,
-      };
-      moduloglobais.log(
-        "API: estoquesServices.consultaRegistroApagado ERROR: " + error.message,
-        "error"
-      );
-      return res.status(500).json(retorno);
-    }
-  }
   static async pegaTodos(req, res) {
     try {
       const retorno = {
         sucesso: true,
         ...(await estoquesServices.pegaTodosOsRegistrosPaginacao({
-          offset: 0,
-          limit: 1000,
+          offset: req.body.inicio,
+          limit: req.body.limit,
         })),
       };
       moduloglobais.log(
@@ -180,32 +131,6 @@ class EstoquesController {
       };
       moduloglobais.log(
         "API: estoquesServices.apagaRegistro ERROR: " + error.message,
-        "error"
-      );
-      return res.status(500).json(retorno);
-    }
-  }
-
-  static async restaura(req, res) {
-    try {
-      const { id } = req.params;
-      await estoquesServices.restauraRegistro(Number(id));
-      let retorno = {
-        sucesso: true,
-        msg: `id ${id} restaurado`,
-      };
-      moduloglobais.log(
-        "API: estoquesServices.restauraRegistro, ID: " + id,
-        "info"
-      );
-      return res.status(200).json(retorno);
-    } catch (error) {
-      let retorno = {
-        sucesso: false,
-        msg: error.message,
-      };
-      moduloglobais.log(
-        "API: estoquesServices.restauraRegistro ERROR: " + error.message,
         "error"
       );
       return res.status(500).json(retorno);

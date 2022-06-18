@@ -14,57 +14,25 @@ const router = Router();
 /**
  * @openapi
  * /estoques:
- *  get:
+ *  post:
  *    summary: Todos
  *    description: Pega todos Estoques de Produtos
  *    tags: [Estoques de Produtos]
- *    responses:
- *      '200':
- *        description: Uma resposta bem-sucedida
- *      '500':
- *        description: Uma resposta de erro
- *      '401':
- *        description: Unauthorized
- *
- */
-router.get("/estoques", JWTController.Verifica, Controller.pegaTodos);
-
-/**
- * @openapi
- * /estoques/apagados:
- *  get:
- *    summary: Todos apagados
- *    description: Retorna todos estoques de produtos apagadas
- *    tags: [Estoques de Produtos]
- *    responses:
- *      '200':
- *        description: Uma resposta bem-sucedida
- *      '500':
- *        description: Uma resposta de erro
- *      '401':
- *        description: Unauthorized
- *
- */
-router.get(
-  "/estoques/apagados",
-  JWTController.Verifica,
-  Controller.pegaApagados
-);
-
-/**
- * @openapi
- * /estoques/apagados/{id}:
- *  get:
- *    summary: Visualiza apagado
- *    description: Visualiza um estoque de produto apagado
- *    tags: [Estoques de Produtos]
- *    parameters:
- *      - name: id
- *        description: Informe o ID do estoque de produto.
- *        required: true
- *        in: path
+ *    requestBody:
+ *      required: true
+ *      content:
+ *       application/json:
  *        schema:
- *         type: integer
+ *          type: object
+ *          properties:
+ *            inicio:
+ *              summary: inicio do index da paginação
+ *              type: integer
+ *              example: 0
+ *            limit:
+ *              summary: limite de registros da paginação
+ *              type: integer
+ *              example: 10
  *    responses:
  *      '200':
  *        description: Uma resposta bem-sucedida
@@ -74,11 +42,8 @@ router.get(
  *        description: Unauthorized
  *
  */
-router.get(
-  "/estoques/apagados/:id",
-  JWTController.Verifica,
-  Controller.pegaApagado
-);
+router.post("/estoques", JWTController.Verifica, Controller.pegaTodos);
+
 /**
  * @openapi
  * /estoques/{id}:
@@ -151,35 +116,7 @@ router.post(
   JWTController.Verifica,
   Controller.cria
 );
-/**
- * @openapi
- * /estoques/{id}/restaura:
- *  post:
- *    summary: Restaura Deletado
- *    description: Restaura o cadastro de um estoque de produto apagado
- *    tags: [Estoques de Produtos]
- *    parameters:
- *      - name: id
- *        description: Informe o ID do estoque de produto.
- *        required: true
- *        in: path
- *        schema:
- *         type: integer
- *    responses:
- *      '200':
- *        description: Uma resposta bem-sucedida
- *      '500':
- *        description: Uma resposta de erro
- *      '401':
- *        description: Unauthorized
- *
- */
-router.post(
-  "/estoques/:id/restaura",
-  LicencaController.Verifica,
-  JWTController.Verifica,
-  Controller.restaura
-);
+
 /**
  * @openapi
  * /estoques/{id}:
