@@ -28,7 +28,7 @@ class EstoquesServices extends Services {
 
   async getvalidadeprodutoall(data) {
     return database[this.nomeDoModelo].findAll({
-      where: { PRODUTO: { [sequelize.Op.lte]: data } },
+      where: { VALIDADE: { [sequelize.Op.lte]: data } },
       order: [
         ["VALIDADE", "ASC"],
         ["LOTE", "ASC"],
@@ -39,7 +39,7 @@ class EstoquesServices extends Services {
   async getvalidadeprodutoarmazem(data, armazem) {
     console.log(data, armazem);
     return database[this.nomeDoModelo].findAll({
-      where: { PRODUTO: { [sequelize.Op.lte]: data }, ARMAZEM: armazem },
+      where: { VALIDADE: { [sequelize.Op.lte]: data }, ARMAZEM: armazem },
       order: [
         ["VALIDADE", "ASC"],
         ["LOTE", "ASC"],
