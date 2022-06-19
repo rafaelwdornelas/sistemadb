@@ -14,10 +14,25 @@ const router = Router();
 /**
  * @openapi
  * /produtos:
- *  get:
+ *  post:
  *    summary: Todos
  *    description: Pega todos Produtos
  *    tags: [Produtos]
+ *    requestBody:
+ *      required: true
+ *      content:
+ *       application/json:
+ *        schema:
+ *          type: object
+ *          properties:
+ *            inicio:
+ *              summary: inicio do index da paginação
+ *              type: integer
+ *              example: 0
+ *            limit:
+ *              summary: limite de registros da paginação
+ *              type: integer
+ *              example: 10
  *    responses:
  *      '200':
  *        description: Uma resposta bem-sucedida
@@ -27,7 +42,7 @@ const router = Router();
  *        description: Unauthorized
  *
  */
-router.get("/produtos", JWTController.Verifica, Controller.pegaTodos);
+router.post("/produtos", JWTController.Verifica, Controller.pegaTodos);
 
 /**
  * @openapi

@@ -59,8 +59,8 @@ class ProdutosController {
       const retorno = {
         sucesso: true,
         ...(await produtosServices.pegaTodosOsRegistrosPaginacao({
-          offset: 0,
-          limit: 1000,
+          offset: req.body.inicio,
+          limit: req.body.limit,
         })),
       };
       moduloglobais.log(
