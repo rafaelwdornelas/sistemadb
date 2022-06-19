@@ -136,6 +136,124 @@ class EstoquesController {
       return res.status(500).json(retorno);
     }
   }
+
+  static async getsaldoprodutoall(req, res) {
+    try {
+      const { id } = req.params;
+      const dados = await estoquesServices.getsaldoprodutoall(id);
+      let retorno = {
+        sucesso: true,
+        count: dados == null ? 0 : 1,
+        row: dados,
+      };
+      moduloglobais.log(
+        "API: estoquesServices.getsaldoprodutoall, ID: " + id,
+        "info"
+      );
+      return res.status(200).json(retorno);
+    } catch (error) {
+      let retorno = {
+        sucesso: false,
+        msg: error.message,
+      };
+      moduloglobais.log(
+        "API: estoquesServices.getsaldoprodutoall ERROR: " + error.message,
+        "error"
+      );
+      return res.status(500).json(retorno);
+    }
+  }
+
+  static async getsaldoprodutoarmazem(req, res) {
+    try {
+      const { id, armazem } = req.params;
+      const dados = await estoquesServices.getsaldoprodutoarmazem(id, armazem);
+      let retorno = {
+        sucesso: true,
+        count: dados == null ? 0 : 1,
+        row: dados,
+      };
+      moduloglobais.log(
+        "API: estoquesServices.getsaldoprodutoarmazem, ID: " +
+          id +
+          " Armazem: " +
+          armazem,
+        "info"
+      );
+      return res.status(200).json(retorno);
+    } catch (error) {
+      let retorno = {
+        sucesso: false,
+        msg: error.message,
+      };
+      moduloglobais.log(
+        "API: estoquesServices.getsaldoprodutoarmazem ERROR: " + error.message,
+        "error"
+      );
+      return res.status(500).json(retorno);
+    }
+  }
+
+  static async getvalidadeprodutoall(req, res) {
+    try {
+      const { data } = req.params;
+      const dados = await estoquesServices.getvalidadeprodutoall(data);
+      let retorno = {
+        sucesso: true,
+        count: dados == null ? 0 : 1,
+        row: dados,
+      };
+      moduloglobais.log(
+        "API: estoquesServices.getvalidadeprodutoall, Data: " + data,
+        "info"
+      );
+      return res.status(200).json(retorno);
+    } catch (error) {
+      let retorno = {
+        sucesso: false,
+        msg: error.message,
+      };
+      moduloglobais.log(
+        "API: estoquesServices.getvalidadeprodutoall ERROR: " + error.message,
+        "error"
+      );
+      return res.status(500).json(retorno);
+    }
+  }
+
+  static async getvalidadeprodutoarmazem(req, res) {
+    try {
+      const { data, armazem } = req.params;
+      const dados = await estoquesServices.getvalidadeprodutoarmazem(
+        data,
+        armazem
+      );
+      let retorno = {
+        sucesso: true,
+        count: dados == null ? 0 : 1,
+        row: dados,
+      };
+      moduloglobais.log(
+        "API: estoquesServices.getvalidadeprodutoarmazem, Data: " +
+          data +
+          " Armazem: " +
+          armazem,
+        "info"
+      );
+      return res.status(200).json(retorno);
+    } catch (error) {
+      let retorno = {
+        sucesso: false,
+        msg: error.message,
+      };
+      moduloglobais.log(
+        "API: estoquesServices.getvalidadeprodutoarmazem ERROR: " +
+          error.message,
+        "error"
+      );
+      return res.status(500).json(retorno);
+    }
+  }
 }
 
 module.exports = EstoquesController;

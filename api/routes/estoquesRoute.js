@@ -201,4 +201,132 @@ router.delete(
   Controller.apaga
 );
 
+/**
+ * @openapi
+ * /estoques/saldo/all/{id}:
+ *  get:
+ *    summary: Visualiza saldo produto
+ *    description: Vizualiza o estoque de produto pelo ID em todos os armazens
+ *    tags: [Estoques de Produtos]
+ *    parameters:
+ *      - name: id
+ *        description: Informe o ID do produto.
+ *        required: true
+ *        in: path
+ *        schema:
+ *         type: integer
+ *    responses:
+ *      '200':
+ *        description: Uma resposta bem-sucedida
+ *      '500':
+ *        description: Uma resposta de erro
+ *      '401':
+ *        description: Unauthorized
+ *
+ */
+router.get(
+  "/estoques/saldo/all/:id",
+  JWTController.Verifica,
+  Controller.getsaldoprodutoall
+);
+
+/**
+ * @openapi
+ * /estoques/saldo/{armazem}/{id}:
+ *  get:
+ *    summary: Visualiza saldo produto por armazem
+ *    description: Vizualiza o estoque de produto pelo ID em um armazem
+ *    tags: [Estoques de Produtos]
+ *    parameters:
+ *      - name: armazem
+ *        description: Informe o ID do armazem.
+ *        required: true
+ *        in: path
+ *        schema:
+ *         type: integer
+ *      - name: id
+ *        description: Informe o ID do produto.
+ *        required: true
+ *        in: path
+ *        schema:
+ *         type: integer
+ *    responses:
+ *      '200':
+ *        description: Uma resposta bem-sucedida
+ *      '500':
+ *        description: Uma resposta de erro
+ *      '401':
+ *        description: Unauthorized
+ *
+ */
+router.get(
+  "/estoques/saldo/:armazem/:id",
+  JWTController.Verifica,
+  Controller.getsaldoprodutoarmazem
+);
+
+/**
+ * @openapi
+ * /estoques/validade/all/{data}:
+ *  get:
+ *    summary: Visualiza validade produto
+ *    description: Vizualiza produtos perto de vencer em todos os armazens
+ *    tags: [Estoques de Produtos]
+ *    parameters:
+ *      - name: data
+ *        description: Informe a data de vencimento máxima YYYYMMDD.
+ *        required: true
+ *        in: path
+ *        schema:
+ *         type: string
+ *    responses:
+ *      '200':
+ *        description: Uma resposta bem-sucedida
+ *      '500':
+ *        description: Uma resposta de erro
+ *      '401':
+ *        description: Unauthorized
+ *
+ */
+router.get(
+  "/estoques/validade/all/:data",
+  JWTController.Verifica,
+  Controller.getvalidadeprodutoall
+);
+
+/**
+ * @openapi
+ * /estoques/validade/{armazem}/{data}:
+ *  get:
+ *    summary: Visualiza saldo produto por armazem
+ *    description: Vizualiza o estoque de produto pelo ID em um armazem
+ *    tags: [Estoques de Produtos]
+ *    parameters:
+ *      - name: armazem
+ *        description: Informe o ID do armazem.
+ *        required: true
+ *        in: path
+ *        schema:
+ *         type: integer
+ *      - name: data
+ *        description: Informe a data de vencimento máxima YYYYMMDD.
+ *        required: true
+ *        in: path
+ *        schema:
+ *         type: string
+ *    responses:
+ *      '200':
+ *        description: Uma resposta bem-sucedida
+ *      '500':
+ *        description: Uma resposta de erro
+ *      '401':
+ *        description: Unauthorized
+ *
+ */
+router.get(
+  "/estoques/validade/:armazem/:data",
+  JWTController.Verifica,
+  Controller.getvalidadeprodutoarmazem
+);
+
 module.exports = router;
