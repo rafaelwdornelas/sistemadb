@@ -118,12 +118,87 @@ router.get("/produtos/:id", JWTController.Verifica, Controller.pega);
  *        schema:
  *          type: object
  *          properties:
- *            LOJA:
- *              summary: Informe o ID da loja.
- *              type: integer
- *            DESCRICAO:
- *              summary: Descrição do armazem de produto
+ *            COD:
+ *              summary: Código do produto
  *              type: string
+ *            ATIVO:
+ *              summary: Ativo?
+ *              type: boolean
+ *            FORMULADO:
+ *              summary:  Formulado?
+ *              type: boolean
+ *            DESCRICAO:
+ *              summary: Descrição
+ *              type: string
+ *            FAMILIA:
+ *              summary: Família
+ *              type: integer
+ *            UND:
+ *              summary: Unidade
+ *              type: string
+ *            COD_BARRAS:
+ *              summary: Código de barras
+ *              type: string
+ *            NCM:
+ *              summary: NCM
+ *              type: string
+ *            PRECO_VENDA:
+ *              summary: Preço de venda
+ *              type: number
+ *            PRECO_CUSTO:
+ *              summary: Preço de custo
+ *              type: number
+ *            PRECO_PORCENTAGEM:
+ *              summary: Porcentagem de lucro
+ *              type: number
+ *            COMISSAO:
+ *              summary: Comissão
+ *              type: number
+ *            FORNECEDOR:
+ *              summary: Fornecedor padrão
+ *              type: integer
+ *            MARCA:
+ *              summary: Marca
+ *              type: string
+ *            ALIQ_ICMS:
+ *              summary: Alíquota ICMS
+ *              type: number
+ *            ALIQ_IPI:
+ *              summary: Alíquota IPI
+ *              type: number
+ *            ALIQ_ISS:
+ *              summary: Alíquota ISS
+ *              type: number
+ *            ALIQ_FECP:
+ *              summary: Alíquota FECP
+ *              type: number
+ *            REDUCAO_INSS:
+ *              summary: Redução INSS
+ *              type: number
+ *            REDUCAO_IRRF:
+ *              summary: Redução IRRF
+ *              type: number
+ *            REDUCAO_PIS:
+ *              summary: Redução PIS
+ *              type: number
+ *            REDUCAO_COFINS:
+ *              summary: Redução COFINS
+ *              type: number
+ *            PERC_CSLL:
+ *              summary: Perc. CSLL
+ *              type: number
+ *            PERC_COFINS:
+ *              summary: Perc. COFINS
+ *              type: number
+ *            PERC_PIS:
+ *              summary: Perc. PIS
+ *              type: number
+ *            CNAE:
+ *              summary: Código CNAE
+ *              type: string
+ *            PESSO_BRUTO:
+ *              summary: Pesso bruto
+ *              type: number
  *    responses:
  *      '200':
  *        description: Uma resposta bem-sucedida
@@ -189,12 +264,87 @@ router.post(
  *        schema:
  *          type: object
  *          properties:
- *            LOJA:
- *              summary: Informe o ID da loja.
- *              type: integer
- *            DESCRICAO:
- *              summary: Descrição do armazem de produto
+ *            COD:
+ *              summary: Código do produto
  *              type: string
+ *            ATIVO:
+ *              summary: Ativo?
+ *              type: boolean
+ *            FORMULADO:
+ *              summary:  Formulado?
+ *              type: boolean
+ *            DESCRICAO:
+ *              summary: Descrição
+ *              type: string
+ *            FAMILIA:
+ *              summary: Família
+ *              type: integer
+ *            UND:
+ *              summary: Unidade
+ *              type: string
+ *            COD_BARRAS:
+ *              summary: Código de barras
+ *              type: string
+ *            NCM:
+ *              summary: NCM
+ *              type: string
+ *            PRECO_VENDA:
+ *              summary: Preço de venda
+ *              type: number
+ *            PRECO_CUSTO:
+ *              summary: Preço de custo
+ *              type: number
+ *            PRECO_PORCENTAGEM:
+ *              summary: Porcentagem de lucro
+ *              type: number
+ *            COMISSAO:
+ *              summary: Comissão
+ *              type: number
+ *            FORNECEDOR:
+ *              summary: Fornecedor padrão
+ *              type: integer
+ *            MARCA:
+ *              summary: Marca
+ *              type: string
+ *            ALIQ_ICMS:
+ *              summary: Alíquota ICMS
+ *              type: number
+ *            ALIQ_IPI:
+ *              summary: Alíquota IPI
+ *              type: number
+ *            ALIQ_ISS:
+ *              summary: Alíquota ISS
+ *              type: number
+ *            ALIQ_FECP:
+ *              summary: Alíquota FECP
+ *              type: number
+ *            REDUCAO_INSS:
+ *              summary: Redução INSS
+ *              type: number
+ *            REDUCAO_IRRF:
+ *              summary: Redução IRRF
+ *              type: number
+ *            REDUCAO_PIS:
+ *              summary: Redução PIS
+ *              type: number
+ *            REDUCAO_COFINS:
+ *              summary: Redução COFINS
+ *              type: number
+ *            PERC_CSLL:
+ *              summary: Perc. CSLL
+ *              type: number
+ *            PERC_COFINS:
+ *              summary: Perc. COFINS
+ *              type: number
+ *            PERC_PIS:
+ *              summary: Perc. PIS
+ *              type: number
+ *            CNAE:
+ *              summary: Código CNAE
+ *              type: string
+ *            PESSO_BRUTO:
+ *              summary: Pesso bruto
+ *              type: number
  *    responses:
  *      '200':
  *        description: Uma resposta bem-sucedida
