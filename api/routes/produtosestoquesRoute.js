@@ -7,7 +7,7 @@ const router = Router();
 /**
  * @swagger
  * tags:
- *   name: Estoques de Produtos
+ *   name: Produtos Estoques
  *   description: Manipulação de Estoques de Produtos
  */
 
@@ -17,7 +17,7 @@ const router = Router();
  *  post:
  *    summary: Todos
  *    description: Pega todos Estoques de Produtos
- *    tags: [Estoques de Produtos]
+ *    tags: [Produtos Estoques]
  *    requestBody:
  *      required: true
  *      content:
@@ -50,7 +50,7 @@ router.post("/estoques", JWTController.Verifica, Controller.pegaTodos);
  *  get:
  *    summary: Visualiza
  *    description: Vizualiza o dado de um estoque de produto pelo ID
- *    tags: [Estoques de Produtos]
+ *    tags: [Produtos Estoques]
  *    parameters:
  *      - name: id
  *        description: Informe o ID do estoque de produto.
@@ -75,7 +75,7 @@ router.get("/estoques/:id", JWTController.Verifica, Controller.pega);
  *  post:
  *    summary: Cadastra
  *    description: Cadastra um novo estoque de produto
- *    tags: [Estoques de Produtos]
+ *    tags: [Produtos Estoques]
  *    requestBody:
  *      required: true
  *      content:
@@ -123,7 +123,7 @@ router.post(
  *  put:
  *    summary: Altera
  *    description: Altera registro de um estoque de produto
- *    tags: [Estoques de Produtos]
+ *    tags: [Produtos Estoques]
  *    parameters:
  *      - name: id
  *        description: Informe o ID do estoque de produto.
@@ -177,7 +177,7 @@ router.put(
  *  delete:
  *    summary: Deleta
  *    description: Deleta um estoque de produto
- *    tags: [Estoques de Produtos]
+ *    tags: [Produtos Estoques]
  *    parameters:
  *      - name: id
  *        description: Informe o ID do estoque de produto.
@@ -207,7 +207,7 @@ router.delete(
  *  get:
  *    summary: Visualiza saldo produto
  *    description: Vizualiza o estoque de produto pelo ID em todos os armazens
- *    tags: [Estoques de Produtos]
+ *    tags: [Produtos Estoques]
  *    parameters:
  *      - name: id
  *        description: Informe o ID do produto.
@@ -236,7 +236,7 @@ router.get(
  *  get:
  *    summary: Visualiza saldo produto por armazem
  *    description: Vizualiza o estoque de produto pelo ID em um armazem
- *    tags: [Estoques de Produtos]
+ *    tags: [Produtos Estoques]
  *    parameters:
  *      - name: armazem
  *        description: Informe o ID do armazem.
@@ -271,7 +271,7 @@ router.get(
  *  get:
  *    summary: Visualiza validade produto
  *    description: Vizualiza produtos perto de vencer em todos os armazens
- *    tags: [Estoques de Produtos]
+ *    tags: [Produtos Estoques]
  *    parameters:
  *      - name: data
  *        description: Informe a data de vencimento máxima YYYYMMDD.
@@ -300,7 +300,7 @@ router.get(
  *  get:
  *    summary: Visualiza validade produto por armazem
  *    description: Vizualiza produtos perto de vencer em um armazem
- *    tags: [Estoques de Produtos]
+ *    tags: [Produtos Estoques]
  *    parameters:
  *      - name: armazem
  *        description: Informe o ID do armazem.
