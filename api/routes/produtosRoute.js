@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const Controller = require("../controllers/armazensController");
+const Controller = require("../controllers/produtosController");
 const JWTController = require("../controllers/JWTController");
 const LicencaController = require("../controllers/LicencaController");
 
@@ -7,17 +7,17 @@ const router = Router();
 /**
  * @swagger
  * tags:
- *   name: Armazens de Produtos
- *   description: Manipulação de Armazens de Produtos
+ *   name: Produtos
+ *   description: Manipulação de Produtos
  */
 
 /**
  * @openapi
- * /armazens:
+ * /produtos:
  *  get:
  *    summary: Todos
- *    description: Pega todos Armazens de Produtos
- *    tags: [Armazens de Produtos]
+ *    description: Pega todos Produtos
+ *    tags: [Produtos]
  *    responses:
  *      '200':
  *        description: Uma resposta bem-sucedida
@@ -27,15 +27,15 @@ const router = Router();
  *        description: Unauthorized
  *
  */
-router.get("/armazens", JWTController.Verifica, Controller.pegaTodos);
+router.get("/produtos", JWTController.Verifica, Controller.pegaTodos);
 
 /**
  * @openapi
- * /armazens/apagados:
+ * /produtos/apagados:
  *  get:
  *    summary: Todos apagados
- *    description: Retorna todos armazens de produtos apagadas
- *    tags: [Armazens de Produtos]
+ *    description: Retorna todos produtos apagadas
+ *    tags: [Produtos]
  *    responses:
  *      '200':
  *        description: Uma resposta bem-sucedida
@@ -46,18 +46,18 @@ router.get("/armazens", JWTController.Verifica, Controller.pegaTodos);
  *
  */
 router.get(
-  "/armazens/apagados",
+  "/produtos/apagados",
   JWTController.Verifica,
   Controller.pegaApagados
 );
 
 /**
  * @openapi
- * /armazens/apagados/{id}:
+ * /produtos/apagados/{id}:
  *  get:
  *    summary: Visualiza apagado
  *    description: Visualiza um armazem de produto apagado
- *    tags: [Armazens de Produtos]
+ *    tags: [Produtos]
  *    parameters:
  *      - name: id
  *        description: Informe o ID do armazem de produto.
@@ -75,17 +75,17 @@ router.get(
  *
  */
 router.get(
-  "/armazens/apagados/:id",
+  "/produtos/apagados/:id",
   JWTController.Verifica,
   Controller.pegaApagado
 );
 /**
  * @openapi
- * /armazens/{id}:
+ * /produtos/{id}:
  *  get:
  *    summary: Visualiza
  *    description: Vizualiza o dado de um armazem de produto pelo ID
- *    tags: [Armazens de Produtos]
+ *    tags: [Produtos]
  *    parameters:
  *      - name: id
  *        description: Informe o ID do armazem de produto.
@@ -102,15 +102,15 @@ router.get(
  *        description: Unauthorized
  *
  */
-router.get("/armazens/:id", JWTController.Verifica, Controller.pega);
+router.get("/produtos/:id", JWTController.Verifica, Controller.pega);
 
 /**
  * @openapi
- * /armazens/novo:
+ * /produtos/novo:
  *  post:
  *    summary: Cadastra
  *    description: Cadastra um novo armazem de produto
- *    tags: [Armazens de Produtos]
+ *    tags: [Produtos]
  *    requestBody:
  *      required: true
  *      content:
@@ -134,18 +134,18 @@ router.get("/armazens/:id", JWTController.Verifica, Controller.pega);
  *
  */
 router.post(
-  "/armazens/novo",
+  "/produtos/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
   Controller.cria
 );
 /**
  * @openapi
- * /armazens/{id}/restaura:
+ * /produtos/{id}/restaura:
  *  post:
  *    summary: Restaura Deletado
  *    description: Restaura o cadastro de um armazem de produto apagado
- *    tags: [Armazens de Produtos]
+ *    tags: [Produtos]
  *    parameters:
  *      - name: id
  *        description: Informe o ID do armazem de produto.
@@ -163,18 +163,18 @@ router.post(
  *
  */
 router.post(
-  "/armazens/:id/restaura",
+  "/produtos/:id/restaura",
   LicencaController.Verifica,
   JWTController.Verifica,
   Controller.restaura
 );
 /**
  * @openapi
- * /armazens/{id}:
+ * /produtos/{id}:
  *  put:
  *    summary: Altera
  *    description: Altera registro de um armazem de produto
- *    tags: [Armazens de Produtos]
+ *    tags: [Produtos]
  *    parameters:
  *      - name: id
  *        description: Informe o ID do armazem de produto.
@@ -205,18 +205,18 @@ router.post(
  *
  */
 router.put(
-  "/armazens/:id",
+  "/produtos/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
   Controller.atualiza
 );
 /**
  * @openapi
- * /armazens/{id}:
+ * /produtos/{id}:
  *  delete:
  *    summary: Deleta
  *    description: Deleta um armazem de produto
- *    tags: [Armazens de Produtos]
+ *    tags: [Produtos]
  *    parameters:
  *      - name: id
  *        description: Informe o ID do armazem de produto.
@@ -234,7 +234,7 @@ router.put(
  *
  */
 router.delete(
-  "/armazens/:id",
+  "/produtos/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
   Controller.apaga

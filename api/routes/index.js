@@ -17,8 +17,9 @@ const bancodedados = require("./bancodedados");
 const funcionarios = require("./funcionariosRoute");
 const usuarios = require("./usuariosRoute");
 const prodfamilias = require("./prodfamiliasRoute");
-const estoques = require("./estoquesRoute");
-const armazens = require("./armazensRoute");
+const estoques = require("./produtosestoquesRoute");
+const armazens = require("./produtosarmazensRoute");
+const produtos = require("./produtosRoute");
 
 module.exports = (app) => {
   app.use(
@@ -41,6 +42,7 @@ module.exports = (app) => {
     usuarios,
     prodfamilias,
     estoques,
-    armazens
+    armazens,
+    produtos
   );
 };
