@@ -298,8 +298,8 @@ router.get(
  * @openapi
  * /estoques/validade/{armazem}/{data}:
  *  get:
- *    summary: Visualiza saldo produto por armazem
- *    description: Vizualiza o estoque de produto pelo ID em um armazem
+ *    summary: Visualiza validade produto por armazem
+ *    description: Vizualiza produtos perto de vencer em um armazem
  *    tags: [Estoques de Produtos]
  *    parameters:
  *      - name: armazem
