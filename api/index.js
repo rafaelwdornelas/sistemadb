@@ -4,6 +4,7 @@ const cors = require("cors");
 const routes = require("./routes");
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const helmet = require("helmet");
 const app = express();
 const port = process.env.PORT || 3000;
 const fs = require("fs");
@@ -86,6 +87,24 @@ fs.readFile("layout.css", "utf8", function (err, data) {
     );
   }
 });
+
+const allowCrossDomain = async (req, res, next) => {
+  let ip = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET, PUT, POST, PATCH, DELETE, OPTIONS"
+  );
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.header("Xss-Protection", true);
+  res.header("Sql-Injection-Protection", true);
+  res.header("Connection-From", ip);
+  next();
+};
+
+app.use(allowCrossDomain);
+app.use(helmet());
 app.use(cors());
 routes(app);
 moduloglobais.log("Iniciando API...", "");
