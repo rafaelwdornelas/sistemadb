@@ -7,7 +7,7 @@ module.exports = {
     database: process.env.DB_DATABASE,
     host: process.env.DB_HOST,
     dialect: process.env.DB_DIALECT,
-    logging: process.env.SEQUELIZE_SHOW_SQL == 1 ? true : null,
+    logging: process.env.SEQUELIZE_SHOW_SQL == 1 ? console.log : null,
     dialectOptions: {
       encrypt: false,
     },

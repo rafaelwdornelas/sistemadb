@@ -141,9 +141,13 @@ class EstoquesController {
     try {
       const { id } = req.params;
       const dados = await estoquesServices.getsaldoprodutoall(id);
+      let sum = 0;
+      dados.forEach((value) => {
+        sum += value.QUANTIDADE;
+      });
       let retorno = {
         sucesso: true,
-        count: dados == null ? 0 : 1,
+        count: dados == null ? 0 : sum,
         row: dados,
       };
       moduloglobais.log(
@@ -168,9 +172,13 @@ class EstoquesController {
     try {
       const { id, armazem } = req.params;
       const dados = await estoquesServices.getsaldoprodutoarmazem(id, armazem);
+      let sum = 0;
+      dados.forEach((value) => {
+        sum += value.QUANTIDADE;
+      });
       let retorno = {
         sucesso: true,
-        count: dados == null ? 0 : 1,
+        count: dados == null ? 0 : sum,
         row: dados,
       };
       moduloglobais.log(
@@ -198,9 +206,13 @@ class EstoquesController {
     try {
       const { data } = req.params;
       const dados = await estoquesServices.getvalidadeprodutoall(data);
+      let sum = 0;
+      dados.forEach((value) => {
+        sum += value.QUANTIDADE;
+      });
       let retorno = {
         sucesso: true,
-        count: dados == null ? 0 : 1,
+        count: dados == null ? 0 : sum,
         row: dados,
       };
       moduloglobais.log(
@@ -228,9 +240,13 @@ class EstoquesController {
         data,
         armazem
       );
+      let sum = 0;
+      dados.forEach((value) => {
+        sum += value.QUANTIDADE;
+      });
       let retorno = {
         sucesso: true,
-        count: dados == null ? 0 : 1,
+        count: dados == null ? 0 : sum,
         row: dados,
       };
       moduloglobais.log(
@@ -249,6 +265,36 @@ class EstoquesController {
       moduloglobais.log(
         "API: estoquesServices.getvalidadeprodutoarmazem ERROR: " +
           error.message,
+        "error"
+      );
+      return res.status(500).json(retorno);
+    }
+  }
+
+  static async retiradadeproduto(req, res) {
+    const { id, armazem, quantidade } = req.body;
+    try {
+      const dados = await estoquesServices.retiradadeproduto(
+        id,
+        armazem,
+        quantidade
+      );
+      let retorno = {
+        sucesso: true,
+        rows: dados,
+      };
+      moduloglobais.log(
+        "API: estoquesServices.retiradadeproduto, ID: " + id,
+        "info"
+      );
+      return res.status(200).json(retorno);
+    } catch (error) {
+      let retorno = {
+        sucesso: false,
+        msg: error.message,
+      };
+      moduloglobais.log(
+        "API: estoquesServices.retiradadeproduto ERROR: " + error.message,
         "error"
       );
       return res.status(500).json(retorno);

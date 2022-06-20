@@ -329,4 +329,42 @@ router.get(
   Controller.getvalidadeprodutoarmazem
 );
 
+/**
+ * @openapi
+ * /estoques/retirada:
+ *  post:
+ *    summary: Retirada
+ *    description: Retira um produto do estoque
+ *    tags: [Produtos Estoques]
+ *    requestBody:
+ *      required: true
+ *      content:
+ *       application/json:
+ *        schema:
+ *          type: object
+ *          properties:
+ *            armazem:
+ *              summary: Armazém do estoque de produto
+ *              type: integer
+ *            id:
+ *              summary: Código do produto
+ *              type: integer
+ *            quantidade:
+ *              summary: Quantidade do estoque de produto
+ *              type: number
+ *    responses:
+ *      '200':
+ *        description: Uma resposta bem-sucedida
+ *      '500':
+ *        description: Uma resposta de erro
+ *      '401':
+ *        description: Unauthorized
+ *
+ */
+router.post(
+  "/estoques/retirada",
+  JWTController.Verifica,
+  Controller.retiradadeproduto
+);
+
 module.exports = router;
