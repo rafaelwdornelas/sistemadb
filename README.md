@@ -18,11 +18,11 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [x] Clientes
-- [x] Clientes Fámilia
+- [x] Clientes Famílias
 - [x] Telefones
 - [x] Endereços
 - [x] Países
-- [x] Municipios
+- [x] Municípios
 - [x] CNAE
 - [x] Unidades
 - [x] Formas de Pagamento
@@ -33,9 +33,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Cargos de Funcionários
 - [x] Funcionários
 - [x] Usuários
-- [x] Produtos Fámilias
+- [x] Produtos Famílias
 - [x] Produtos Estoques
-- [x] Produtos Armazens
+- [x] Produtos Armazéns
 - [x] Produtos
 - [x] Fornecedor Códigos de Produtos Link
 - [ ] Tabela de Preços
