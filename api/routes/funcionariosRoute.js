@@ -119,130 +119,130 @@ router.get("/funcionarios/:id", JWTController.Verifica, Controller.pega);
  *          type: object
  *          properties:
  *            FUN_MSOCIAL:
- *              summary: Numero matricula eSocial
+ *              description: Numero matricula eSocial
  *              type: string
  *            FUN_NOME:
- *              summary: Nome
+ *              description: Nome
  *              type: string
  *            FUN_NOME_MAE:
- *              summary: Nome da mae
+ *              description: Nome da mae
  *              type: string
  *            FUN_NOME_PAI:
- *              summary: Nome do pai
+ *              description: Nome do pai
  *              type: string
  *            FUN_SEXO:
- *              summary:  Sexo (M ou F)
+ *              description:  Sexo (M ou F)
  *              type: string
  *            FUN_NASCIMENTO:
- *              summary: Data de nascimento (YYYYMMDD)
+ *              description: Data de nascimento (YYYYMMDD)
  *              type: string
  *            FUN_EST_CIVIL:
- *              summary: Estado civil 1- Solteiro 2- Casado 3- Divorciado 4- Viúvo
+ *              description: Estado civil 1- Solteiro 2- Casado 3- Divorciado 4- Viúvo
  *              type: string
  *            FUN_NACIONALIDADE:
- *              summary: Nacionalidade
+ *              description: Nacionalidade
  *              type: integer
  *            FUN_EMAIL:
- *              summary: Email
+ *              description: Email
  *              type: string
  *            FUN_DEFICIENTE:
- *              summary: Deficiente funcionario true ou false
+ *              description: Deficiente funcionario true ou false
  *              type: boolean
  *            FUN_OBS_DEFICIENCIA:
- *              summary: Observação da deficiencia
+ *              description: Observação da deficiencia
  *              type: string
  *            FUN_DATA_ADMISSAO:
- *              summary: Data de admissão (YYYYMMDD)
+ *              description: Data de admissão (YYYYMMDD)
  *              type: string
  *            FUN_DATA_DEMISSAO:
- *              summary: Data de demissão (YYYYMMDD)
+ *              description: Data de demissão (YYYYMMDD)
  *              type: string
  *            FUN_RECEB_BANCO:
- *              summary: Nome do banco
+ *              description: Nome do banco
  *              type: string
  *            FUN_RECEB_AG:
- *              summary: Agência do banco
+ *              description: Agência do banco
  *              type: string
  *            FUN_RECEB_CONTA:
- *              summary: Conta do banco
+ *              description: Conta do banco
  *              type: string
  *            FUN_GRUPO:
- *              summary: Grupo
+ *              description: Grupo
  *              type: integer
  *            FUN_CARGO:
- *              summary: Cargo
+ *              description: Cargo
  *              type: integer
  *            FUN_SALARIO:
- *              summary: Salário
+ *              description: Salário
  *              type: number
  *            FUN_TIPO_CONTRATO:
- *              summary: Tipo de contrato 1- CLT 2- PJ 3- PJ/CLT
+ *              description: Tipo de contrato 1- CLT 2- PJ 3- PJ/CLT
  *              type: integer
  *            FUN_DATA_FIM_CONTRATO:
- *              summary: Data de fim do contrato (YYYYMMDD)
+ *              description: Data de fim do contrato (YYYYMMDD)
  *              type: string
  *            FUN_P_ADIANTAMENTO:
- *              summary: Percentual de adiantamento
+ *              description: Percentual de adiantamento
  *              type: number
  *            FUN_CPF:
- *              summary: CPF
+ *              description: CPF
  *              type: string
  *            FUN_PIS:
- *              summary: PIS
+ *              description: PIS
  *              type: string
  *            FUN_RG:
- *              summary: RG
+ *              description: RG
  *              type: string
  *            FUN_RG_EMISSAO:
- *              summary: Data de emissão do RG (YYYYMMDD)
+ *              description: Data de emissão do RG (YYYYMMDD)
  *              type: string
  *            FUN_RG_UF:
- *              summary: UF do RG
+ *              description: UF do RG
  *              type: string
  *            FUN_RG_OEM:
- *              summary: Órgão emissor do RG
+ *              description: Órgão emissor do RG
  *              type: string
  *            FUN_END_RUA:
- *              summary: Rua do endereço
+ *              description: Rua do endereço
  *              type: string
  *            FUN_END_NUMERO:
- *              summary: Número do endereço
+ *              description: Número do endereço
  *              type: integer
  *            FUN_END_BAIRRO:
- *              summary: Bairro do endereço
+ *              description: Bairro do endereço
  *              type: string
  *            FUN_END_COMP:
- *              summary: Complemento do endereço
+ *              description: Complemento do endereço
  *              type: string
  *            FUN_END_MUNICIPIO:
- *              summary: Município do endereço
+ *              description: Município do endereço
  *              type: string
  *            FUN_END_EST:
- *              summary: Estado do endereço
+ *              description: Estado do endereço
  *              type: string
  *            FUN_END_CEP:
- *              summary: CEP do endereço
+ *              description: CEP do endereço
  *              type: string
  *            FUN_TEL_DDD:
- *              summary: DDD do telefone
+ *              description: DDD do telefone
  *              type: string
  *            FUN_TEL_NUMERO:
- *              summary: Número do telefone
+ *              description: Número do telefone
  *              type: string
  *            FUN_CELULAR_DDD:
- *              summary: DDD do celular
+ *              description: DDD do celular
  *              type: string
  *            FUN_CELULAR_NUMERO:
- *              summary: Número do celular
+ *              description: Número do celular
  *              type: string
  *            FUN_EMER_CONTATO:
- *              summary: Nome do contato de emergência
+ *              description: Nome do contato de emergência
  *              type: string
  *            FUN_EMER_DDD:
- *              summary: DDD do telefone de emergência
+ *              description: DDD do telefone de emergência
  *              type: string
  *            FUN_EMER_NUMERO:
- *              summary: Número do telefone de emergência
+ *              description: Número do telefone de emergência
  *              type: string
  *    responses:
  *      '200':
@@ -310,130 +310,130 @@ router.post(
  *          type: object
  *          properties:
  *            FUN_MSOCIAL:
- *              summary: Numero matricula eSocial
+ *              description: Numero matricula eSocial
  *              type: string
  *            FUN_NOME:
- *              summary: Nome
+ *              description: Nome
  *              type: string
  *            FUN_NOME_MAE:
- *              summary: Nome da mae
+ *              description: Nome da mae
  *              type: string
  *            FUN_NOME_PAI:
- *              summary: Nome do pai
+ *              description: Nome do pai
  *              type: string
  *            FUN_SEXO:
- *              summary:  Sexo (M ou F)
+ *              description:  Sexo (M ou F)
  *              type: string
  *            FUN_NASCIMENTO:
- *              summary: Data de nascimento (YYYYMMDD)
+ *              description: Data de nascimento (YYYYMMDD)
  *              type: string
  *            FUN_EST_CIVIL:
- *              summary: Estado civil 1- Solteiro 2- Casado 3- Divorciado 4- Viúvo
+ *              description: Estado civil 1- Solteiro 2- Casado 3- Divorciado 4- Viúvo
  *              type: string
  *            FUN_NACIONALIDADE:
- *              summary: Nacionalidade
+ *              description: Nacionalidade
  *              type: integer
  *            FUN_EMAIL:
- *              summary: Email
+ *              description: Email
  *              type: string
  *            FUN_DEFICIENTE:
- *              summary: Deficiente funcionario true ou false
+ *              description: Deficiente funcionario true ou false
  *              type: boolean
  *            FUN_OBS_DEFICIENCIA:
- *              summary: Observação da deficiencia
+ *              description: Observação da deficiencia
  *              type: string
  *            FUN_DATA_ADMISSAO:
- *              summary: Data de admissão (YYYYMMDD)
+ *              description: Data de admissão (YYYYMMDD)
  *              type: string
  *            FUN_DATA_DEMISSAO:
- *              summary: Data de demissão (YYYYMMDD)
+ *              description: Data de demissão (YYYYMMDD)
  *              type: string
  *            FUN_RECEB_BANCO:
- *              summary: Nome do banco
+ *              description: Nome do banco
  *              type: string
  *            FUN_RECEB_AG:
- *              summary: Agência do banco
+ *              description: Agência do banco
  *              type: string
  *            FUN_RECEB_CONTA:
- *              summary: Conta do banco
+ *              description: Conta do banco
  *              type: string
  *            FUN_GRUPO:
- *              summary: Grupo
+ *              description: Grupo
  *              type: integer
  *            FUN_CARGO:
- *              summary: Cargo
+ *              description: Cargo
  *              type: integer
  *            FUN_SALARIO:
- *              summary: Salário
+ *              description: Salário
  *              type: number
  *            FUN_TIPO_CONTRATO:
- *              summary: Tipo de contrato 1- CLT 2- PJ 3- PJ/CLT
+ *              description: Tipo de contrato 1- CLT 2- PJ 3- PJ/CLT
  *              type: integer
  *            FUN_DATA_FIM_CONTRATO:
- *              summary: Data de fim do contrato (YYYYMMDD)
+ *              description: Data de fim do contrato (YYYYMMDD)
  *              type: string
  *            FUN_P_ADIANTAMENTO:
- *              summary: Percentual de adiantamento
+ *              description: Percentual de adiantamento
  *              type: number
  *            FUN_CPF:
- *              summary: CPF
+ *              description: CPF
  *              type: string
  *            FUN_PIS:
- *              summary: PIS
+ *              description: PIS
  *              type: string
  *            FUN_RG:
- *              summary: RG
+ *              description: RG
  *              type: string
  *            FUN_RG_EMISSAO:
- *              summary: Data de emissão do RG (YYYYMMDD)
+ *              description: Data de emissão do RG (YYYYMMDD)
  *              type: string
  *            FUN_RG_UF:
- *              summary: UF do RG
+ *              description: UF do RG
  *              type: string
  *            FUN_RG_OEM:
- *              summary: Órgão emissor do RG
+ *              description: Órgão emissor do RG
  *              type: string
  *            FUN_END_RUA:
- *              summary: Rua do endereço
+ *              description: Rua do endereço
  *              type: string
  *            FUN_END_NUMERO:
- *              summary: Número do endereço
+ *              description: Número do endereço
  *              type: integer
  *            FUN_END_BAIRRO:
- *              summary: Bairro do endereço
+ *              description: Bairro do endereço
  *              type: string
  *            FUN_END_COMP:
- *              summary: Complemento do endereço
+ *              description: Complemento do endereço
  *              type: string
  *            FUN_END_MUNICIPIO:
- *              summary: Município do endereço
+ *              description: Município do endereço
  *              type: string
  *            FUN_END_EST:
- *              summary: Estado do endereço
+ *              description: Estado do endereço
  *              type: string
  *            FUN_END_CEP:
- *              summary: CEP do endereço
+ *              description: CEP do endereço
  *              type: string
  *            FUN_TEL_DDD:
- *              summary: DDD do telefone
+ *              description: DDD do telefone
  *              type: string
  *            FUN_TEL_NUMERO:
- *              summary: Número do telefone
+ *              description: Número do telefone
  *              type: string
  *            FUN_CELULAR_DDD:
- *              summary: DDD do celular
+ *              description: DDD do celular
  *              type: string
  *            FUN_CELULAR_NUMERO:
- *              summary: Número do celular
+ *              description: Número do celular
  *              type: string
  *            FUN_EMER_CONTATO:
- *              summary: Nome do contato de emergência
+ *              description: Nome do contato de emergência
  *              type: string
  *            FUN_EMER_DDD:
- *              summary: DDD do telefone de emergência
+ *              description: DDD do telefone de emergência
  *              type: string
  *            FUN_EMER_NUMERO:
- *              summary: Número do telefone de emergência
+ *              description: Número do telefone de emergência
  *              type: string
  *    responses:
  *      '200':

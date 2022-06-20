@@ -26,11 +26,11 @@ const router = Router();
  *          type: object
  *          properties:
  *            inicio:
- *              summary: inicio do index da paginação
+ *              description: inicio do index da paginação
  *              type: integer
  *              example: 0
  *            limit:
- *              summary: limite de registros da paginação
+ *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
  *    responses:
@@ -70,11 +70,11 @@ router.post(
  *          type: object
  *          properties:
  *            inicio:
- *              summary: inicio do index da paginação
+ *              description: inicio do index da paginação
  *              type: integer
  *              example: 0
  *            limit:
- *              summary: limite de registros da paginação
+ *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
  *    responses:
@@ -132,16 +132,16 @@ router.get("/fornecedornotalinks/:id", JWTController.Verifica, Controller.pega);
  *          type: object
  *          properties:
  *            FORNECEDOR:
- *              summary: Código do Fornecedor
+ *              description: Código do Fornecedor
  *              type: integer
  *            PRODUTO:
- *              summary: Código do Produto interno
+ *              description: Código do Produto interno
  *              type: integer
  *            COD_FORNECEDOR:
- *              summary: código do produto da nota
+ *              description: código do produto da nota
  *              type: string
  *            MULTIPLICADOR:
- *              summary: Multiplicador do produto da nota para o produto interno
+ *              description: Multiplicador do produto da nota para o produto interno
  *              type: number
  *    responses:
  *      '200':
@@ -180,16 +180,16 @@ router.post(
  *          type: object
  *          properties:
  *            FORNECEDOR:
- *              summary: Código do Fornecedor
+ *              description: Código do Fornecedor
  *              type: integer
  *            PRODUTO:
- *              summary: Código do Produto interno
+ *              description: Código do Produto interno
  *              type: integer
  *            COD_FORNECEDOR:
- *              summary: código do produto da nota
+ *              description: código do produto da nota
  *              type: string
  *            MULTIPLICADOR:
- *              summary: Multiplicador do produto da nota para o produto interno
+ *              description: Multiplicador do produto da nota para o produto interno
  *              type: number
  *    responses:
  *      '200':

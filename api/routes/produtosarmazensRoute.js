@@ -119,10 +119,10 @@ router.get("/armazens/:id", JWTController.Verifica, Controller.pega);
  *          type: object
  *          properties:
  *            LOJA:
- *              summary: Informe o ID da loja.
+ *              description: Informe o ID da loja.
  *              type: integer
  *            DESCRICAO:
- *              summary: Descrição do armazem de produto
+ *              description: Descrição do armazem de produto
  *              type: string
  *    responses:
  *      '200':
@@ -190,10 +190,10 @@ router.post(
  *          type: object
  *          properties:
  *            LOJA:
- *              summary: Informe o ID da loja.
+ *              description: Informe o ID da loja.
  *              type: integer
  *            DESCRICAO:
- *              summary: Descrição do armazem de produto
+ *              description: Descrição do armazem de produto
  *              type: string
  *    responses:
  *      '200':

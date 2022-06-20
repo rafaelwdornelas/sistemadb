@@ -120,13 +120,13 @@ router.get("/clifamilias/:id", JWTController.Verifica, Controller.pega);
  *          type: object
  *          properties:
  *            NOME:
- *              summary: Nome da Família
+ *              description: Nome da Família
  *              type: string
  *            DESCONTO:
- *              summary: Percentual de Desconto
+ *              description: Percentual de Desconto
  *              type: string
  *            RESTRITO:
- *              summary: Família Restrita para Moviventação?
+ *              description: Família Restrita para Moviventação?
  *              type: boolean
  *              example: false
  *    responses:
@@ -195,13 +195,13 @@ router.post(
  *          type: object
  *          properties:
  *            NOME:
- *              summary: Nome da Família
+ *              description: Nome da Família
  *              type: string
  *            DESCONTO:
- *              summary: Percentual de Desconto
+ *              description: Percentual de Desconto
  *              type: string
  *            RESTRITO:
- *              summary: Família Restrita para Moviventação?
+ *              description: Família Restrita para Moviventação?
  *              type: boolean
  *              example: false
  *    responses:
@@ -264,15 +264,15 @@ router.delete(
  *          type: object
  *          properties:
  *            busca:
- *              summary: string para busca
+ *              description: string para busca
  *              type: string
  *              example: "GER"
  *            inicio:
- *              summary: inicio do index da paginação
+ *              description: inicio do index da paginação
  *              type: integer
  *              example: 0
  *            limit:
- *              summary: limite de registros da paginação
+ *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
  *    responses:

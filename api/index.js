@@ -16,7 +16,7 @@ const swaggerDefinition = {
   info: {
     title: "CoreByte ERP  - DB",
     version: "1.0.0",
-    description: "API documentation",
+    description: "Documentação da API do CoreByte ERP - DB",
     contact: {
       name: "CoreByte ERP",
       url: "https://www.corebyteerp.com.br",

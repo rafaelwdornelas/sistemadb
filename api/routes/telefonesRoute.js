@@ -130,25 +130,25 @@ router.get("/telefones/:id", JWTController.Verifica, Controller.pega);
  *          type: object
  *          properties:
  *            TEL_CLI:
- *              summary: Código do Cliente
+ *              description: Código do Cliente
  *              type: integer
  *            TEL_TIPO:
- *              summary: 1-Fixo 2-Celular
+ *              description: 1-Fixo 2-Celular
  *              type: integer
  *            TEL_DDD:
- *              summary: DDD
+ *              description: DDD
  *              type: string
  *            TEL_NUMERO:
- *              summary: Número
+ *              description: Número
  *              type: string
  *            TEL_RAMAL:
- *              summary: Ramal
+ *              description: Ramal
  *              type: string
  *            TEL_CONTATO:
- *              summary: Contato
+ *              description: Contato
  *              type: string
  *            TEL_OBS:
- *              summary: Observação
+ *              description: Observação
  *              type: string
  *    responses:
  *      '200':
@@ -216,25 +216,25 @@ router.post(
  *          type: object
  *          properties:
  *            TEL_CLI:
- *              summary: Código do Cliente
+ *              description: Código do Cliente
  *              type: integer
  *            TEL_TIPO:
- *              summary: 1-Fixo 2-Celular
+ *              description: 1-Fixo 2-Celular
  *              type: integer
  *            TEL_DDD:
- *              summary: DDD
+ *              description: DDD
  *              type: string
  *            TEL_NUMERO:
- *              summary: Número
+ *              description: Número
  *              type: string
  *            TEL_RAMAL:
- *              summary: Ramal
+ *              description: Ramal
  *              type: string
  *            TEL_CONTATO:
- *              summary: Contato
+ *              description: Contato
  *              type: string
  *            TEL_OBS:
- *              summary: Observação
+ *              description: Observação
  *              type: string
  *    responses:
  *      '200':

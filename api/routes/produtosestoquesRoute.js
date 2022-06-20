@@ -26,11 +26,11 @@ const router = Router();
  *          type: object
  *          properties:
  *            inicio:
- *              summary: inicio do index da paginação
+ *              description: inicio do index da paginação
  *              type: integer
  *              example: 0
  *            limit:
- *              summary: limite de registros da paginação
+ *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
  *    responses:
@@ -84,22 +84,22 @@ router.get("/estoques/:id", JWTController.Verifica, Controller.pega);
  *          type: object
  *          properties:
  *            ARMAZEM:
- *              summary: Armazém do estoque de produto
+ *              description: Armazém do estoque de produto
  *              type: integer
  *            PRODUTO:
- *              summary: Código do produto
+ *              description: Código do produto
  *              type: integer
  *            QUANTIDADE:
- *              summary: Quantidade do estoque de produto
+ *              description: Quantidade do estoque de produto
  *              type: number
  *            FABRICACAO:
- *              summary: Data de fabricação do produto
+ *              description: Data de fabricação do produto
  *              type: string
  *            VALIDADE:
- *              summary: Data de validade do produto
+ *              description: Data de validade do produto
  *              type: string
  *            LOTE:
- *              summary: Lote do produto
+ *              description: Lote do produto
  *              type: string
  *    responses:
  *      '200':
@@ -139,22 +139,22 @@ router.post(
  *          type: object
  *          properties:
  *            ARMAZEM:
- *              summary: Armazém do estoque de produto
+ *              description: Armazém do estoque de produto
  *              type: integer
  *            PRODUTO:
- *              summary: Código do produto
+ *              description: Código do produto
  *              type: integer
  *            QUANTIDADE:
- *              summary: Quantidade do estoque de produto
+ *              description: Quantidade do estoque de produto
  *              type: number
  *            FABRICACAO:
- *              summary: Data de fabricação do produto
+ *              description: Data de fabricação do produto
  *              type: string
  *            VALIDADE:
- *              summary: Data de validade do produto
+ *              description: Data de validade do produto
  *              type: string
  *            LOTE:
- *              summary: Lote do produto
+ *              description: Lote do produto
  *              type: string
  *    responses:
  *      '200':
@@ -344,13 +344,13 @@ router.get(
  *          type: object
  *          properties:
  *            armazem:
- *              summary: Armazém do estoque de produto
+ *              description: Armazém do estoque de produto
  *              type: integer
  *            id:
- *              summary: Código do produto
+ *              description: Código do produto
  *              type: integer
  *            quantidade:
- *              summary: Quantidade do estoque de produto
+ *              description: Quantidade do estoque de produto
  *              type: number
  *    responses:
  *      '200':

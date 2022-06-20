@@ -29,11 +29,11 @@ const router = Router();
  *          type: object
  *          properties:
  *            inicio:
- *              summary: inicio do index da paginação
+ *              description: inicio do index da paginação
  *              type: integer
  *              example: 0
  *            limit:
- *              summary: limite de registros da paginação
+ *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
  *    responses:
@@ -64,11 +64,11 @@ router.post("/clientes", JWTController.Verifica, Controller.pegaTodos);
  *          type: object
  *          properties:
  *            inicio:
- *              summary: inicio do index da paginação
+ *              description: inicio do index da paginação
  *              type: integer
  *              example: 0
  *            limit:
- *              summary: limite de registros da paginação
+ *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
  *    responses:
@@ -171,47 +171,47 @@ router.get("/clientes/:id", JWTController.Verifica, Controller.pegaTodosDados);
  *          type: object
  *          properties:
  *            CLI_LOJA:
- *              summary: Código da Loja
+ *              description: Código da Loja
  *              type: integer
  *              example: 1
  *            CLI_ATIVO:
- *              summary: N = inativo, S = ativo
+ *              description: N = inativo, S = ativo
  *              type: string
  *              example: S
  *            CLI_FAMILIA:
- *              summary: Familia do grupo de Cliente
+ *              description: Familia do grupo de Cliente
  *              type: integer
  *              example: 1
  *            CLI_FORNECEDOR:
- *              summary: O Cadastro é de um fornecedor?
+ *              description: O Cadastro é de um fornecedor?
  *              type: boolean
  *              example: false
  *            CLI_TRANSPORTADORA:
- *              summary: O Cadastro é de uma transportadora?
+ *              description: O Cadastro é de uma transportadora?
  *              type: boolean
  *              example: false
  *            CLI_NOME:
- *              summary: Nome
+ *              description: Nome
  *              type: string
  *            CLI_NOME_FANTASIA:
- *              summary: Nome
+ *              description: Nome
  *              type: string
  *            CLI_SEXO:
- *              summary: F - Feminino, M - Masculino
+ *              description: F - Feminino, M - Masculino
  *              type: string
  *              example: M
  *            CLI_TIPO:
- *              summary: F - Fisica, J - Juridica
+ *              description: F - Fisica, J - Juridica
  *              type: string
  *              example: F
  *            CLI_CPF_CNPJ:
- *              summary: CPF ou CNPJ (não aceita repetição)
+ *              description: CPF ou CNPJ (não aceita repetição)
  *              type: string
  *            CLI_RG:
- *              summary: RG
+ *              description: RG
  *              type: string
  *            CLI_DTNASC:
- *              summary: Data de Nascimento YYYYMMDD
+ *              description: Data de Nascimento YYYYMMDD
  *              type: string
  *            CLI_ESTRANGEIRO:
  *             summary: É estrangeiro?
@@ -221,83 +221,83 @@ router.get("/clientes/:id", JWTController.Verifica, Controller.pegaTodosDados);
  *             summary: Passaporte
  *             type: string
  *            CLI_EMAIL:
- *              summary: Email Principal
+ *              description: Email Principal
  *              type: string
  *            CLI_EMAIL_COB:
- *              summary: Email de Cobrança para envio de fatura e boletos
+ *              description: Email de Cobrança para envio de fatura e boletos
  *              type: string
  *            CLI_SITE:
- *              summary: Site
+ *              description: Site
  *              type: string
  *            CLI_IE:
- *              summary: Inscrisão Estadual
+ *              description: Inscrisão Estadual
  *              type: string
  *            CLI_IM:
- *              summary: Inscrisão Municipal
+ *              description: Inscrisão Municipal
  *              type: string
  *            CLI_IR:
- *              summary: Inscrisão Rural
+ *              description: Inscrisão Rural
  *              type: string
  *            CLI_CNAE:
- *              summary: CNAE
+ *              description: CNAE
  *              type: string
  *            CLI_NATUREZA:
- *              summary: Natureza da Operação
+ *              description: Natureza da Operação
  *              type: integer
  *            CLI_VENDEDOR:
- *              summary: Vendendor Padrão
+ *              description: Vendendor Padrão
  *              type: integer
  *            CLI_COMISSAO:
- *              summary: Porcentagem de Comissão
+ *              description: Porcentagem de Comissão
  *              type: number
  *            CLI_FRETE_TIPO:
- *              summary: Tipo de Frete Padrão F - FOB , C - CIF
+ *              description: Tipo de Frete Padrão F - FOB , C - CIF
  *              type: string
  *              example: F
  *            CLI_AIRRF:
- *              summary: IRRF Alicota
+ *              description: IRRF Alicota
  *              type: number
  *            CLI_ISS_RECOLHE:
- *              summary: RECOLHER - ISS?
+ *              description: RECOLHER - ISS?
  *              type: boolean
  *            CLI_COD_SUFRAMA:
- *              summary: Código da Suframa
+ *              description: Código da Suframa
  *              type: string
  *            CLI_DESC_SUFRAMA:
- *              summary: S - SIM, N - NÃO, I - ISMS (Desc  SUFRAMA)
+ *              description: S - SIM, N - NÃO, I - ISMS (Desc  SUFRAMA)
  *              type: string
  *            CLI_ISS_PRECO:
- *              summary: ISS NO PREÇO?
+ *              description: ISS NO PREÇO?
  *              type: boolean
  *            CLI_INSS_RECOLHE:
- *              summary: Recolhe INSS?
+ *              description: Recolhe INSS?
  *              type: boolean
  *            CLI_CONFINS_RECOLHE:
- *              summary: Recolhe CONFINS?
+ *              description: Recolhe CONFINS?
  *              type: boolean
  *            CLI_CSLL_RECOLHE:
- *              summary: Recolhe CSLL?
+ *              description: Recolhe CSLL?
  *              type: boolean
  *            CLI_PIS_RECOLHE:
- *              summary: Recolhe PIS?
+ *              description: Recolhe PIS?
  *              type: boolean
  *            CLI_SIMPLESSC:
- *              summary: Optante SIMPLES/SC?
+ *              description: Optante SIMPLES/SC?
  *              type: boolean
  *            CLI_TARE:
- *              summary: Contribuinte TARE?
+ *              description: Contribuinte TARE?
  *              type: boolean
  *            CLI_FRETISS:
- *              summary:  1 - Cons Vrl Mínimo, 2 - Sempre Retém (Forma de retenção do ISS)
+ *              description:  1 - Cons Vrl Mínimo, 2 - Sempre Retém (Forma de retenção do ISS)
  *              type: string
  *            CLI_MABATIMENTO:
- *              summary:  1 - Cálculo do Sistema, 2 - Efetua Retenção,3 - Não Efetua Retenção (Modo de Abatimento de Imposto)
+ *              description:  1 - Cálculo do Sistema, 2 - Efetua Retenção,3 - Não Efetua Retenção (Modo de Abatimento de Imposto)
  *              type: string
  *            CLI_IRRF:
- *              summary: Recolhe IRRF?
+ *              description: Recolhe IRRF?
  *              type: boolean
  *            CLI_ICMS:
- *              summary: Contribuinte do ICMS?
+ *              description: Contribuinte do ICMS?
  *              type: boolean
  *            CLI_FINAL:
  *             summary: Controle para a NFe/NFCe para saber se o cliente é consumidor final
@@ -306,34 +306,34 @@ router.get("/clientes/:id", JWTController.Verifica, Controller.pegaTodosDados);
  *             summary: Controle para NFe/NFCe para saber se o cliente é microcervejaria
  *             type: boolean
  *            CLI_VMIRRF:
- *              summary: Valor minimo IRRF?
+ *              description: Valor minimo IRRF?
  *              type: boolean
  *            CLI_FOMEZERO:
- *              summary: Participação Fome Zero?
+ *              description: Participação Fome Zero?
  *              type: boolean
  *            CLI_SIMPLES:
- *              summary: Participação Simples Nacional?
+ *              description: Participação Simples Nacional?
  *              type: boolean
  *            CLI_TPJ:
- *              summary: 1 - ME - Micro Empresa, 2 - EPP - Empresa de Pequeno Porte,3 - MEI - Microempreendedor Individual,4 - Não Optante (Tipo de Pessoa Juridica?)
+ *              description: 1 - ME - Micro Empresa, 2 - EPP - Empresa de Pequeno Porte,3 - MEI - Microempreendedor Individual,4 - Não Optante (Tipo de Pessoa Juridica?)
  *              type: string
  *            CLI_CTRANSPORTADORA:
- *              summary: Código da Transportadora Padrão
+ *              description: Código da Transportadora Padrão
  *              type: integer
  *            CLI_FPAGAMENTO:
- *              summary: Tabela de Pagamento Padrão
+ *              description: Tabela de Pagamento Padrão
  *              type: integer
  *            CLI_TABELA:
- *              summary: Código da Tabela de Preços
+ *              description: Código da Tabela de Preços
  *              type: integer
  *            CLI_DESCONTO:
- *              summary: Porcentagem de Desconto Padrão
+ *              description: Porcentagem de Desconto Padrão
  *              type: number
  *            CLI_SENHA:
- *              summary: Senha de acesso para outros sistemas
+ *              description: Senha de acesso para outros sistemas
  *              type: string
  *            CLI_OBS:
- *              summary: Campo para Observação
+ *              description: Campo para Observação
  *              type: string
  *    responses:
  *      '200':
@@ -401,47 +401,47 @@ router.post(
  *          type: object
  *          properties:
  *            CLI_LOJA:
- *              summary: Código da Loja
+ *              description: Código da Loja
  *              type: integer
  *              example: 1
  *            CLI_ATIVO:
- *              summary: N = inativo, S = ativo
+ *              description: N = inativo, S = ativo
  *              type: string
  *              example: S
  *            CLI_FAMILIA:
- *              summary: Familia do grupo de Cliente
+ *              description: Familia do grupo de Cliente
  *              type: integer
  *              example: 1
  *            CLI_FORNECEDOR:
- *              summary: O Cadastro é de um fornecedor?
+ *              description: O Cadastro é de um fornecedor?
  *              type: boolean
  *              example: false
  *            CLI_TRANSPORTADORA:
- *              summary: O Cadastro é de uma transportadora?
+ *              description: O Cadastro é de uma transportadora?
  *              type: boolean
  *              example: false
  *            CLI_NOME:
- *              summary: Nome
+ *              description: Nome
  *              type: string
  *            CLI_NOME_FANTASIA:
- *              summary: Nome
+ *              description: Nome
  *              type: string
  *            CLI_SEXO:
- *              summary: F - Feminino, M - Masculino
+ *              description: F - Feminino, M - Masculino
  *              type: string
  *              example: M
  *            CLI_TIPO:
- *              summary: F - Fisica, J - Juridica
+ *              description: F - Fisica, J - Juridica
  *              type: string
  *              example: F
  *            CLI_CPF_CNPJ:
- *              summary: CPF ou CNPJ (não aceita repetição)
+ *              description: CPF ou CNPJ (não aceita repetição)
  *              type: string
  *            CLI_RG:
- *              summary: RG
+ *              description: RG
  *              type: string
  *            CLI_DTNASC:
- *              summary: Data de Nascimento YYYYMMDD
+ *              description: Data de Nascimento YYYYMMDD
  *              type: string
  *            CLI_ESTRANGEIRO:
  *             summary: É estrangeiro?
@@ -451,83 +451,83 @@ router.post(
  *             summary: Passaporte
  *             type: string
  *            CLI_EMAIL:
- *              summary: Email Principal
+ *              description: Email Principal
  *              type: string
  *            CLI_EMAIL_COB:
- *              summary: Email de Cobrança para envio de fatura e boletos
+ *              description: Email de Cobrança para envio de fatura e boletos
  *              type: string
  *            CLI_SITE:
- *              summary: Site
+ *              description: Site
  *              type: string
  *            CLI_IE:
- *              summary: Inscrisão Estadual
+ *              description: Inscrisão Estadual
  *              type: string
  *            CLI_IM:
- *              summary: Inscrisão Municipal
+ *              description: Inscrisão Municipal
  *              type: string
  *            CLI_IR:
- *              summary: Inscrisão Rural
+ *              description: Inscrisão Rural
  *              type: string
  *            CLI_CNAE:
- *              summary: CNAE
+ *              description: CNAE
  *              type: string
  *            CLI_NATUREZA:
- *              summary: Natureza da Operação
+ *              description: Natureza da Operação
  *              type: integer
  *            CLI_VENDEDOR:
- *              summary: Vendendor Padrão
+ *              description: Vendendor Padrão
  *              type: integer
  *            CLI_COMISSAO:
- *              summary: Porcentagem de Comissão
+ *              description: Porcentagem de Comissão
  *              type: number
  *            CLI_FRETE_TIPO:
- *              summary: Tipo de Frete Padrão F - FOB , C - CIF
+ *              description: Tipo de Frete Padrão F - FOB , C - CIF
  *              type: string
  *              example: F
  *            CLI_AIRRF:
- *              summary: IRRF Alicota
+ *              description: IRRF Alicota
  *              type: number
  *            CLI_ISS_RECOLHE:
- *              summary: RECOLHER - ISS?
+ *              description: RECOLHER - ISS?
  *              type: boolean
  *            CLI_COD_SUFRAMA:
- *              summary: Código da Suframa
+ *              description: Código da Suframa
  *              type: string
  *            CLI_DESC_SUFRAMA:
- *              summary: S - SIM, N - NÃO, I - ISMS (Desc  SUFRAMA)
+ *              description: S - SIM, N - NÃO, I - ISMS (Desc  SUFRAMA)
  *              type: string
  *            CLI_ISS_PRECO:
- *              summary: ISS NO PREÇO?
+ *              description: ISS NO PREÇO?
  *              type: boolean
  *            CLI_INSS_RECOLHE:
- *              summary: Recolhe INSS?
+ *              description: Recolhe INSS?
  *              type: boolean
  *            CLI_CONFINS_RECOLHE:
- *              summary: Recolhe CONFINS?
+ *              description: Recolhe CONFINS?
  *              type: boolean
  *            CLI_CSLL_RECOLHE:
- *              summary: Recolhe CSLL?
+ *              description: Recolhe CSLL?
  *              type: boolean
  *            CLI_PIS_RECOLHE:
- *              summary: Recolhe PIS?
+ *              description: Recolhe PIS?
  *              type: boolean
  *            CLI_SIMPLESSC:
- *              summary: Optante SIMPLES/SC?
+ *              description: Optante SIMPLES/SC?
  *              type: boolean
  *            CLI_TARE:
- *              summary: Contribuinte TARE?
+ *              description: Contribuinte TARE?
  *              type: boolean
  *            CLI_FRETISS:
- *              summary:  1 - Cons Vrl Mínimo, 2 - Sempre Retém (Forma de retenção do ISS)
+ *              description:  1 - Cons Vrl Mínimo, 2 - Sempre Retém (Forma de retenção do ISS)
  *              type: string
  *            CLI_MABATIMENTO:
- *              summary:  1 - Cálculo do Sistema, 2 - Efetua Retenção,3 - Não Efetua Retenção (Modo de Abatimento de Imposto)
+ *              description:  1 - Cálculo do Sistema, 2 - Efetua Retenção,3 - Não Efetua Retenção (Modo de Abatimento de Imposto)
  *              type: string
  *            CLI_IRRF:
- *              summary: Recolhe IRRF?
+ *              description: Recolhe IRRF?
  *              type: boolean
  *            CLI_ICMS:
- *              summary: Contribuinte do ICMS?
+ *              description: Contribuinte do ICMS?
  *              type: boolean
  *            CLI_FINAL:
  *             summary: Controle para a NFe/NFCe para saber se o cliente é consumidor final
@@ -536,34 +536,34 @@ router.post(
  *             summary: Controle para NFe/NFCe para saber se o cliente é microcervejaria
  *             type: boolean
  *            CLI_VMIRRF:
- *              summary: Valor minimo IRRF?
+ *              description: Valor minimo IRRF?
  *              type: boolean
  *            CLI_FOMEZERO:
- *              summary: Participação Fome Zero?
+ *              description: Participação Fome Zero?
  *              type: boolean
  *            CLI_SIMPLES:
- *              summary: Participação Simples Nacional?
+ *              description: Participação Simples Nacional?
  *              type: boolean
  *            CLI_TPJ:
- *              summary: 1 - ME - Micro Empresa, 2 - EPP - Empresa de Pequeno Porte,3 - MEI - Microempreendedor Individual,4 - Não Optante (Tipo de Pessoa Juridica?)
+ *              description: 1 - ME - Micro Empresa, 2 - EPP - Empresa de Pequeno Porte,3 - MEI - Microempreendedor Individual,4 - Não Optante (Tipo de Pessoa Juridica?)
  *              type: string
  *            CLI_CTRANSPORTADORA:
- *              summary: Código da Transportadora Padrão
+ *              description: Código da Transportadora Padrão
  *              type: integer
  *            CLI_FPAGAMENTO:
- *              summary: Tabela de Pagamento Padrão
+ *              description: Tabela de Pagamento Padrão
  *              type: integer
  *            CLI_TABELA:
- *              summary: Código da Tabela de Preços
+ *              description: Código da Tabela de Preços
  *              type: integer
  *            CLI_DESCONTO:
- *              summary: Porcentagem de Desconto Padrão
+ *              description: Porcentagem de Desconto Padrão
  *              type: number
  *            CLI_SENHA:
- *              summary: Senha de acesso para outros sistemas
+ *              description: Senha de acesso para outros sistemas
  *              type: string
  *            CLI_OBS:
- *              summary: Campo para Observação
+ *              description: Campo para Observação
  *              type: string
  *    responses:
  *      '200':
@@ -625,15 +625,15 @@ router.delete(
  *          type: object
  *          properties:
  *            busca:
- *              summary: string para busca
+ *              description: string para busca
  *              type: string
  *              example: "CON"
  *            inicio:
- *              summary: inicio do index da paginação
+ *              description: inicio do index da paginação
  *              type: integer
  *              example: 0
  *            limit:
- *              summary: limite de registros da paginação
+ *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
  *    responses:

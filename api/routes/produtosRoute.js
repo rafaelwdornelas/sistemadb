@@ -26,11 +26,11 @@ const router = Router();
  *          type: object
  *          properties:
  *            inicio:
- *              summary: inicio do index da paginação
+ *              description: inicio do index da paginação
  *              type: integer
  *              example: 0
  *            limit:
- *              summary: limite de registros da paginação
+ *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
  *    responses:
@@ -134,85 +134,85 @@ router.get("/produtos/:id", JWTController.Verifica, Controller.pega);
  *          type: object
  *          properties:
  *            COD:
- *              summary: Código do produto
+ *              description: Código do produto
  *              type: string
  *            ATIVO:
- *              summary: Ativo?
+ *              description: Ativo?
  *              type: boolean
  *            FORMULADO:
- *              summary:  Formulado?
+ *              description:  Formulado?
  *              type: boolean
  *            DESCRICAO:
- *              summary: Descrição
+ *              description: Descrição
  *              type: string
  *            FAMILIA:
- *              summary: Família
+ *              description: Família
  *              type: integer
  *            UND:
- *              summary: Unidade
+ *              description: Unidade
  *              type: string
  *            COD_BARRAS:
- *              summary: Código de barras
+ *              description: Código de barras
  *              type: string
  *            NCM:
- *              summary: NCM
+ *              description: NCM
  *              type: string
  *            PRECO_VENDA:
- *              summary: Preço de venda
+ *              description: Preço de venda
  *              type: number
  *            PRECO_CUSTO:
- *              summary: Preço de custo
+ *              description: Preço de custo
  *              type: number
  *            PRECO_PORCENTAGEM:
- *              summary: Porcentagem de lucro
+ *              description: Porcentagem de lucro
  *              type: number
  *            COMISSAO:
- *              summary: Comissão
+ *              description: Comissão
  *              type: number
  *            FORNECEDOR:
- *              summary: Fornecedor padrão
+ *              description: Fornecedor padrão
  *              type: integer
  *            MARCA:
- *              summary: Marca
+ *              description: Marca
  *              type: string
  *            ALIQ_ICMS:
- *              summary: Alíquota ICMS
+ *              description: Alíquota ICMS
  *              type: number
  *            ALIQ_IPI:
- *              summary: Alíquota IPI
+ *              description: Alíquota IPI
  *              type: number
  *            ALIQ_ISS:
- *              summary: Alíquota ISS
+ *              description: Alíquota ISS
  *              type: number
  *            ALIQ_FECP:
- *              summary: Alíquota FECP
+ *              description: Alíquota FECP
  *              type: number
  *            REDUCAO_INSS:
- *              summary: Redução INSS
+ *              description: Redução INSS
  *              type: number
  *            REDUCAO_IRRF:
- *              summary: Redução IRRF
+ *              description: Redução IRRF
  *              type: number
  *            REDUCAO_PIS:
- *              summary: Redução PIS
+ *              description: Redução PIS
  *              type: number
  *            REDUCAO_COFINS:
- *              summary: Redução COFINS
+ *              description: Redução COFINS
  *              type: number
  *            PERC_CSLL:
- *              summary: Perc. CSLL
+ *              description: Perc. CSLL
  *              type: number
  *            PERC_COFINS:
- *              summary: Perc. COFINS
+ *              description: Perc. COFINS
  *              type: number
  *            PERC_PIS:
- *              summary: Perc. PIS
+ *              description: Perc. PIS
  *              type: number
  *            CNAE:
- *              summary: Código CNAE
+ *              description: Código CNAE
  *              type: string
  *            PESSO_BRUTO:
- *              summary: Pesso bruto
+ *              description: Pesso bruto
  *              type: number
  *    responses:
  *      '200':
@@ -280,85 +280,85 @@ router.post(
  *          type: object
  *          properties:
  *            COD:
- *              summary: Código do produto
+ *              description: Código do produto
  *              type: string
  *            ATIVO:
- *              summary: Ativo?
+ *              description: Ativo?
  *              type: boolean
  *            FORMULADO:
- *              summary:  Formulado?
+ *              description:  Formulado?
  *              type: boolean
  *            DESCRICAO:
- *              summary: Descrição
+ *              description: Descrição
  *              type: string
  *            FAMILIA:
- *              summary: Família
+ *              description: Família
  *              type: integer
  *            UND:
- *              summary: Unidade
+ *              description: Unidade
  *              type: string
  *            COD_BARRAS:
- *              summary: Código de barras
+ *              description: Código de barras
  *              type: string
  *            NCM:
- *              summary: NCM
+ *              description: NCM
  *              type: string
  *            PRECO_VENDA:
- *              summary: Preço de venda
+ *              description: Preço de venda
  *              type: number
  *            PRECO_CUSTO:
- *              summary: Preço de custo
+ *              description: Preço de custo
  *              type: number
  *            PRECO_PORCENTAGEM:
- *              summary: Porcentagem de lucro
+ *              description: Porcentagem de lucro
  *              type: number
  *            COMISSAO:
- *              summary: Comissão
+ *              description: Comissão
  *              type: number
  *            FORNECEDOR:
- *              summary: Fornecedor padrão
+ *              description: Fornecedor padrão
  *              type: integer
  *            MARCA:
- *              summary: Marca
+ *              description: Marca
  *              type: string
  *            ALIQ_ICMS:
- *              summary: Alíquota ICMS
+ *              description: Alíquota ICMS
  *              type: number
  *            ALIQ_IPI:
- *              summary: Alíquota IPI
+ *              description: Alíquota IPI
  *              type: number
  *            ALIQ_ISS:
- *              summary: Alíquota ISS
+ *              description: Alíquota ISS
  *              type: number
  *            ALIQ_FECP:
- *              summary: Alíquota FECP
+ *              description: Alíquota FECP
  *              type: number
  *            REDUCAO_INSS:
- *              summary: Redução INSS
+ *              description: Redução INSS
  *              type: number
  *            REDUCAO_IRRF:
- *              summary: Redução IRRF
+ *              description: Redução IRRF
  *              type: number
  *            REDUCAO_PIS:
- *              summary: Redução PIS
+ *              description: Redução PIS
  *              type: number
  *            REDUCAO_COFINS:
- *              summary: Redução COFINS
+ *              description: Redução COFINS
  *              type: number
  *            PERC_CSLL:
- *              summary: Perc. CSLL
+ *              description: Perc. CSLL
  *              type: number
  *            PERC_COFINS:
- *              summary: Perc. COFINS
+ *              description: Perc. COFINS
  *              type: number
  *            PERC_PIS:
- *              summary: Perc. PIS
+ *              description: Perc. PIS
  *              type: number
  *            CNAE:
- *              summary: Código CNAE
+ *              description: Código CNAE
  *              type: string
  *            PESSO_BRUTO:
- *              summary: Pesso bruto
+ *              description: Pesso bruto
  *              type: number
  *    responses:
  *      '200':

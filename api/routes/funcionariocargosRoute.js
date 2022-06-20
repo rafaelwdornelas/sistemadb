@@ -119,13 +119,13 @@ router.get("/funcionariocargos/:id", JWTController.Verifica, Controller.pega);
  *          type: object
  *          properties:
  *            FUNCG_NOME:
- *              summary: Nome do Cargo
+ *              description: Nome do Cargo
  *              type: string
  *            FUNCG_GRUPO:
- *              summary: id do Grupo de Funcionários
+ *              description: id do Grupo de Funcionários
  *              type: integer
  *            FUNCG_SALARIO:
- *              summary: salario do Cargo padrão
+ *              description: salario do Cargo padrão
  *              type: number
  *    responses:
  *      '200':
@@ -193,13 +193,13 @@ router.post(
  *          type: object
  *          properties:
  *            FUNCG_NOME:
- *              summary: Nome do Cargo
+ *              description: Nome do Cargo
  *              type: string
  *            FUNCG_GRUPO:
- *              summary: id do Grupo de Funcionários
+ *              description: id do Grupo de Funcionários
  *              type: integer
  *            FUNCG_SALARIO:
- *              summary: salario do Cargo
+ *              description: salario do Cargo
  *              type: number
  *    responses:
  *      '200':

@@ -41,7 +41,7 @@ router.get("/cnaes", CnaesController.pegaTodos);
  *          type: object
  *          properties:
  *            busca:
- *              summary: string para busca
+ *              description: string para busca
  *              type: string
  *              example: "BRA"
  *    responses:

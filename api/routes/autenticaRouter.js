@@ -29,10 +29,10 @@ const moduloglobais = new globais();
  *          type: object
  *          properties:
  *            USERNAME:
- *              summary: Nome de usuário
+ *              description: Nome de usuário
  *              type: string
  *            SENHA:
- *              summary: Senha do usuário
+ *              description: Senha do usuário
  *              type: string
  *    responses:
  *      '200':

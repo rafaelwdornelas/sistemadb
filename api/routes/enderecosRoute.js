@@ -130,46 +130,46 @@ router.get("/enderecos/:id", JWTController.Verifica, Controller.pega);
  *          type: object
  *          properties:
  *            END_CLI:
- *              summary: Código do Cliente
+ *              description: Código do Cliente
  *              type: integer
  *            END_TIPO:
- *              summary: 1 - Principal , 2 - Cobrança , 3 - Entrega
+ *              description: 1 - Principal , 2 - Cobrança , 3 - Entrega
  *              type: integer
  *            END_CEP:
- *              summary: CEP 10 digitos
+ *              description: CEP 10 digitos
  *              type: string
  *            END_RUA:
- *              summary: Rua
+ *              description: Rua
  *              type: string
  *            END_NUMERO:
- *              summary: Numero
+ *              description: Numero
  *              type: integer
  *            END_BAIRRO:
- *              summary: Bairro
+ *              description: Bairro
  *              type: string
  *            END_EST:
- *              summary: Estado (UF)
+ *              description: Estado (UF)
  *              type: string
  *            END_MUNICIPIO:
- *              summary: Município
+ *              description: Município
  *              type: string
  *            END_COMP:
- *              summary: Complemento
+ *              description: Complemento
  *              type: string
  *            END_CODMUN:
- *              summary: Código do Município (IBGE)
+ *              description: Código do Município (IBGE)
  *              type: string
  *            END_REFERENCIA:
- *              summary: Ponto de Referência
+ *              description: Ponto de Referência
  *              type: string
  *            END_REGIAO:
- *              summary: código da região do cliente
+ *              description: código da região do cliente
  *              type: string
  *            END_CPAIS:
- *              summary: Código do País
+ *              description: Código do País
  *              type: string
  *            END_NCPAIS:
- *              summary: Nome do País
+ *              description: Nome do País
  *              type: string
  *    responses:
  *      '200':
@@ -237,46 +237,46 @@ router.post(
  *          type: object
  *          properties:
  *            END_CLI:
- *              summary: Código do Cliente
+ *              description: Código do Cliente
  *              type: integer
  *            END_TIPO:
- *              summary: 1 - Principal , 2 - Cobrança , 3 - Entrega
+ *              description: 1 - Principal , 2 - Cobrança , 3 - Entrega
  *              type: integer
  *            END_CEP:
- *              summary: CEP 10 digitos
+ *              description: CEP 10 digitos
  *              type: string
  *            END_RUA:
- *              summary: Rua
+ *              description: Rua
  *              type: string
  *            END_NUMERO:
- *              summary: Numero
+ *              description: Numero
  *              type: integer
  *            END_BAIRRO:
- *              summary: Bairro
+ *              description: Bairro
  *              type: string
  *            END_EST:
- *              summary: Estado (UF)
+ *              description: Estado (UF)
  *              type: string
  *            END_MUNICIPIO:
- *              summary: Município
+ *              description: Município
  *              type: string
  *            END_COMP:
- *              summary: Complemento
+ *              description: Complemento
  *              type: string
  *            END_CODMUN:
- *              summary: Código do Município (IBGE)
+ *              description: Código do Município (IBGE)
  *              type: string
  *            END_REFERENCIA:
- *              summary: Ponto de Referência
+ *              description: Ponto de Referência
  *              type: string
  *            END_REGIAO:
- *              summary: código da região do cliente
+ *              description: código da região do cliente
  *              type: string
  *            END_CPAIS:
- *              summary: Código do País
+ *              description: Código do País
  *              type: string
  *            END_NCPAIS:
- *              summary: Nome do País
+ *              description: Nome do País
  *              type: string
  *    responses:
  *      '200':

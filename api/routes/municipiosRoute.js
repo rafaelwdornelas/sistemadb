@@ -28,7 +28,7 @@ const router = Router();
  *          type: object
  *          properties:
  *            uf:
- *              summary: uf que deseja buscar todos Municipíos
+ *              description: uf que deseja buscar todos Municipíos
  *              type: string
  *              example: SP
  *    responses:
@@ -55,19 +55,19 @@ router.post("/municipios", MunicipiosController.pegaTodos);
  *          type: object
  *          properties:
  *            uf:
- *              summary: uf que deseja buscar os Municipíos
+ *              description: uf que deseja buscar os Municipíos
  *              type: string
  *              example: SP
  *            busca:
- *              summary: string para busca
+ *              description: string para busca
  *              type: string
  *              example: "CON"
  *            inicio:
- *              summary: inicio do index da paginação
+ *              description: inicio do index da paginação
  *              type: integer
  *              example: 0
  *            limit:
- *              summary: limite de registros da paginação
+ *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
  *    responses:

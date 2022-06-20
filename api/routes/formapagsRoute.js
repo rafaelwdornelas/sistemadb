@@ -69,25 +69,25 @@ router.get("/formapags/:id", JWTController.Verifica, Controller.pega);
  *          type: object
  *          properties:
  *            PAG_NOME:
- *              summary: Nome da Forma de Pagamento
+ *              description: Nome da Forma de Pagamento
  *              type: string
  *            PAG_ATIVO:
- *              summary: true - Ativo , false - Inativo
+ *              description: true - Ativo , false - Inativo
  *              type: boolean
  *            PAG_TIPO:
- *              summary: 1 - Boleto , 2 - Cartão de Crédito , 3 - Cartão de Débito , 4 - Dinheiro
+ *              description: 1 - Boleto , 2 - Cartão de Crédito , 3 - Cartão de Débito , 4 - Dinheiro
  *              type: string
  *            PAG_FDIAS:
- *              summary: Formula de dias de vencimento
+ *              description: Formula de dias de vencimento
  *              type: string
  *            PAG_FPORCENTAGEM:
- *              summary: Formula porcentagem do valor total do pedido
+ *              description: Formula porcentagem do valor total do pedido
  *              type: string
  *            PAG_DESCONTO:
- *              summary: Desconto em porcentagem do valor total
+ *              description: Desconto em porcentagem do valor total
  *              type: float
  *            PAG_ACRESSIMO:
- *              summary: Acréscimo em porcentagem do valor total
+ *              description: Acréscimo em porcentagem do valor total
  *              type: float
  *    responses:
  *      '200':
@@ -126,25 +126,25 @@ router.post(
  *          type: object
  *          properties:
  *            PAG_NOME:
- *              summary: Nome da Forma de Pagamento
+ *              description: Nome da Forma de Pagamento
  *              type: string
  *            PAG_ATIVO:
- *              summary: true - Ativo , false - Inativo
+ *              description: true - Ativo , false - Inativo
  *              type: boolean
  *            PAG_TIPO:
- *              summary: 1 - Boleto , 2 - Cartão de Crédito , 3 - Cartão de Débito , 4 - Dinheiro
+ *              description: 1 - Boleto , 2 - Cartão de Crédito , 3 - Cartão de Débito , 4 - Dinheiro
  *              type: string
  *            PAG_FDIAS:
- *              summary: Formula de dias de vencimento
+ *              description: Formula de dias de vencimento
  *              type: string
  *            PAG_FPORCENTAGEM:
- *              summary: Formula porcentagem do valor total do pedido
+ *              description: Formula porcentagem do valor total do pedido
  *              type: string
  *            PAG_DESCONTO:
- *              summary: Desconto em porcentagem do valor total
+ *              description: Desconto em porcentagem do valor total
  *              type: float
  *            PAG_ACRESSIMO:
- *              summary: Acréscimo em porcentagem do valor total
+ *              description: Acréscimo em porcentagem do valor total
  *              type: float
  *    responses:
  *      '200':

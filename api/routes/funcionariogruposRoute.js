@@ -119,10 +119,10 @@ router.get("/funcionariogrupos/:id", JWTController.Verifica, Controller.pega);
  *          type: object
  *          properties:
  *            FUNGR_NOME:
- *              summary: Nome do grupo
+ *              description: Nome do grupo
  *              type: string
  *            FUNGR_LOJA:
- *              summary: id da loja do grupo
+ *              description: id da loja do grupo
  *              type: integer
  *    responses:
  *      '200':
@@ -190,10 +190,10 @@ router.post(
  *          type: object
  *          properties:
  *            FUNGR_NOME:
- *              summary: Nome do grupo
+ *              description: Nome do grupo
  *              type: string
  *            FUNGR_LOJA:
- *              summary: id da loja do grupo
+ *              description: id da loja do grupo
  *              type: integer
  *    responses:
  *      '200':

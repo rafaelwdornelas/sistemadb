@@ -119,7 +119,7 @@ router.get("/prodfamilias/:id", JWTController.Verifica, Controller.pega);
  *          type: object
  *          properties:
  *            PROD_NOME:
- *              summary: Nome da família
+ *              description: Nome da família
  *              type: string
  *    responses:
  *      '200':
@@ -187,7 +187,7 @@ router.post(
  *          type: object
  *          properties:
  *            PROD_NOME:
- *              summary: Nome da família
+ *              description: Nome da família
  *              type: string
  *    responses:
  *      '200':
