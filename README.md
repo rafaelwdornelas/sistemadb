@@ -37,7 +37,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Produtos Estoques
 - [x] Produtos Armazens
 - [x] Produtos
-- [ ] Fornecedor Códigos de Produtos Link
+- [x] Fornecedor Códigos de Produtos Link
 - [ ] Tabela de Preços
 - [ ] ...
 
