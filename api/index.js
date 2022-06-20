@@ -6,6 +6,7 @@ const swaggerJsDoc = require("swagger-jsdoc");
 const helmet = require("helmet");
 const path = require("path");
 const app = express();
+const fs = require("fs");
 const port = process.env.PORT || 3000;
 const { globais } = require("./modules");
 const moduloglobais = new globais();
@@ -65,7 +66,12 @@ app.get("/api-docs.json", (req, res) => {
 });
 
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname + "/documentation.html"));
+  let html = fs.readFileSync(
+    path.join(__dirname + "/documentation.html"),
+    "utf8"
+  );
+  html = html.replace("{{server}}", req.hostname);
+  res.send(html);
 });
 
 const allowCrossDomain = async (req, res, next) => {
