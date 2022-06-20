@@ -14,10 +14,25 @@ const router = Router();
 /**
  * @openapi
  * /fornecedornotalinks:
- *  get:
+ *  post:
  *    summary: Todos
  *    description: Pega todos links entre código do produto interno e código do produto da nota
  *    tags: [Fornecedor Nota Links]
+ *    requestBody:
+ *      required: true
+ *      content:
+ *       application/json:
+ *        schema:
+ *          type: object
+ *          properties:
+ *            inicio:
+ *              summary: inicio do index da paginação
+ *              type: integer
+ *              example: 0
+ *            limit:
+ *              summary: limite de registros da paginação
+ *              type: integer
+ *              example: 10
  *    responses:
  *      '200':
  *        description: Uma resposta bem-sucedida
@@ -27,10 +42,54 @@ const router = Router();
  *        description: Unauthorized
  *
  */
-router.get(
+router.post(
   "/fornecedornotalinks",
   JWTController.Verifica,
   Controller.pegaTodos
+);
+
+/**
+ * @openapi
+ * /fornecedornotalinks/fornecedor/{id}:
+ *  post:
+ *    summary: Todos por fornecedor
+ *    description: Pega todos links de um fornecedor especifico
+ *    tags: [Fornecedor Nota Links]
+ *    parameters:
+ *      - name: id
+ *        description: Informe o ID do fornecedor.
+ *        required: true
+ *        in: path
+ *        schema:
+ *         type: integer
+ *    requestBody:
+ *      required: true
+ *      content:
+ *       application/json:
+ *        schema:
+ *          type: object
+ *          properties:
+ *            inicio:
+ *              summary: inicio do index da paginação
+ *              type: integer
+ *              example: 0
+ *            limit:
+ *              summary: limite de registros da paginação
+ *              type: integer
+ *              example: 10
+ *    responses:
+ *      '200':
+ *        description: Uma resposta bem-sucedida
+ *      '500':
+ *        description: Uma resposta de erro
+ *      '401':
+ *        description: Unauthorized
+ *
+ */
+router.post(
+  "/fornecedornotalinks/fornecedor/:id",
+  JWTController.Verifica,
+  Controller.pegaTodosfornecedor
 );
 
 /**

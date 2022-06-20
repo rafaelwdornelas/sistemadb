@@ -10,9 +10,45 @@ class FornecedorNotaLinksController {
       const retorno = {
         sucesso: true,
         ...(await fornecedornotalinksServices.pegaTodosOsRegistrosPaginacao({
-          offset: 0,
-          limit: 1000,
+          offset: req.body.inicio,
+          limit: req.body.limit,
         })),
+      };
+      moduloglobais.log(
+        "API: fornecedornotalinksServices.pegaTodosOsRegistrosPaginacao",
+        "info"
+      );
+      return res.status(200).json(retorno);
+    } catch (error) {
+      let retorno = {
+        sucesso: false,
+        msg: error.message,
+      };
+      console.log(error);
+      moduloglobais.log(
+        "API: fornecedornotalinksServices.pegaTodosOsRegistrosPaginacao ERROR: " +
+          error.message,
+        "error"
+      );
+      return res.status(500).json(retorno);
+    }
+  }
+
+  static async pegaTodosfornecedor(req, res) {
+    try {
+      const { id } = req.params;
+      const where = {
+        FORNECEDOR: id,
+      };
+      const retorno = {
+        sucesso: true,
+        ...(await fornecedornotalinksServices.pegaTodosOsRegistrosWherePaginacao(
+          where,
+          {
+            offset: req.body.inicio,
+            limit: req.body.limit,
+          }
+        )),
       };
       moduloglobais.log(
         "API: fornecedornotalinksServices.pegaTodosOsRegistrosPaginacao",
