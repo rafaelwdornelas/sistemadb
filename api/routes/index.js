@@ -20,6 +20,7 @@ const prodfamilias = require("./prodfamiliasRoute");
 const estoques = require("./produtosestoquesRoute");
 const armazens = require("./produtosarmazensRoute");
 const produtos = require("./produtosRoute");
+const fornecedornotalinks = require("./fornecedornotalinksRoute");
 
 module.exports = (app) => {
   app.use(
@@ -43,6 +44,7 @@ module.exports = (app) => {
     prodfamilias,
     estoques,
     armazens,
-    produtos
+    produtos,
+    fornecedornotalinks
   );
 };
