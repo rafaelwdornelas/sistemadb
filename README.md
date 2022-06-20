@@ -39,6 +39,12 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Produtos
 - [x] Fornecedor Códigos de Produtos Link
 - [ ] Tabela de Preços
+- [ ] Pedido Cabeçalho
+- [ ] Pedido Itens
+- [ ] Nota Cabeçalho
+- [ ] Nota Itens
+- [ ] Cotação Cabeçalho
+- [ ] Cotação Itens
 - [ ] ...
 
 ## 💻 Pré-requisitos
