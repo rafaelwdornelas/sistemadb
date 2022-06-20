@@ -16,7 +16,8 @@ const swaggerDefinition = {
   info: {
     title: "CoreByte ERP  - DB",
     version: "1.0.0",
-    description: "Documentação da API do CoreByte ERP - DB",
+    description:
+      "Documentação da API do CoreByte ERP - DB\n\n## Cabeçalhos\n#### Token de Autenticação\nCom `Secret Key` você consegue <a href='#post-/login'>realizar o login</a> em nossa api para obter o `Bearer` de autenticação. Ele é obrigatório em todas as rotas autenticadas.\n\nExemplo de um **header**:\n \nAuthorization: Bearer {BEARER_TOKEN}\n \nCódigos de Respostas\nNossa API usa como retorno os códigos HTTP padrão para indicar tanto o sucesso de uma requisição, quanto para indicar falha. Segue:\n\n| CODE  |                               |\n|-------|-------------------------------|\n| `200` | Função executada com sucesso  |\n| `400` | Solicitação inválida          |\n| `401` | Usuário não autenticado       |\n| `403` | Usuário sem permissão         |\n| `404` | Solicitação indisponível      |\n| `500` | Erro interno do servidor      |\n\n",
     contact: {
       name: "CoreByte ERP",
       url: "https://www.corebyteerp.com.br",
