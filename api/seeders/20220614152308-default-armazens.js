@@ -17,6 +17,6 @@ module.exports = {
   },
 
   async down(queryInterface) {
-    await queryInterface.bulkDelete("ARMAZENS", null, {});
+    await queryInterface.bulkDelete("ARMAZENS", null, { truncate: true });
   },
 };

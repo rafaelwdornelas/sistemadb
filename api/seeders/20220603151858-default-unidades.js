@@ -3,7 +3,8 @@
 module.exports = {
   async up(queryInterface) {
     await queryInterface.bulkInsert(
-      "UNIDADES", [
+      "UNIDADES",
+      [
         { UN_CODIGO: "AR", UN_DESCRICAO: "ARROBA" },
         { UN_CODIGO: "BD", UN_DESCRICAO: "BALDE" },
         { UN_CODIGO: "CM", UN_DESCRICAO: "CENTIMETRO" },
@@ -36,11 +37,12 @@ module.exports = {
         { UN_CODIGO: "PL", UN_DESCRICAO: "POLEGADAS" },
         { UN_CODIGO: "YD", UN_DESCRICAO: "JARDA" },
         { UN_CODIGO: "UN", UN_DESCRICAO: "UNIDADE" },
-      ], {}
+      ],
+      {}
     );
   },
 
   async down(queryInterface) {
-    await queryInterface.bulkDelete("UNIDADES", null, {});
+    await queryInterface.bulkDelete("UNIDADES", null, { truncate: true });
   },
 };
