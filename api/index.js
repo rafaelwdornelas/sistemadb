@@ -49,7 +49,7 @@ const swaggerDefinition = {
 app.get("/api-docs.json", (req, res) => {
   swaggerDefinition.servers = [
     {
-      url: `http://${req.hostname}:37778`,
+      url: `http://${req.hostname}:${port}`,
       description: "CoreByte ERP",
     },
   ];
@@ -68,7 +68,7 @@ app.get("/api-docs", function (req, res) {
     path.join(__dirname + "/documentation.html"),
     "utf8"
   );
-  html = html.replace("{{server}}", req.hostname);
+  html = html.replace("{{server}}", `http://${req.hostname}:${port}`);
   res.send(html);
 });
 
