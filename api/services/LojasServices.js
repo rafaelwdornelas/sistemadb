@@ -8,7 +8,9 @@ class LojasServices extends Services {
   }
 
   async adicionalicenca(id, dias) {
-    let lojainfos = await database[this.nomeDoModelo].findOne({ id: id });
+    let lojainfos = await database[this.nomeDoModelo].findOne({
+      where: { id: id },
+    });
     if (lojainfos) {
       lojainfos = lojainfos.dataValues;
       const hoje = new Date();
@@ -21,7 +23,10 @@ class LojasServices extends Services {
       dados = JSON.stringify(dados);
       let LICENCADEUSO = await modulocrypto.encrypt(dados);
       if (LICENCADEUSO) {
-        let retornoupdate = await database[this.nomeDoModelo].update({ LJ_LICENCADEUSO: LICENCADEUSO }, { where: { id: id } });
+        let retornoupdate = await database[this.nomeDoModelo].update(
+          { LJ_LICENCADEUSO: LICENCADEUSO },
+          { where: { id: id } }
+        );
         if (retornoupdate == 1) {
           return true;
         } else {
@@ -36,7 +41,9 @@ class LojasServices extends Services {
   }
 
   async verificalicenca(id) {
-    let lojainfos = await database[this.nomeDoModelo].findOne({ id: id });
+    let lojainfos = await database[this.nomeDoModelo].findOne({
+      where: { id: id },
+    });
     if (lojainfos) {
       lojainfos = lojainfos.dataValues;
       let licenca = lojainfos.LJ_LICENCADEUSO;
@@ -46,16 +53,18 @@ class LojasServices extends Services {
         let hoje = new Date();
         hoje = hoje.getTime();
         var d = new Date(LICENCADEUSO.DataLimite),
-          dformat = [
-            (d.getMonth() + 1).toString().padStart(2, "0"),
-            d.getDate().toString().padStart(2, "0"),
-            d.getFullYear(),
-          ].join("/") +
-                    " " + [
-            d.getHours().toString().padStart(2, "0"),
-            d.getMinutes().toString().padStart(2, "0"),
-            d.getSeconds().toString().padStart(2, "0"),
-          ].join(":");
+          dformat =
+            [
+              (d.getMonth() + 1).toString().padStart(2, "0"),
+              d.getDate().toString().padStart(2, "0"),
+              d.getFullYear(),
+            ].join("/") +
+            " " +
+            [
+              d.getHours().toString().padStart(2, "0"),
+              d.getMinutes().toString().padStart(2, "0"),
+              d.getSeconds().toString().padStart(2, "0"),
+            ].join(":");
         if (hoje > LICENCADEUSO.DataLimite) {
           LICENCADEUSO.validade = "Licença Vencida";
         } else {
