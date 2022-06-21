@@ -17,6 +17,7 @@ const ProdutosServices = require("./ProdutosServices");
 const EstoquesServices = require("./EstoquesServices");
 const ArmazensServices = require("./ArmazensServices");
 const FornecedornotalinksServices = require("./FornecedornotalinksServices");
+const CfopsServices = require("./CfopsServices");
 
 module.exports = {
   ClientesServices: ClientesServices,
@@ -38,4 +39,5 @@ module.exports = {
   EstoquesServices: EstoquesServices,
   ArmazensServices: ArmazensServices,
   FornecedornotalinksServices: FornecedornotalinksServices,
+  CfopsServices: CfopsServices,
 };

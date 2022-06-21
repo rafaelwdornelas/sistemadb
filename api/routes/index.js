@@ -21,6 +21,7 @@ const estoques = require("./produtosestoquesRoute");
 const armazens = require("./produtosarmazensRoute");
 const produtos = require("./produtosRoute");
 const fornecedornotalinks = require("./fornecedornotalinksRoute");
+const cfops = require("./cfopsRoute");
 
 module.exports = (app) => {
   app.use(
@@ -45,6 +46,7 @@ module.exports = (app) => {
     estoques,
     armazens,
     produtos,
-    fornecedornotalinks
+    fornecedornotalinks,
+    cfops
   );
 };
