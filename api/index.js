@@ -63,7 +63,7 @@ app.get("/api-docs.json", (req, res) => {
   res.send(swaggerDocs);
 });
 
-app.get("/", function (req, res) {
+app.get("/api-docs", function (req, res) {
   let html = fs.readFileSync(
     path.join(__dirname + "/documentation.html"),
     "utf8"

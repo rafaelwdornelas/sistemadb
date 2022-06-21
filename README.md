@@ -90,6 +90,6 @@ yarn start
 
 ## 💻 Acessar a Documentação local da API:
 
-http://localhost:37778/
+http://localhost:37778/api-docs
 
-[![Documentação](https://img.shields.io/badge/Manual-999999?style=for-the-badge&logo=BookStack&logoColor=white)](http://localhost:37778/)
+[![Documentação](https://img.shields.io/badge/Manual-999999?style=for-the-badge&logo=BookStack&logoColor=white)](http://localhost:37778/api-docs)
