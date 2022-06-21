@@ -1,8 +1,4 @@
-/* eslint-disable quotes */
-/* eslint-disable no-irregular-whitespace */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-prototype-builtins */
-/* eslint-disable indent */
+/* eslint-disable */
 /*! RapiDoc 9.3.2 | Author - Mrinmoy Majumdar | License information can be found in rapidoc-min.js.LICENSE.txt  */
 (() => {
   var e,
@@ -26070,7 +26066,7 @@ PREENCHER EXEMPLO
                 this.matchPaths
                   ? B`
                   <button @click = '${this.onClearSearch}' class="m-btn thin-border" style="margin-left:5px; color:var(--nav-text-color); width:75px; padding:6px 8px;" part="btn btn-outline btn-clear-filter">
-                    CLEAR
+                    LIMPAR
                   </button>`
                   : ""
               }
@@ -26081,7 +26077,7 @@ PREENCHER EXEMPLO
               ? ""
               : B`
               <button class="m-btn primary" part="btn btn-fill btn-search" style="margin-left:5px; padding:6px 8px; width:75px" @click="${this.onShowSearchModalClicked}">
-                SEARCH
+                BUSCAR
               </button>
             `
           }
