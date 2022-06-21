@@ -19,11 +19,19 @@ const router = Router();
  *    summary: Todos
  *    description: Pega todos os Familias com Paginação
  *    tags: [CliFamilias]
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -37,11 +45,19 @@ router.get("/clifamilias", JWTController.Verifica, Controller.pegaTodos);
  *    summary: Todos apagados
  *    description: Retorna todas as Familias Apagadas
  *    tags: [CliFamilias]
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -67,11 +83,19 @@ router.get(
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -96,11 +120,19 @@ router.get(
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -131,11 +163,19 @@ router.get("/clifamilias/:id", JWTController.Verifica, Controller.pega);
  *              description: Família Restrita para Moviventação?
  *              type: boolean
  *              example: false
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -160,11 +200,19 @@ router.post(
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -206,11 +254,19 @@ router.post(
  *              description: Família Restrita para Moviventação?
  *              type: boolean
  *              example: false
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -235,11 +291,19 @@ router.put(
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -277,11 +341,19 @@ router.delete(
  *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *

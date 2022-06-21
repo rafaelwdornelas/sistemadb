@@ -33,11 +33,19 @@ const router = Router();
  *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -51,11 +59,19 @@ router.post("/produtos", JWTController.Verifica, Controller.pegaTodos);
  *    summary: Todos apagados
  *    description: Retorna todos produtos apagadas
  *    tags: [Produtos]
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -81,11 +97,19 @@ router.get(
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -110,11 +134,19 @@ router.get(
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -216,11 +248,19 @@ router.get("/produtos/:id", JWTController.Verifica, Controller.pega);
  *            PESSO_BRUTO:
  *              description: Pesso bruto
  *              type: number
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -245,11 +285,19 @@ router.post(
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -362,11 +410,19 @@ router.post(
  *            PESSO_BRUTO:
  *              description: Pesso bruto
  *              type: number
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -391,11 +447,19 @@ router.put(
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *

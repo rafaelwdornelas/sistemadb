@@ -33,11 +33,19 @@ const router = Router();
  *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -59,11 +67,19 @@ router.post("/estoques", JWTController.Verifica, Controller.pegaTodos);
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -102,11 +118,19 @@ router.get("/estoques/:id", JWTController.Verifica, Controller.pega);
  *            LOTE:
  *              description: Lote do produto
  *              type: string
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -157,11 +181,19 @@ router.post(
  *            LOTE:
  *              description: Lote do produto
  *              type: string
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -186,11 +218,19 @@ router.put(
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -217,11 +257,19 @@ router.delete(
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -254,11 +302,19 @@ router.get(
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -284,11 +340,19 @@ router.get(
  *        in: path
  *        schema:
  *         type: string
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -321,11 +385,19 @@ router.get(
  *        in: path
  *        schema:
  *         type: string
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -359,11 +431,19 @@ router.get(
  *            quantidade:
  *              description: Quantidade do estoque de produto
  *              type: number
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *

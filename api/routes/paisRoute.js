@@ -17,11 +17,19 @@ const router = Router();
  *    description: |
  *      Pega todos Países com Paginação
  *    tags: [País]
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *
  */
 router.get("/pais", PaisController.pegaTodos);
@@ -44,11 +52,19 @@ router.get("/pais", PaisController.pegaTodos);
  *              description: string para busca
  *              type: string
  *              example: "BRA"
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *
  */
 router.post("/pais/busca", PaisController.buscaRegistroCount);

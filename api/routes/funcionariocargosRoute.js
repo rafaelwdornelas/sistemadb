@@ -18,11 +18,19 @@ const router = Router();
  *    summary: Todos
  *    description: Pega todos cargos de Funcionarios
  *    tags: [Funcionario Cargos]
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -36,11 +44,19 @@ router.get("/funcionariocargos", JWTController.Verifica, Controller.pegaTodos);
  *    summary: Todos apagados
  *    description: Retorna todos os cargos apagados
  *    tags: [Funcionario Cargos]
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -66,11 +82,19 @@ router.get(
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -95,11 +119,19 @@ router.get(
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -129,11 +161,19 @@ router.get("/funcionariocargos/:id", JWTController.Verifica, Controller.pega);
  *            FUNCG_SALARIO:
  *              description: salario do Cargo padrão
  *              type: number
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -158,11 +198,19 @@ router.post(
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -203,11 +251,19 @@ router.post(
  *            FUNCG_SALARIO:
  *              description: salario do Cargo
  *              type: number
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *
@@ -232,11 +288,19 @@ router.put(
  *        in: path
  *        schema:
  *         type: integer
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *      '401':
  *        description: Unauthorized
  *

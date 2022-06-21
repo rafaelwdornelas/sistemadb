@@ -13,7 +13,7 @@
 ### API:
 
 - Criação de uma API utilizando a biblioteca express, com controle de acesso por token JWT.
-- Documentação da API utilizando o componente Swagger.
+- Documentação da API utilizando o componente Rapi-Doc.
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 

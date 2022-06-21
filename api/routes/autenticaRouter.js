@@ -36,9 +36,17 @@ const moduloglobais = new globais();
  *              type: string
  *    responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  */
 router.post("/login", async (req, res) => {
   const user = req.body.USERNAME;
@@ -103,11 +111,19 @@ router.post("/login", async (req, res) => {
  *    summary: Informações do usuário
  *    description: Carrega informação do usuário logado
  *    tags: [Autenticação]
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  */
 router.get("/login/auth/me", async (req, res) => {
   const authHeader = req.headers.authorization;
@@ -147,11 +163,19 @@ router.get("/login/auth/me", async (req, res) => {
  *    summary: Atualiza Token
  *    description: Atualizar token de acesso utilizando o refresh token
  *    tags: [Autenticação]
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  */
 router.get("/login/auth/refresh", async (req, res) => {
   const authHeader = req.headers.authorization;

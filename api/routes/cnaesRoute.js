@@ -17,11 +17,19 @@ const router = Router();
  *    description: |
  *      Lista todos os Códigos CNAE
  *    tags: [CNAES]
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *
  */
 router.get("/cnaes", CnaesController.pegaTodos);
@@ -44,11 +52,19 @@ router.get("/cnaes", CnaesController.pegaTodos);
  *              description: string para busca
  *              type: string
  *              example: "BRA"
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *
  */
 router.post("/cnaes/busca", CnaesController.buscaRegistroCount);

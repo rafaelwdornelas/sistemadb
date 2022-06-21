@@ -24,16 +24,7 @@ const swaggerDefinition = {
       email: "contato@corebyteerp.com.br",
     },
   },
-  servers: [
-    {
-      url: "http://127.0.0.1:37778",
-      description: "Localhost",
-    },
-    {
-      url: "http://207.244.230.240:37778",
-      description: "CoreByte ERP",
-    },
-  ],
+  servers: [],
   termsOfService: "http://swagger.io/terms/",
   schemes: ["http", "https"],
   consumes: ["application/json"],
@@ -55,14 +46,20 @@ const swaggerDefinition = {
   ],
 };
 
-const options = {
-  swaggerDefinition,
-  apis: ["./api/*.js", "./api/routes/*.js", "./components.yaml"],
-};
-
-const swaggerDocs = swaggerJsDoc(options);
-
 app.get("/api-docs.json", (req, res) => {
+  swaggerDefinition.servers = [
+    {
+      url: `http://${req.hostname}:37778`,
+      description: "CoreByte ERP",
+    },
+  ];
+  const options = {
+    swaggerDefinition,
+    apis: ["./api/*.js", "./api/routes/*.js", "./components.yaml"],
+  };
+
+  const swaggerDocs = swaggerJsDoc(options);
+
   res.send(swaggerDocs);
 });
 

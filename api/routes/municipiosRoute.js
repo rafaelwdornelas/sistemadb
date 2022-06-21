@@ -31,11 +31,19 @@ const router = Router();
  *              description: uf que deseja buscar todos Municipíos
  *              type: string
  *              example: SP
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *
  */
 router.post("/municipios", MunicipiosController.pegaTodos);
@@ -70,11 +78,19 @@ router.post("/municipios", MunicipiosController.pegaTodos);
  *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
- *    responses:
+ *     responses:
  *      '200':
- *        description: Uma resposta bem-sucedida
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
  *      '500':
- *        description: Uma resposta de erro
+ *        description: Erro interno do servidor
  *
  */
 router.post("/municipios/busca", MunicipiosController.buscaRegistroCount);
