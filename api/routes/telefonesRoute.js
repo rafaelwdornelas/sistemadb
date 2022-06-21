@@ -20,7 +20,7 @@ const router = Router();
  *    tags: [Telefones]
  *    parameters:
  *      - name: id
- *        description: Informe cógido do cliente.
+ *        description: Informe cógigo do cliente.
  *        required: true
  *        in: path
  *        schema:
