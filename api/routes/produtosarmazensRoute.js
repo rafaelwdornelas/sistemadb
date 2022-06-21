@@ -18,7 +18,7 @@ const router = Router();
  *    summary: Todos
  *    description: Pega todos Armazens de Produtos
  *    tags: [Produtos Armazens]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -31,8 +31,6 @@ const router = Router();
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get("/armazens", JWTController.Verifica, Controller.pegaTodos);
@@ -44,7 +42,7 @@ router.get("/armazens", JWTController.Verifica, Controller.pegaTodos);
  *    summary: Todos apagados
  *    description: Retorna todos armazens de produtos apagadas
  *    tags: [Produtos Armazens]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -57,8 +55,6 @@ router.get("/armazens", JWTController.Verifica, Controller.pegaTodos);
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get(
@@ -82,7 +78,7 @@ router.get(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -95,8 +91,6 @@ router.get(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get(
@@ -119,7 +113,7 @@ router.get(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -132,8 +126,6 @@ router.get(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get("/armazens/:id", JWTController.Verifica, Controller.pega);
@@ -158,7 +150,7 @@ router.get("/armazens/:id", JWTController.Verifica, Controller.pega);
  *            DESCRICAO:
  *              description: Descrição do armazem de produto
  *              type: string
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -171,8 +163,6 @@ router.get("/armazens/:id", JWTController.Verifica, Controller.pega);
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.post(
@@ -195,7 +185,7 @@ router.post(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -208,8 +198,6 @@ router.post(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.post(
@@ -245,7 +233,7 @@ router.post(
  *            DESCRICAO:
  *              description: Descrição do armazem de produto
  *              type: string
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -258,8 +246,6 @@ router.post(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.put(
@@ -282,7 +268,7 @@ router.put(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -295,8 +281,6 @@ router.put(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.delete(

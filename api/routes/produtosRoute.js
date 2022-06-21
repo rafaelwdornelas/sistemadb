@@ -33,7 +33,7 @@ const router = Router();
  *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -46,8 +46,6 @@ const router = Router();
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.post("/produtos", JWTController.Verifica, Controller.pegaTodos);
@@ -59,7 +57,7 @@ router.post("/produtos", JWTController.Verifica, Controller.pegaTodos);
  *    summary: Todos apagados
  *    description: Retorna todos produtos apagadas
  *    tags: [Produtos]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -72,8 +70,6 @@ router.post("/produtos", JWTController.Verifica, Controller.pegaTodos);
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get(
@@ -97,7 +93,7 @@ router.get(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -110,8 +106,6 @@ router.get(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get(
@@ -134,7 +128,7 @@ router.get(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -147,8 +141,6 @@ router.get(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get("/produtos/:id", JWTController.Verifica, Controller.pega);
@@ -248,7 +240,7 @@ router.get("/produtos/:id", JWTController.Verifica, Controller.pega);
  *            PESSO_BRUTO:
  *              description: Pesso bruto
  *              type: number
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -261,8 +253,6 @@ router.get("/produtos/:id", JWTController.Verifica, Controller.pega);
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.post(
@@ -285,7 +275,7 @@ router.post(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -298,8 +288,6 @@ router.post(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.post(
@@ -410,7 +398,7 @@ router.post(
  *            PESSO_BRUTO:
  *              description: Pesso bruto
  *              type: number
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -423,8 +411,6 @@ router.post(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.put(
@@ -447,7 +433,7 @@ router.put(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -460,8 +446,6 @@ router.put(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.delete(

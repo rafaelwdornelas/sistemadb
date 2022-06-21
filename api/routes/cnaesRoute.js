@@ -17,7 +17,7 @@ const router = Router();
  *    description: |
  *      Lista todos os Códigos CNAE
  *    tags: [CNAES]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -52,7 +52,7 @@ router.get("/cnaes", CnaesController.pegaTodos);
  *              description: string para busca
  *              type: string
  *              example: "BRA"
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':

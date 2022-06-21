@@ -19,7 +19,7 @@ const moduloglobais = new globais();
  *    summary: Criar database
  *    description: Cria o banco de dados conforme configuração enviroment
  *    tags: [Banco de Dados]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -32,8 +32,6 @@ const moduloglobais = new globais();
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get("/bancodedados/create", JWTController.Verifica, async (req, res) => {
@@ -72,7 +70,7 @@ router.get("/bancodedados/create", JWTController.Verifica, async (req, res) => {
  *    summary: Apaga database
  *    description: Apaga o banco de dados atual
  *    tags: [Banco de Dados]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -85,8 +83,6 @@ router.get("/bancodedados/create", JWTController.Verifica, async (req, res) => {
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get("/bancodedados/delete", JWTController.Verifica, async (req, res) => {
@@ -125,7 +121,7 @@ router.get("/bancodedados/delete", JWTController.Verifica, async (req, res) => {
  *    summary: Cria Tabelas
  *    description: Cria as tabelas do banco de dados ou atualiza as tabelas para a nova versão
  *    tags: [Banco de Dados]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -138,8 +134,6 @@ router.get("/bancodedados/delete", JWTController.Verifica, async (req, res) => {
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get(
@@ -182,7 +176,7 @@ router.get(
  *    summary: Alimenta Tabelas
  *    description: Carrega os dados iniciais das tabelas do banco de dados
  *    tags: [Banco de Dados]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -195,8 +189,6 @@ router.get(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get(
@@ -239,7 +231,7 @@ router.get(
  *    summary: Lista Seeds
  *    description: Lista toda a pasta de seeds
  *    tags: [Banco de Dados]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -252,8 +244,6 @@ router.get(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get(

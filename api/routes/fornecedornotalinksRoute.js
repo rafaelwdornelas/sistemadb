@@ -33,7 +33,7 @@ const router = Router();
  *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -46,8 +46,6 @@ const router = Router();
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.post(
@@ -85,7 +83,7 @@ router.post(
  *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -98,8 +96,6 @@ router.post(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.post(
@@ -123,7 +119,7 @@ router.post(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -136,8 +132,6 @@ router.post(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get("/fornecedornotalinks/:id", JWTController.Verifica, Controller.pega);
@@ -168,7 +162,7 @@ router.get("/fornecedornotalinks/:id", JWTController.Verifica, Controller.pega);
  *            MULTIPLICADOR:
  *              description: Multiplicador do produto da nota para o produto interno
  *              type: number
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -181,8 +175,6 @@ router.get("/fornecedornotalinks/:id", JWTController.Verifica, Controller.pega);
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.post(
@@ -224,7 +216,7 @@ router.post(
  *            MULTIPLICADOR:
  *              description: Multiplicador do produto da nota para o produto interno
  *              type: number
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -237,8 +229,6 @@ router.post(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.put(
@@ -261,7 +251,7 @@ router.put(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -274,8 +264,6 @@ router.put(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.delete(

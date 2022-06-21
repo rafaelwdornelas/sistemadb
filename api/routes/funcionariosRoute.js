@@ -18,7 +18,7 @@ const router = Router();
  *    summary: Todos
  *    description: Pega todos Funcionarios
  *    tags: [Funcionarios]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -31,8 +31,6 @@ const router = Router();
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get("/funcionarios", JWTController.Verifica, Controller.pegaTodos);
@@ -44,7 +42,7 @@ router.get("/funcionarios", JWTController.Verifica, Controller.pegaTodos);
  *    summary: Todos apagados
  *    description: Retorna todos os funcionarios apagados
  *    tags: [Funcionarios]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -57,8 +55,6 @@ router.get("/funcionarios", JWTController.Verifica, Controller.pegaTodos);
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get(
@@ -82,7 +78,7 @@ router.get(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -95,8 +91,6 @@ router.get(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get(
@@ -119,7 +113,7 @@ router.get(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -132,8 +126,6 @@ router.get(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get("/funcionarios/:id", JWTController.Verifica, Controller.pega);
@@ -278,7 +270,7 @@ router.get("/funcionarios/:id", JWTController.Verifica, Controller.pega);
  *            FUN_EMER_NUMERO:
  *              description: Número do telefone de emergência
  *              type: string
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -291,8 +283,6 @@ router.get("/funcionarios/:id", JWTController.Verifica, Controller.pega);
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.post(
@@ -315,7 +305,7 @@ router.post(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -328,8 +318,6 @@ router.post(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.post(
@@ -485,7 +473,7 @@ router.post(
  *            FUN_EMER_NUMERO:
  *              description: Número do telefone de emergência
  *              type: string
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -498,8 +486,6 @@ router.post(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.put(
@@ -522,7 +508,7 @@ router.put(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -535,8 +521,6 @@ router.put(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.delete(

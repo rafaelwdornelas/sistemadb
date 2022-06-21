@@ -36,7 +36,7 @@ const router = Router();
  *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -49,8 +49,6 @@ const router = Router();
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.post("/clientes", JWTController.Verifica, Controller.pegaTodos);
@@ -79,7 +77,7 @@ router.post("/clientes", JWTController.Verifica, Controller.pegaTodos);
  *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -92,8 +90,6 @@ router.post("/clientes", JWTController.Verifica, Controller.pegaTodos);
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.post("/clientes/ativos", JWTController.Verifica, Controller.pegaAtivos);
@@ -104,7 +100,7 @@ router.post("/clientes/ativos", JWTController.Verifica, Controller.pegaAtivos);
  *    summary: Todos apagados
  *    description: Retorna todos os Clientes Apagados
  *    tags: [Clientes]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -117,8 +113,6 @@ router.post("/clientes/ativos", JWTController.Verifica, Controller.pegaAtivos);
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get(
@@ -142,7 +136,7 @@ router.get(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -155,8 +149,6 @@ router.get(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get(
@@ -179,7 +171,7 @@ router.get(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -192,8 +184,6 @@ router.get(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.get("/clientes/:id", JWTController.Verifica, Controller.pegaTodosDados);
@@ -377,7 +367,7 @@ router.get("/clientes/:id", JWTController.Verifica, Controller.pegaTodosDados);
  *            CLI_OBS:
  *              description: Campo para Observação
  *              type: string
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -390,8 +380,6 @@ router.get("/clientes/:id", JWTController.Verifica, Controller.pegaTodosDados);
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.post(
@@ -414,7 +402,7 @@ router.post(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -427,8 +415,6 @@ router.post(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.post(
@@ -623,7 +609,7 @@ router.post(
  *            CLI_OBS:
  *              description: Campo para Observação
  *              type: string
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -636,8 +622,6 @@ router.post(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.put(
@@ -660,7 +644,7 @@ router.put(
  *        in: path
  *        schema:
  *         type: integer
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -673,8 +657,6 @@ router.put(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.delete(
@@ -710,7 +692,7 @@ router.delete(
  *              description: limite de registros da paginação
  *              type: integer
  *              example: 10
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -723,8 +705,6 @@ router.delete(
  *        description: Solicitação indisponível
  *      '500':
  *        description: Erro interno do servidor
- *      '401':
- *        description: Unauthorized
  *
  */
 router.post(

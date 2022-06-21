@@ -17,7 +17,7 @@ const router = Router();
  *    description: |
  *      Pega todos Países com Paginação
  *    tags: [País]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -52,7 +52,7 @@ router.get("/pais", PaisController.pegaTodos);
  *              description: string para busca
  *              type: string
  *              example: "BRA"
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':

@@ -17,7 +17,7 @@ const router = Router();
  *    description: |
  *      Pega todas unidades
  *    tags: [Unidades]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -52,7 +52,7 @@ router.get("/unidaes", UnidadesController.pegaTodos);
  *              description: string para busca
  *              type: string
  *              example: "BRA"
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':

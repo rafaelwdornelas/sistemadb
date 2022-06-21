@@ -111,7 +111,7 @@ router.post("/login", async (req, res) => {
  *    summary: Informações do usuário
  *    description: Carrega informação do usuário logado
  *    tags: [Autenticação]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
@@ -163,7 +163,7 @@ router.get("/login/auth/me", async (req, res) => {
  *    summary: Atualiza Token
  *    description: Atualizar token de acesso utilizando o refresh token
  *    tags: [Autenticação]
- *     responses:
+ *    responses:
  *      '200':
  *        description: Função executada com sucesso
  *      '400':
