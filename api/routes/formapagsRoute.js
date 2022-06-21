@@ -40,6 +40,7 @@ router.get("/formapags", JWTController.Verifica, Controller.pegaTodos);
  *      - name: id
  *        description: Informe o ID.
  *        required: true
+ *        example: 1
  *        in: path
  *        schema:
  *         type: integer

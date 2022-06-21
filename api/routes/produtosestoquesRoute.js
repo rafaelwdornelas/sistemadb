@@ -55,6 +55,7 @@ router.post("/estoques", JWTController.Verifica, Controller.pegaTodos);
  *      - name: id
  *        description: Informe o ID do estoque de produto.
  *        required: true
+ *        example: 1
  *        in: path
  *        schema:
  *         type: integer
@@ -212,6 +213,7 @@ router.delete(
  *      - name: id
  *        description: Informe o ID do produto.
  *        required: true
+ *        example: 1
  *        in: path
  *        schema:
  *         type: integer
@@ -241,12 +243,14 @@ router.get(
  *      - name: armazem
  *        description: Informe o ID do armazem.
  *        required: true
+ *        example: 1
  *        in: path
  *        schema:
  *         type: integer
  *      - name: id
  *        description: Informe o ID do produto.
  *        required: true
+ *        example: 1
  *        in: path
  *        schema:
  *         type: integer
@@ -276,6 +280,7 @@ router.get(
  *      - name: data
  *        description: Informe a data de vencimento máxima YYYYMMDD.
  *        required: true
+ *        example: 20300518
  *        in: path
  *        schema:
  *         type: string
@@ -305,12 +310,14 @@ router.get(
  *      - name: armazem
  *        description: Informe o ID do armazem.
  *        required: true
+ *        example: 1
  *        in: path
  *        schema:
  *         type: integer
  *      - name: data
  *        description: Informe a data de vencimento máxima YYYYMMDD.
  *        required: true
+ *        example: 20300518
  *        in: path
  *        schema:
  *         type: string

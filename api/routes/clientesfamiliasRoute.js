@@ -63,6 +63,7 @@ router.get(
  *      - name: id
  *        description: Informe o ID.
  *        required: true
+ *        example: 1
  *        in: path
  *        schema:
  *         type: integer
@@ -91,6 +92,7 @@ router.get(
  *      - name: id
  *        description: Informe o ID.
  *        required: true
+ *        example: 1
  *        in: path
  *        schema:
  *         type: integer

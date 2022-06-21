@@ -114,6 +114,7 @@ router.get(
  *      - name: id
  *        description: Informe o ID.
  *        required: true
+ *        example: 1
  *        in: path
  *        schema:
  *         type: integer
@@ -141,6 +142,7 @@ router.get(
  *    parameters:
  *      - name: id
  *        description: Informe o ID.
+ *        example: 1
  *        required: true
  *        in: path
  *        schema:

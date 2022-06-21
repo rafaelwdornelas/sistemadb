@@ -103,6 +103,7 @@ router.post(
  *      - name: id
  *        description: Informe o ID.
  *        required: true
+ *        example: 1
  *        in: path
  *        schema:
  *         type: integer
