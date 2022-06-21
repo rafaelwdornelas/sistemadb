@@ -93,6 +93,7 @@ const allowCrossDomain = async (req, res, next) => {
 app.use(allowCrossDomain);
 app.use(helmet());
 app.use(cors());
+app.use(express.static("public"));
 routes(app);
 moduloglobais.log("Iniciando API...", "");
 app.listen(port, () =>
