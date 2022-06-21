@@ -55,7 +55,7 @@ router.post("/login", async (req, res) => {
   if (user == "admin" && senha == "admin") {
     // generate an access token
     const accessToken = jwt.sign({ username: user, role: ["admin"] }, secret, {
-      expiresIn: "15m",
+      expiresIn: "7d",
     });
 
     const refreshToken = jwt.sign(
