@@ -29,6 +29,15 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: true,
       },
+      ROLE_ID: {
+        type: Sequelize.INTEGER,
+        default: 1,
+        allowNull: false,
+        references: {
+          model: "Roles",
+          key: "id",
+        },
+      },
       CRIADO_EM: {
         allowNull: false,
         type: Sequelize.DATE,

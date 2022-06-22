@@ -23,6 +23,8 @@ const produtos = require("./produtosRoute");
 const fornecedornotalinks = require("./fornecedornotalinksRoute");
 const cfops = require("./cfopsRoute");
 const produtoformulas = require("./produtoformulasRoute");
+const roles = require("./rolesRouter");
+const permissions = require("./permissionsRoute");
 
 module.exports = (app) => {
   app.use(
@@ -49,6 +51,8 @@ module.exports = (app) => {
     produtos,
     fornecedornotalinks,
     cfops,
-    produtoformulas
+    produtoformulas,
+    roles,
+    permissions
   );
 };

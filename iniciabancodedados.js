@@ -2,9 +2,10 @@ const { sequelizemagager } = require("./api/modules");
 const sequelize = new sequelizemagager();
 
 (async () => {
+  let retorno;
   //apaga o banco de dados
-  let retorno = await sequelize.dropdatabase();
-  console.log(retorno);
+  //retorno = await sequelize.dropdatabase();
+  //console.log(retorno);
   //cria o banco de dados
   retorno = await sequelize.createdatabase();
   console.log(retorno);

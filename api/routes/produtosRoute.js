@@ -2,6 +2,8 @@ const { Router } = require("express");
 const Controller = require("../controllers/produtosController");
 const JWTController = require("../controllers/JWTController");
 const LicencaController = require("../controllers/LicencaController");
+const Helper = require("../modules/helper");
+const helper = new Helper();
 
 const router = Router();
 /**
@@ -48,7 +50,12 @@ const router = Router();
  *        description: Erro interno do servidor
  *
  */
-router.post("/produtos", JWTController.Verifica, Controller.pegaTodos);
+router.post(
+  "/produtos",
+  JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
+  Controller.pegaTodos
+);
 
 /**
  * @openapi
@@ -75,6 +82,7 @@ router.post("/produtos", JWTController.Verifica, Controller.pegaTodos);
 router.get(
   "/produtos/apagados",
   JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
   Controller.pegaApagados
 );
 
@@ -111,6 +119,7 @@ router.get(
 router.get(
   "/produtos/apagados/:id",
   JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
   Controller.pegaApagado
 );
 /**
@@ -118,11 +127,11 @@ router.get(
  * /produtos/{id}:
  *  get:
  *    summary: Visualiza
- *    description: Vizualiza o dado de um armazem de produto pelo ID
+ *    description: Vizualiza o dado de um produto pelo ID
  *    tags: [Produtos]
  *    parameters:
  *      - name: id
- *        description: Informe o ID do armazem de produto.
+ *        description: Informe o ID do produto.
  *        required: true
  *        example: 1
  *        in: path
@@ -143,7 +152,12 @@ router.get(
  *        description: Erro interno do servidor
  *
  */
-router.get("/produtos/:id", JWTController.Verifica, Controller.pega);
+router.get(
+  "/produtos/:id",
+  JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
+  Controller.pega
+);
 
 /**
  * @openapi
@@ -259,6 +273,7 @@ router.post(
   "/produtos/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_criar"),
   Controller.cria
 );
 /**
@@ -294,6 +309,7 @@ router.post(
   "/produtos/:id/restaura",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_alterar"),
   Controller.restaura
 );
 /**
@@ -417,6 +433,7 @@ router.put(
   "/produtos/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_alterar"),
   Controller.atualiza
 );
 /**
@@ -424,11 +441,11 @@ router.put(
  * /produtos/{id}:
  *  delete:
  *    summary: Deleta
- *    description: Deleta um armazem de produto
+ *    description: Deleta um produto
  *    tags: [Produtos]
  *    parameters:
  *      - name: id
- *        description: Informe o ID do armazem de produto.
+ *        description: Informe o ID do produto.
  *        required: true
  *        in: path
  *        schema:
@@ -452,6 +469,7 @@ router.delete(
   "/produtos/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_apagar"),
   Controller.apaga
 );
 

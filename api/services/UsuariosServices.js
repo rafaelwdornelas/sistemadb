@@ -35,7 +35,7 @@ class FuncionariosServices extends Services {
   async getLogin(username, senha) {
     try {
       return await database[this.nomeDoModelo].findOne({
-        attributes: ["id", "USERNAME", "SENHA", "COD_FUNCIONARIO"],
+        attributes: ["id", "USERNAME", "SENHA", "COD_FUNCIONARIO", "ROLE_ID"],
         where: {
           USERNAME: username,
           SENHA: senha,

@@ -154,6 +154,9 @@ router.get("/usuarios/:id", JWTController.Verifica, Controller.pega);
  *            COD_FUNCIONARIO:
  *              description: Código do funcionário
  *              type: integer
+ *            ROLE_ID:
+ *              description: Código do Role de acesso
+ *              type: integer
  *    responses:
  *      '200':
  *        description: Função executada com sucesso
@@ -239,6 +242,9 @@ router.post(
  *              type: string
  *            COD_FUNCIONARIO:
  *              description: Código do funcionário
+ *              type: integer
+ *            ROLE_ID:
+ *              description: Código do Role de acesso
  *              type: integer
  *    responses:
  *      '200':

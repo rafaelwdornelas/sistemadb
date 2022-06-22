@@ -59,7 +59,17 @@ router.post("/login", async (req, res) => {
     });
 
     const refreshToken = jwt.sign(
-      { username: user, role: ["admin"] },
+      {
+        username: user,
+        role: ["admin"],
+        dados: {
+          id: 0,
+          USERNAME: "admin",
+          SENHA: "admin",
+          COD_FUNCIONARIO: 1,
+          ROLE_ID: 1,
+        },
+      },
       secret2,
       {
         expiresIn: "1y",

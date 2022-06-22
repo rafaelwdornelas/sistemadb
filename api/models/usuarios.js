@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "id",
         as: "FUNCIONARIO",
       });
+      USUARIOS.hasOne(models.Role, {
+        foreignKey: "id",
+        as: "role",
+      });
     }
   }
   USUARIOS.init(
@@ -16,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       SENHA: DataTypes.STRING,
       COD_FUNCIONARIO: DataTypes.INTEGER,
       REFRESHTOKEN: DataTypes.TEXT,
+      ROLE_ID: DataTypes.INTEGER,
     },
     {
       sequelize,
