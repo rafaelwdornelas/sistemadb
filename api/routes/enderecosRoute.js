@@ -2,6 +2,8 @@ const { Router } = require("express");
 const Controller = require("../controllers/EnderecosController");
 const JWTController = require("../controllers/JWTController");
 const LicencaController = require("../controllers/LicencaController");
+const Helper = require("../modules/helper");
+const helper = new Helper();
 
 const router = Router();
 /**
@@ -43,6 +45,7 @@ const router = Router();
 router.get(
   "/enderecos/todos/:id",
   JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
   Controller.pegaTodos
 );
 
@@ -71,6 +74,7 @@ router.get(
 router.get(
   "/enderecos/apagados",
   JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
   Controller.pegaApagados
 );
 
@@ -107,6 +111,7 @@ router.get(
 router.get(
   "/enderecos/apagados/:id",
   JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
   Controller.pegaApagado
 );
 /**
@@ -139,7 +144,12 @@ router.get(
  *        description: Erro interno do servidor
  *
  */
-router.get("/enderecos/:id", JWTController.Verifica, Controller.pega);
+router.get(
+  "/enderecos/:id",
+  JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
+  Controller.pega
+);
 
 /**
  * @openapi
@@ -216,6 +226,7 @@ router.post(
   "/enderecos/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_criar"),
   Controller.cria
 );
 /**
@@ -251,6 +262,7 @@ router.post(
   "/enderecos/:id/restaura",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_alterar"),
   Controller.restaura
 );
 /**
@@ -335,6 +347,7 @@ router.put(
   "/enderecos/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_alterar"),
   Controller.atualiza
 );
 /**
@@ -370,6 +383,7 @@ router.delete(
   "/enderecos/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_apagar"),
   Controller.apaga
 );
 

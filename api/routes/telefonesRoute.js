@@ -2,6 +2,8 @@ const { Router } = require("express");
 const Controller = require("../controllers/TelefonesController");
 const JWTController = require("../controllers/JWTController");
 const LicencaController = require("../controllers/LicencaController");
+const Helper = require("../modules/helper");
+const helper = new Helper();
 
 const router = Router();
 /**
@@ -43,6 +45,7 @@ const router = Router();
 router.get(
   "/telefones/todos/:id",
   JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
   Controller.pegaTodos
 );
 
@@ -71,6 +74,7 @@ router.get(
 router.get(
   "/telefones/apagados",
   JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
   Controller.pegaApagados
 );
 
@@ -107,6 +111,7 @@ router.get(
 router.get(
   "/telefones/apagados/:id",
   JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
   Controller.pegaApagado
 );
 /**
@@ -139,7 +144,12 @@ router.get(
  *        description: Erro interno do servidor
  *
  */
-router.get("/telefones/:id", JWTController.Verifica, Controller.pega);
+router.get(
+  "/telefones/:id",
+  JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
+  Controller.pega
+);
 
 /**
  * @openapi
@@ -195,6 +205,7 @@ router.post(
   "/telefones/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_criar"),
   Controller.cria
 );
 /**
@@ -230,6 +241,7 @@ router.post(
   "/telefones/:id/restaura",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_alterar"),
   Controller.restaura
 );
 /**
@@ -293,6 +305,7 @@ router.put(
   "/telefones/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_alterar"),
   Controller.atualiza
 );
 /**
@@ -328,6 +341,7 @@ router.delete(
   "/telefones/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_apagar"),
   Controller.apaga
 );
 
