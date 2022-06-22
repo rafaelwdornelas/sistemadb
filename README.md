@@ -36,6 +36,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Produtos Famílias
 - [x] Produtos Estoques
 - [x] Produtos Armazéns
+- [x] Produtos Fórmulas
 - [x] Produtos
 - [x] Fornecedor Códigos de Produtos Link
 - [x] CFOPs
