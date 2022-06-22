@@ -41,6 +41,38 @@ module.exports = {
           perm_name: "clientes_visualizar",
           perm_description: "Permite visualizar clientes",
         },
+        {
+          perm_name: "funcionarios_criar",
+          perm_description: "Permite criar novos funcionarios",
+        },
+        {
+          perm_name: "funcionarios_apagar",
+          perm_description: "Permite apagar funcionarios",
+        },
+        {
+          perm_name: "funcionarios_alterar",
+          perm_description: "Permite alterar funcionarios",
+        },
+        {
+          perm_name: "funcionarios_visualizar",
+          perm_description: "Permite visualizar funcionarios",
+        },
+        {
+          perm_name: "usuarios_criar",
+          perm_description: "Permite criar novos usuários",
+        },
+        {
+          perm_name: "usuarios_apagar",
+          perm_description: "Permite apagar usuários",
+        },
+        {
+          perm_name: "usuarios_alterar",
+          perm_description: "Permite alterar usuários",
+        },
+        {
+          perm_name: "usuarios_visualizar",
+          perm_description: "Permite visualizar usuários",
+        },
       ],
       {}
     );

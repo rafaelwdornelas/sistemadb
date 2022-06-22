@@ -2,6 +2,8 @@ const { Router } = require("express");
 const Controller = require("../controllers/usuariosController");
 const JWTController = require("../controllers/JWTController");
 const LicencaController = require("../controllers/LicencaController");
+const Helper = require("../modules/helper");
+const helper = new Helper();
 
 const router = Router();
 
@@ -34,7 +36,12 @@ const router = Router();
  *        description: Erro interno do servidor
  *
  */
-router.get("/usuarios", JWTController.Verifica, Controller.pegaTodos);
+router.get(
+  "/usuarios",
+  JWTController.Verifica,
+  helper.checkPermission("usuarios_visualizar"),
+  Controller.pegaTodos
+);
 
 /**
  * @openapi
@@ -61,6 +68,7 @@ router.get("/usuarios", JWTController.Verifica, Controller.pegaTodos);
 router.get(
   "/usuarios/apagados",
   JWTController.Verifica,
+  helper.checkPermission("usuarios_visualizar"),
   Controller.pegaApagados
 );
 
@@ -97,6 +105,7 @@ router.get(
 router.get(
   "/usuarios/apagados/:id",
   JWTController.Verifica,
+  helper.checkPermission("usuarios_visualizar"),
   Controller.pegaApagado
 );
 /**
@@ -129,7 +138,12 @@ router.get(
  *        description: Erro interno do servidor
  *
  */
-router.get("/usuarios/:id", JWTController.Verifica, Controller.pega);
+router.get(
+  "/usuarios/:id",
+  JWTController.Verifica,
+  helper.checkPermission("usuarios_visualizar"),
+  Controller.pega
+);
 
 /**
  * @openapi
@@ -176,6 +190,7 @@ router.post(
   "/usuarios/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("usuarios_criar"),
   Controller.cria
 );
 /**
@@ -211,6 +226,7 @@ router.post(
   "/usuarios/:id/restaura",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("usuarios_alterar"),
   Controller.restaura
 );
 /**
@@ -265,6 +281,7 @@ router.put(
   "/usuarios/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("usuarios_alterar"),
   Controller.atualiza
 );
 /**
@@ -300,6 +317,7 @@ router.delete(
   "/usuarios/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("usuarios_apagar"),
   Controller.apaga
 );
 

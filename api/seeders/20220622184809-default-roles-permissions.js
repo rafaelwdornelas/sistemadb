@@ -41,6 +41,38 @@ module.exports = {
           role_id: 1,
           perm_id: 9,
         },
+        {
+          role_id: 1,
+          perm_id: 10,
+        },
+        {
+          role_id: 1,
+          perm_id: 11,
+        },
+        {
+          role_id: 1,
+          perm_id: 12,
+        },
+        {
+          role_id: 1,
+          perm_id: 13,
+        },
+        {
+          role_id: 1,
+          perm_id: 14,
+        },
+        {
+          role_id: 1,
+          perm_id: 15,
+        },
+        {
+          role_id: 1,
+          perm_id: 16,
+        },
+        {
+          role_id: 1,
+          perm_id: 17,
+        },
       ],
       {}
     );

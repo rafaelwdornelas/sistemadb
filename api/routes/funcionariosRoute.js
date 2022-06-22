@@ -2,6 +2,8 @@ const { Router } = require("express");
 const Controller = require("../controllers/FuncionariosController");
 const JWTController = require("../controllers/JWTController");
 const LicencaController = require("../controllers/LicencaController");
+const Helper = require("../modules/helper");
+const helper = new Helper();
 
 const router = Router();
 /**
@@ -33,7 +35,12 @@ const router = Router();
  *        description: Erro interno do servidor
  *
  */
-router.get("/funcionarios", JWTController.Verifica, Controller.pegaTodos);
+router.get(
+  "/funcionarios",
+  JWTController.Verifica,
+  helper.checkPermission("funcionarios_visualizar"),
+  Controller.pegaTodos
+);
 
 /**
  * @openapi
@@ -60,6 +67,7 @@ router.get("/funcionarios", JWTController.Verifica, Controller.pegaTodos);
 router.get(
   "/funcionarios/apagados",
   JWTController.Verifica,
+  helper.checkPermission("funcionarios_visualizar"),
   Controller.pegaApagados
 );
 
@@ -96,6 +104,7 @@ router.get(
 router.get(
   "/funcionarios/apagados/:id",
   JWTController.Verifica,
+  helper.checkPermission("funcionarios_visualizar"),
   Controller.pegaApagado
 );
 /**
@@ -128,7 +137,12 @@ router.get(
  *        description: Erro interno do servidor
  *
  */
-router.get("/funcionarios/:id", JWTController.Verifica, Controller.pega);
+router.get(
+  "/funcionarios/:id",
+  JWTController.Verifica,
+  helper.checkPermission("funcionarios_visualizar"),
+  Controller.pega
+);
 
 /**
  * @openapi
@@ -289,6 +303,7 @@ router.post(
   "/funcionarios/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("funcionarios_criar"),
   Controller.cria
 );
 /**
@@ -324,6 +339,7 @@ router.post(
   "/funcionarios/:id/restaura",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("funcionarios_alterar"),
   Controller.restaura
 );
 /**
@@ -492,6 +508,7 @@ router.put(
   "/funcionarios/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("funcionarios_alterar"),
   Controller.atualiza
 );
 /**
@@ -527,6 +544,7 @@ router.delete(
   "/funcionarios/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("funcionarios_apagar"),
   Controller.apaga
 );
 
