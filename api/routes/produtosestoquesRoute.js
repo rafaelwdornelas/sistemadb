@@ -2,6 +2,8 @@ const { Router } = require("express");
 const Controller = require("../controllers/estoquesController");
 const JWTController = require("../controllers/JWTController");
 const LicencaController = require("../controllers/LicencaController");
+const Helper = require("../modules/helper");
+const helper = new Helper();
 
 const router = Router();
 /**
@@ -48,7 +50,12 @@ const router = Router();
  *        description: Erro interno do servidor
  *
  */
-router.post("/estoques", JWTController.Verifica, Controller.pegaTodos);
+router.post(
+  "/estoques",
+  JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
+  Controller.pegaTodos
+);
 
 /**
  * @openapi
@@ -80,7 +87,12 @@ router.post("/estoques", JWTController.Verifica, Controller.pegaTodos);
  *        description: Erro interno do servidor
  *
  */
-router.get("/estoques/:id", JWTController.Verifica, Controller.pega);
+router.get(
+  "/estoques/:id",
+  JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
+  Controller.pega
+);
 
 /**
  * @openapi
@@ -133,6 +145,7 @@ router.post(
   "/estoques/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_criar"),
   Controller.cria
 );
 
@@ -194,6 +207,7 @@ router.put(
   "/estoques/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_alterar"),
   Controller.atualiza
 );
 /**
@@ -229,6 +243,7 @@ router.delete(
   "/estoques/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_apagar"),
   Controller.apaga
 );
 
@@ -265,6 +280,7 @@ router.delete(
 router.get(
   "/estoques/saldo/all/:id",
   JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
   Controller.getsaldoprodutoall
 );
 
@@ -308,6 +324,7 @@ router.get(
 router.get(
   "/estoques/saldo/:armazem/:id",
   JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
   Controller.getsaldoprodutoarmazem
 );
 
@@ -344,6 +361,7 @@ router.get(
 router.get(
   "/estoques/validade/all/:data",
   JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
   Controller.getvalidadeprodutoall
 );
 
@@ -387,6 +405,7 @@ router.get(
 router.get(
   "/estoques/validade/:armazem/:data",
   JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
   Controller.getvalidadeprodutoarmazem
 );
 
@@ -431,6 +450,7 @@ router.get(
 router.post(
   "/estoques/retirada",
   JWTController.Verifica,
+  helper.checkPermission("produtos_movimenta"),
   Controller.retiradadeproduto
 );
 

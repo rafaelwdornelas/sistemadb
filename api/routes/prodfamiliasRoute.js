@@ -2,6 +2,8 @@ const { Router } = require("express");
 const Controller = require("../controllers/prodfamiliasController");
 const JWTController = require("../controllers/JWTController");
 const LicencaController = require("../controllers/LicencaController");
+const Helper = require("../modules/helper");
+const helper = new Helper();
 
 const router = Router();
 /**
@@ -33,7 +35,12 @@ const router = Router();
  *        description: Erro interno do servidor
  *
  */
-router.get("/prodfamilias", JWTController.Verifica, Controller.pegaTodos);
+router.get(
+  "/prodfamilias",
+  JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
+  Controller.pegaTodos
+);
 
 /**
  * @openapi
@@ -60,6 +67,7 @@ router.get("/prodfamilias", JWTController.Verifica, Controller.pegaTodos);
 router.get(
   "/prodfamilias/apagados",
   JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
   Controller.pegaApagados
 );
 
@@ -96,6 +104,7 @@ router.get(
 router.get(
   "/prodfamilias/apagados/:id",
   JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
   Controller.pegaApagado
 );
 /**
@@ -128,7 +137,12 @@ router.get(
  *        description: Erro interno do servidor
  *
  */
-router.get("/prodfamilias/:id", JWTController.Verifica, Controller.pega);
+router.get(
+  "/prodfamilias/:id",
+  JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
+  Controller.pega
+);
 
 /**
  * @openapi
@@ -166,6 +180,7 @@ router.post(
   "/prodfamilias/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_criar"),
   Controller.cria
 );
 /**
@@ -201,6 +216,7 @@ router.post(
   "/prodfamilias/:id/restaura",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_alterar"),
   Controller.restaura
 );
 /**
@@ -246,6 +262,7 @@ router.put(
   "/prodfamilias/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_alterar"),
   Controller.atualiza
 );
 /**
@@ -281,6 +298,7 @@ router.delete(
   "/prodfamilias/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_apagar"),
   Controller.apaga
 );
 

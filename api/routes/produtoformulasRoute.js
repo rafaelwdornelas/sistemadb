@@ -2,6 +2,8 @@ const { Router } = require("express");
 const Controller = require("../controllers/ProdutoFormulasController");
 const JWTController = require("../controllers/JWTController");
 const LicencaController = require("../controllers/LicencaController");
+const Helper = require("../modules/helper");
+const helper = new Helper();
 
 const router = Router();
 /**
@@ -43,6 +45,7 @@ const router = Router();
 router.get(
   "/prodformulas/todos/:id",
   JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
   Controller.pegaTodos
 );
 
@@ -76,7 +79,12 @@ router.get(
  *        description: Erro interno do servidor
  *
  */
-router.get("/prodformulas/:id", JWTController.Verifica, Controller.pega);
+router.get(
+  "/prodformulas/:id",
+  JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
+  Controller.pega
+);
 
 /**
  * @openapi
@@ -120,6 +128,7 @@ router.post(
   "/prodformulas/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_criar"),
   Controller.cria
 );
 
@@ -172,6 +181,7 @@ router.put(
   "/prodformulas/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_alterar"),
   Controller.atualiza
 );
 /**
@@ -207,6 +217,7 @@ router.delete(
   "/prodformulas/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_apagar"),
   Controller.apaga
 );
 

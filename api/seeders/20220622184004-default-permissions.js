@@ -22,6 +22,10 @@ module.exports = {
           perm_description: "Permite visualizar produtos",
         },
         {
+          perm_name: "produtos_movimenta",
+          perm_description: "Permite movimentação produtos",
+        },
+        {
           perm_name: "clientes_criar",
           perm_description: "Permite criar novos clientes",
         },

@@ -2,6 +2,8 @@ const { Router } = require("express");
 const Controller = require("../controllers/armazensController");
 const JWTController = require("../controllers/JWTController");
 const LicencaController = require("../controllers/LicencaController");
+const Helper = require("../modules/helper");
+const helper = new Helper();
 
 const router = Router();
 /**
@@ -33,7 +35,12 @@ const router = Router();
  *        description: Erro interno do servidor
  *
  */
-router.get("/armazens", JWTController.Verifica, Controller.pegaTodos);
+router.get(
+  "/armazens",
+  JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
+  Controller.pegaTodos
+);
 
 /**
  * @openapi
@@ -60,6 +67,7 @@ router.get("/armazens", JWTController.Verifica, Controller.pegaTodos);
 router.get(
   "/armazens/apagados",
   JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
   Controller.pegaApagados
 );
 
@@ -96,6 +104,7 @@ router.get(
 router.get(
   "/armazens/apagados/:id",
   JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
   Controller.pegaApagado
 );
 /**
@@ -128,7 +137,12 @@ router.get(
  *        description: Erro interno do servidor
  *
  */
-router.get("/armazens/:id", JWTController.Verifica, Controller.pega);
+router.get(
+  "/armazens/:id",
+  JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
+  Controller.pega
+);
 
 /**
  * @openapi
@@ -169,6 +183,7 @@ router.post(
   "/armazens/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_criar"),
   Controller.cria
 );
 /**
@@ -204,6 +219,7 @@ router.post(
   "/armazens/:id/restaura",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_alterar"),
   Controller.restaura
 );
 /**
@@ -252,6 +268,7 @@ router.put(
   "/armazens/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_alterar"),
   Controller.atualiza
 );
 /**
@@ -287,6 +304,7 @@ router.delete(
   "/armazens/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("produtos_apagar"),
   Controller.apaga
 );
 

@@ -2,6 +2,8 @@ const { Router } = require("express");
 const Controller = require("../controllers/ClientesFamiliasController");
 const JWTController = require("../controllers/JWTController");
 const LicencaController = require("../controllers/LicencaController");
+const Helper = require("../modules/helper");
+const helper = new Helper();
 
 const router = Router();
 
@@ -34,7 +36,12 @@ const router = Router();
  *        description: Erro interno do servidor
  *
  */
-router.get("/clifamilias", JWTController.Verifica, Controller.pegaTodos);
+router.get(
+  "/clifamilias",
+  JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
+  Controller.pegaTodos
+);
 
 /**
  * @openapi
@@ -61,6 +68,7 @@ router.get("/clifamilias", JWTController.Verifica, Controller.pegaTodos);
 router.get(
   "/clifamilias/apagados",
   JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
   Controller.pegaApagados
 );
 
@@ -97,6 +105,7 @@ router.get(
 router.get(
   "/clifamilias/apagados/:id",
   JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
   Controller.pegaApagado
 );
 /**
@@ -129,7 +138,12 @@ router.get(
  *        description: Erro interno do servidor
  *
  */
-router.get("/clifamilias/:id", JWTController.Verifica, Controller.pega);
+router.get(
+  "/clifamilias/:id",
+  JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
+  Controller.pega
+);
 
 /**
  * @openapi
@@ -174,6 +188,7 @@ router.post(
   "/clifamilias/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_criar"),
   Controller.cria
 );
 /**
@@ -209,6 +224,7 @@ router.post(
   "/clifamilias/:id/restaura",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_alterar"),
   Controller.restaura
 );
 /**
@@ -261,6 +277,7 @@ router.put(
   "/clifamilias/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_alterar"),
   Controller.atualiza
 );
 /**
@@ -296,6 +313,7 @@ router.delete(
   "/clifamilias/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_apagar"),
   Controller.apaga
 );
 
@@ -343,6 +361,7 @@ router.delete(
 router.post(
   "/clifamilias/busca",
   JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
   Controller.buscaRegistroCount
 );
 

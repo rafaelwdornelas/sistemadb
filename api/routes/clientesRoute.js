@@ -2,6 +2,9 @@ const { Router } = require("express");
 const Controller = require("../controllers/ClientesController");
 const JWTController = require("../controllers/JWTController");
 const LicencaController = require("../controllers/LicencaController");
+const Helper = require("../modules/helper");
+const helper = new Helper();
+
 const router = Router();
 
 /**
@@ -51,7 +54,12 @@ const router = Router();
  *        description: Erro interno do servidor
  *
  */
-router.post("/clientes", JWTController.Verifica, Controller.pegaTodos);
+router.post(
+  "/clientes",
+  JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
+  Controller.pegaTodos
+);
 /**
  * @openapi
  * /clientes/ativos:
@@ -92,7 +100,12 @@ router.post("/clientes", JWTController.Verifica, Controller.pegaTodos);
  *        description: Erro interno do servidor
  *
  */
-router.post("/clientes/ativos", JWTController.Verifica, Controller.pegaAtivos);
+router.post(
+  "/clientes/ativos",
+  JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
+  Controller.pegaAtivos
+);
 /**
  * @openapi
  * /clientes/apagados:
@@ -118,6 +131,7 @@ router.post("/clientes/ativos", JWTController.Verifica, Controller.pegaAtivos);
 router.get(
   "/clientes/apagados",
   JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
   Controller.pegaApagados
 );
 
@@ -154,6 +168,7 @@ router.get(
 router.get(
   "/clientes/apagados/:id",
   JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
   Controller.pegaApagado
 );
 /**
@@ -186,7 +201,12 @@ router.get(
  *        description: Erro interno do servidor
  *
  */
-router.get("/clientes/:id", JWTController.Verifica, Controller.pegaTodosDados);
+router.get(
+  "/clientes/:id",
+  JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
+  Controller.pegaTodosDados
+);
 
 /**
  * @openapi
@@ -386,6 +406,7 @@ router.post(
   "/clientes/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_criar"),
   Controller.cria
 );
 /**
@@ -421,6 +442,7 @@ router.post(
   "/clientes/:id/restaura",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_alterar"),
   Controller.restaura
 );
 /**
@@ -628,6 +650,7 @@ router.put(
   "/clientes/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_alterar"),
   Controller.atualiza
 );
 /**
@@ -663,6 +686,7 @@ router.delete(
   "/clientes/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
+  helper.checkPermission("clientes_apagar"),
   Controller.apaga
 );
 
@@ -710,6 +734,7 @@ router.delete(
 router.post(
   "/clientes/busca",
   JWTController.Verifica,
+  helper.checkPermission("clientes_visualizar"),
   Controller.buscaRegistroCount
 );
 
