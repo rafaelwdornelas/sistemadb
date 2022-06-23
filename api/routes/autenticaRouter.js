@@ -54,9 +54,23 @@ router.post("/login", async (req, res) => {
 
   if (user == "admin" && senha == "admin") {
     // generate an access token
-    const accessToken = jwt.sign({ username: user, role: ["admin"] }, secret, {
-      expiresIn: "7d",
-    });
+    const accessToken = jwt.sign(
+      {
+        username: user,
+        role: ["admin"],
+        dados: {
+          id: 0,
+          USERNAME: "admin",
+          SENHA: "admin",
+          COD_FUNCIONARIO: 1,
+          ROLE_ID: 1,
+        },
+      },
+      secret,
+      {
+        expiresIn: "7d",
+      }
+    );
 
     const refreshToken = jwt.sign(
       {
@@ -151,7 +165,6 @@ router.get("/login/auth/me", async (req, res) => {
         let tempretorno = JSON.stringify(retornousuario);
         tempretorno = JSON.parse(tempretorno);
         console.log("resultado", tempretorno);
-        tempretorno.row.role = "admin";
         res.json(tempretorno);
       } catch (error) {
         moduloglobais.log("/login/auth/me ERROR1: " + error.message, "error");
