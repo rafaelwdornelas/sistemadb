@@ -25,6 +25,9 @@ const cfops = require("./cfopsRoute");
 const produtoformulas = require("./produtoformulasRoute");
 const roles = require("./rolesRouter");
 const permissions = require("./permissionsRoute");
+const cotacaostatus = require("./cotacao_statusRoute");
+const cotacaocabs = require("./cotacao_cabsRoute");
+const cotacaoitens = require("./cotacao_itensRoute");
 
 module.exports = (app) => {
   app.use(
@@ -53,6 +56,9 @@ module.exports = (app) => {
     cfops,
     produtoformulas,
     roles,
-    permissions
+    permissions,
+    cotacaostatus,
+    cotacaocabs,
+    cotacaoitens
   );
 };

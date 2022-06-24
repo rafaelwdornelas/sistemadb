@@ -19,6 +19,9 @@ const ArmazensServices = require("./ArmazensServices");
 const FornecedornotalinksServices = require("./FornecedornotalinksServices");
 const CfopsServices = require("./CfopsServices");
 const ProdutoformulasServices = require("./ProdutoformulasServices");
+const Cotacao_StatusServices = require("./Cotacao_StatusServices");
+const Cotacao_CabsServices = require("./Cotacao_CabsServices");
+const Cotacao_ItensServices = require("./Cotacao_ItensServices");
 
 module.exports = {
   ClientesServices: ClientesServices,
@@ -42,4 +45,7 @@ module.exports = {
   FornecedornotalinksServices: FornecedornotalinksServices,
   CfopsServices: CfopsServices,
   ProdutoformulasServices: ProdutoformulasServices,
+  Cotacao_StatusServices: Cotacao_StatusServices,
+  Cotacao_CabsServices: Cotacao_CabsServices,
+  Cotacao_ItensServices: Cotacao_ItensServices,
 };

@@ -73,6 +73,22 @@ module.exports = {
           perm_name: "usuarios_visualizar",
           perm_description: "Permite visualizar usuários",
         },
+        {
+          perm_name: "pedidos_criar",
+          perm_description: "Permite criar novos pedidos",
+        },
+        {
+          perm_name: "pedidos_apagar",
+          perm_description: "Permite apagar pedidos",
+        },
+        {
+          perm_name: "pedidos_alterar",
+          perm_description: "Permite alterar pedidos",
+        },
+        {
+          perm_name: "pedidos_visualizar",
+          perm_description: "Permite visualizar pedidos",
+        },
       ],
       {}
     );
