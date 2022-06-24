@@ -105,8 +105,11 @@ router.get(
  *              description: Informe o ID da cotação.
  *              type: integer
  *            PRODUTO:
- *              description: Informe o código do produto.
+ *              description: Informe o ID do produto.
  *              type: integer
+ *            PRODUTOCOD:
+ *              description: Informe o código do produto.
+ *              type: string
  *            PRODUTODESC:
  *              description: Informe o nome do produto.
  *              type: string
@@ -179,8 +182,11 @@ router.post(
  *              description: Informe o ID da cotação.
  *              type: integer
  *            PRODUTO:
- *              description: Informe o código do produto.
+ *              description: Informe o ID do produto.
  *              type: integer
+ *            PRODUTOCOD:
+ *              description: Informe o código do produto.
+ *              type: string
  *            PRODUTODESC:
  *              description: Informe o nome do produto.
  *              type: string

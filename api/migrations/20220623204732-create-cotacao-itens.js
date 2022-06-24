@@ -24,6 +24,10 @@ module.exports = {
           key: "id",
         },
       },
+      PRODUTOCOD: {
+        type: Sequelize.STRING(60),
+        allowNull: false,
+      },
       PRODUTODESC: {
         type: Sequelize.STRING(120),
         allowNull: false,

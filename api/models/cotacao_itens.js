@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       COTACAO_ID: DataTypes.INTEGER,
       PRODUTO: DataTypes.INTEGER,
+      PRODUTOCOD: DataTypes.STRING(60),
       PRODUTODESC: DataTypes.STRING(120),
       PRODUTOUND: DataTypes.STRING(3),
       QUANTIDADE: DataTypes.FLOAT,

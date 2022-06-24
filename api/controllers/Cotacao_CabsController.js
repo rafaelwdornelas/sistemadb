@@ -144,6 +144,34 @@ class Cotacao_CabsController {
     }
   }
 
+  static async carregacotacao(req, res) {
+    try {
+      const { id } = req.params;
+      const dados = await cotacao_cabsServices.carregacotacao(id);
+      let retorno = {
+        sucesso: true,
+        count: dados == null ? 0 : 1,
+        row: dados,
+      };
+      moduloglobais.log(
+        "API: cotacao_cabsServices.carregacotacao, ID: " + id,
+        "info"
+      );
+      return res.status(200).json(retorno);
+    } catch (error) {
+      console.log(error);
+      let retorno = {
+        sucesso: false,
+        msg: error.message,
+      };
+      moduloglobais.log(
+        "API: cotacao_cabsServices.carregacotacao ERROR: " + error.message,
+        "error"
+      );
+      return res.status(500).json(retorno);
+    }
+  }
+
   static async cria(req, res) {
     try {
       const novoRegistro = req.body;
