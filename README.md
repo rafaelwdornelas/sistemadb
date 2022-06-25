@@ -40,13 +40,14 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Produtos
 - [x] Fornecedor Códigos de Produtos Link
 - [x] CFOPs
+- [x] Cotação Cabeçalho
+- [x] Cotação Itens
+- [x] Cotação Status
 - [ ] Tabela de Preços
 - [ ] Pedido Cabeçalho
 - [ ] Pedido Itens
 - [ ] Nota Cabeçalho
 - [ ] Nota Itens
-- [ ] Cotação Cabeçalho
-- [ ] Cotação Itens
 - [ ] ...
 
 ## 💻 Pré-requisitos
