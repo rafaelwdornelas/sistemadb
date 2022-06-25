@@ -3,6 +3,8 @@ const { Cotacao_CabsServices } = require("../services");
 const cotacao_cabsServices = new Cotacao_CabsServices();
 const { globais } = require("../modules");
 const moduloglobais = new globais();
+const Cotacao = require("../pdfgenerator/cotacao/index");
+const cotacao = new Cotacao();
 
 class Cotacao_CabsController {
   static async pegaApagados(req, res) {
@@ -269,6 +271,37 @@ class Cotacao_CabsController {
       };
       moduloglobais.log(
         "API: cotacao_cabsServices.restauraRegistro ERROR: " + error.message,
+        "error"
+      );
+      return res.status(500).json(retorno);
+    }
+  }
+
+  static async imprimir(req, res) {
+    try {
+      const { id } = req.params;
+      const dados = await cotacao_cabsServices.carregacotacao(id);
+      let retorno = {
+        sucesso: true,
+        count: dados == null ? 0 : 1,
+        row: dados,
+      };
+      moduloglobais.log(
+        "API: cotacao_cabsServices.carregacotacao [imprimir], ID: " + id,
+        "info"
+      );
+      let pdf = await cotacao.imprimir(retorno);
+      retorno.row = { file: pdf };
+      return res.status(200).json(retorno);
+    } catch (error) {
+      console.log(error);
+      let retorno = {
+        sucesso: false,
+        msg: error.message,
+      };
+      moduloglobais.log(
+        "API: cotacao_cabsServices.carregacotacao [imprimir] ERROR: " +
+          error.message,
         "error"
       );
       return res.status(500).json(retorno);

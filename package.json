@@ -17,6 +17,8 @@
     "fs": "^0.0.1-security",
     "helmet": "^5.1.0",
     "jsonwebtoken": "^8.5.1",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.25",
     "mariadb": "^3.0.0",
     "mysql2": "^2.3.3",
     "path": "^0.12.7",

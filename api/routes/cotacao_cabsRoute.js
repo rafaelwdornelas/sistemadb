@@ -445,4 +445,41 @@ router.get(
   Controller.carregacotacao
 );
 
+/**
+ * @openapi
+ * /cotacaocabs/imprimir/{id}:
+ *  get:
+ *    summary: Imprimir
+ *    description: Gera o PDF da cotação para impressão
+ *    tags: [Cotação Cabecalho]
+ *    parameters:
+ *      - name: id
+ *        description: Informe o ID da Cotação.
+ *        required: true
+ *        example: 1
+ *        in: path
+ *        schema:
+ *         type: integer
+ *    responses:
+ *      '200':
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
+ *      '500':
+ *        description: Erro interno do servidor
+ *
+ */
+router.get(
+  "/cotacaocabs/imprimir/:id",
+  JWTController.Verifica,
+  helper.checkPermission("pedidos_visualizar"),
+  Controller.imprimir
+);
+
 module.exports = router;
