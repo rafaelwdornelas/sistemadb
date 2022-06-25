@@ -450,7 +450,7 @@ router.get(
  * /cotacaocabs/imprimir/{id}:
  *  get:
  *    summary: Imprimir
- *    description: Gera o PDF da cotação para impressão
+ *    description: Gera o PDF da cotação para impressão, basta apenas jogar o retorno para uma nova aba do navegador para visualizar o arquivo
  *    tags: [Cotação Cabecalho]
  *    parameters:
  *      - name: id
