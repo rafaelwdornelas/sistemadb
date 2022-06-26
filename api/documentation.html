@@ -6,14 +6,25 @@
     <!-- Important: rapi-doc uses utf8 characters -->
     <script type="module" src="/rapidoc.js"></script>
     <title>CoreByte ERP</title>
+
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   </head>
   <body>
     <rapi-doc
+      persist-auth="true"
+      sort-tags="true"
+      sort-endpoints-by="summary"
       regular-font="Open Sans"
       mono-font="Open Sans"
       font-size="largest"
       header-color="#2d87e2"
+      render-style="focused"
       theme="dark"
+      default-schema-tab="schema"
       schema-description-expanded="true"
       show-header="false"
       info-description-headings-in-navbar="true"
@@ -32,7 +43,7 @@
         "
       >
         <div>
-          <div style="font-weight: 700; font-size: 32px">Informações:</div>
+          <div style="font-weight: 700; font-size: 32px">Lembrete:</div>
           <div style="font-weight: 300; font-size: 14px; opacity: 0.9">
             <p>
               Aqui você pode gerenciar todas as funções do banco de dados do seu
@@ -44,20 +55,6 @@
         </div>
         <div style="flex: 1"></div>
       </div>
-
-      <!-- content at the bottom -->
-      <p
-        slot="footer"
-        style="
-          margin: 0;
-          padding: 16px 36px;
-          background-color: rgb(58, 54, 52);
-          color: #fff;
-          text-align: center;
-        "
-      >
-        Fim da documentação
-      </p>
     </rapi-doc>
   </body>
 </html>
