@@ -17,6 +17,8 @@ module.exports = (sequelize, DataTypes) => {
       QUANTIDADE: DataTypes.FLOAT,
       VALORUNT: DataTypes.FLOAT,
       VALORTOTAL: DataTypes.FLOAT,
+      NECESSIDADE: DataTypes.FLOAT,
+      OBSITEM: DataTypes.FLOAT,
     },
     {
       sequelize,

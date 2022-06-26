@@ -42,6 +42,14 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: false,
       },
+      NECESSIDADE: {
+        type: Sequelize.STRING(8),
+        allowNull: false,
+      }, //Data da Necessidade do produto YYYYMMDD
+      OBSITEM: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      }, //observações do item
       VALORUNT: {
         type: Sequelize.FLOAT,
         allowNull: false,
