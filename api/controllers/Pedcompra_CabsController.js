@@ -3,8 +3,8 @@ const { Pedcompra_CabsServices } = require("../services");
 const pedcompra_cabsServices = new Pedcompra_CabsServices();
 const { globais } = require("../modules");
 const moduloglobais = new globais();
-const Cotacao = require("../pdfgenerator/cotacao/index");
-const cotacao = new Cotacao();
+const Pedidocompra = require("../pdfgenerator/pedidocompra/index");
+const pedidocompra = new Pedidocompra();
 
 class Pedcompra_CabsController {
   static async pegaApagados(req, res) {
@@ -290,7 +290,7 @@ class Pedcompra_CabsController {
         "API: pedcompra_cabsServices.carregacotacao [imprimir], ID: " + id,
         "info"
       );
-      let pdf = await cotacao.imprimir(retorno);
+      let pdf = await pedidocompra.imprimir(retorno);
       retorno.row = { file: pdf };
       return res.status(200).json(retorno);
     } catch (error) {
