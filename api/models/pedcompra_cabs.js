@@ -1,28 +1,28 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class COTACAO_CABS extends Model {
+  class PEDCOMPRA_CABS extends Model {
     // eslint-disable-next-line no-unused-vars
     static associate(models) {
       // define association here
     }
   }
-  COTACAO_CABS.init(
+  PEDCOMPRA_CABS.init(
     {
-      CLIENTE: DataTypes.INTEGER,
       LOJA: DataTypes.INTEGER,
-      VENDEDOR: DataTypes.INTEGER,
-      USUARIO: DataTypes.INTEGER,
+      FORNECEDOR: DataTypes.INTEGER,
+      SOLICITANTE: DataTypes.INTEGER,
+      APROVADOR: DataTypes.INTEGER,
       STATUS: DataTypes.INTEGER,
-      VALIDADE: DataTypes.STRING(8),
-      DESCONTOPERC: DataTypes.FLOAT,
-      DESCONTOVALOR: DataTypes.FLOAT,
-      TOTAL: DataTypes.FLOAT,
+      DATAAPROVADO: DataTypes.STRING(8),
+      VALORMERCADORIAS: DataTypes.FLOAT,
+      VALORTAXAS: DataTypes.FLOAT,
+      VALORTOTAL: DataTypes.FLOAT,
       OBS: DataTypes.TEXT,
     },
     {
       sequelize,
-      modelName: "COTACAO_CABS",
+      modelName: "PEDCOMPRA_CAB",
       createdAt: "CRIADO_EM",
       updatedAt: "ATUALIZADO_EM",
       deletedAt: "DELETADO_EM",
@@ -30,5 +30,5 @@ module.exports = (sequelize, DataTypes) => {
       paranoid: true,
     }
   );
-  return COTACAO_CABS;
+  return PEDCOMPRA_CABS;
 };
