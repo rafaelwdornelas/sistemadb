@@ -9,7 +9,7 @@ const router = Router();
 /**
  * @swagger
  * tags:
- *   name: Cotação Cabecalho
+ *   name: Ped. Compra Cabecalho
  *   description: Manipulação de cabecalho de pedido de compras
  */
 

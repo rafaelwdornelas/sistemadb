@@ -59,7 +59,8 @@ app.get("/api-docs.json", (req, res) => {
   };
 
   const swaggerDocs = swaggerJsDoc(options);
-
+  var paths = sortObjectByKeys(swaggerDocs.paths);
+  swaggerDocs.paths = paths;
   res.send(swaggerDocs);
 });
 
@@ -98,3 +99,9 @@ app.listen(port, () =>
 );
 
 module.exports = app;
+
+function sortObjectByKeys(o) {
+  return Object.keys(o)
+    .sort()
+    .reduce((r, k) => ((r[k] = o[k]), r), {});
+}
