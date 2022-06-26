@@ -43,6 +43,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Cotação Cabeçalho
 - [x] Cotação Itens
 - [x] Cotação Status
+- [ ] Pedido Compra Cabeçalho
+- [ ] Pedido Compra Itens
+- [ ] Pedido Compra Status
 - [ ] Tabela de Preços
 - [ ] Pedido Cabeçalho
 - [ ] Pedido Itens
