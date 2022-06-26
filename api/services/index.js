@@ -22,6 +22,9 @@ const ProdutoformulasServices = require("./ProdutoformulasServices");
 const Cotacao_StatusServices = require("./Cotacao_StatusServices");
 const Cotacao_CabsServices = require("./Cotacao_CabsServices");
 const Cotacao_ItensServices = require("./Cotacao_ItensServices");
+const Pedcompra_StatusServices = require("./Pedcompra_StatusServices");
+const Pedcompra_CabsServices = require("./Pedcompra_CabsServices");
+const Pedcompra_ItensServices = require("./Pedcompra_ItensServices");
 
 module.exports = {
   ClientesServices: ClientesServices,
@@ -48,4 +51,7 @@ module.exports = {
   Cotacao_StatusServices: Cotacao_StatusServices,
   Cotacao_CabsServices: Cotacao_CabsServices,
   Cotacao_ItensServices: Cotacao_ItensServices,
+  Pedcompra_StatusServices: Pedcompra_StatusServices,
+  Pedcompra_CabsServices: Pedcompra_CabsServices,
+  Pedcompra_ItensServices: Pedcompra_ItensServices,
 };

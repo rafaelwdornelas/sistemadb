@@ -28,6 +28,9 @@ const permissions = require("./permissionsRoute");
 const cotacaostatus = require("./cotacao_statusRoute");
 const cotacaocabs = require("./cotacao_cabsRoute");
 const cotacaoitens = require("./cotacao_itensRoute");
+const pedcomprastatus = require("./pedcompra_statusRoute");
+const pedcompracabs = require("./pedcompra_cabsRoute");
+const pedcompraitens = require("./pedcompra_itensRoute");
 
 module.exports = (app) => {
   app.use(
@@ -59,6 +62,9 @@ module.exports = (app) => {
     permissions,
     cotacaostatus,
     cotacaocabs,
-    cotacaoitens
+    cotacaoitens,
+    pedcomprastatus,
+    pedcompracabs,
+    pedcompraitens
   );
 };

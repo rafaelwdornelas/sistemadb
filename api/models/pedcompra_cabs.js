@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "PEDCOMPRA_CAB",
+      modelName: "PEDCOMPRA_CABS",
       createdAt: "CRIADO_EM",
       updatedAt: "ATUALIZADO_EM",
       deletedAt: "DELETADO_EM",
