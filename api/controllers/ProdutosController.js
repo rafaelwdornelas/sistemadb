@@ -3,6 +3,7 @@ const { ProdutosServices } = require("../services");
 const produtosServices = new ProdutosServices();
 const { globais } = require("../modules");
 const moduloglobais = new globais();
+const sequelize = require("sequelize");
 
 class ProdutosController {
   static async pegaApagados(req, res) {
@@ -206,6 +207,49 @@ class ProdutosController {
       };
       moduloglobais.log(
         "API: produtosServices.restauraRegistro ERROR: " + error.message,
+        "error"
+      );
+      return res.status(500).json(retorno);
+    }
+  }
+
+  static async buscaRegistroCount(req, res) {
+    const where = {
+      [sequelize.Op.or]: [
+        {
+          DESCRICAO: {
+            [sequelize.Op.like]: `%${req.body.busca}%`,
+          },
+        },
+        {
+          MARCA: {
+            [sequelize.Op.like]: `%${req.body.busca}%`,
+          },
+        },
+      ],
+    };
+    try {
+      const retorno = {
+        sucesso: true,
+        ...(await produtosServices.pegaTodosOsRegistrosWherePaginacao(where, {
+          offset: req.body.inicio,
+          limit: req.body.limit,
+        })),
+      };
+      moduloglobais.log(
+        "API: produtosServices.pegaTodosOsRegistrosWherePaginacao, Busca: " +
+          req.body.busca,
+        "info"
+      );
+      return res.status(200).json(retorno);
+    } catch (error) {
+      let retorno = {
+        sucesso: false,
+        msg: error.message,
+      };
+      moduloglobais.log(
+        "API: produtosServices.pegaTodosOsRegistrosWherePaginacao, Busca ERROR: " +
+          error.message,
         "error"
       );
       return res.status(500).json(retorno);

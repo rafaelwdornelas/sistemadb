@@ -473,4 +473,52 @@ router.delete(
   Controller.apaga
 );
 
+/**
+ * @openapi
+ * /produtos/busca:
+ *  post:
+ *    summary: Busca
+ *    description: Realiza uma busca no Banco de Dados
+ *    tags: [Produtos]
+ *    requestBody:
+ *      required: true
+ *      content:
+ *       application/json:
+ *        schema:
+ *          type: object
+ *          properties:
+ *            busca:
+ *              description: string para busca
+ *              type: string
+ *              example: "CON"
+ *            inicio:
+ *              description: inicio do index da paginação
+ *              type: integer
+ *              example: 0
+ *            limit:
+ *              description: limite de registros da paginação
+ *              type: integer
+ *              example: 10
+ *    responses:
+ *      '200':
+ *        description: Função executada com sucesso
+ *      '400':
+ *        description: Solicitação inválida
+ *      '401':
+ *        description: Usuário não autenticado
+ *      '403':
+ *        description: Usuário sem permissão
+ *      '404':
+ *        description: Solicitação indisponível
+ *      '500':
+ *        description: Erro interno do servidor
+ *
+ */
+router.post(
+  "/produtos/busca",
+  JWTController.Verifica,
+  helper.checkPermission("produtos_visualizar"),
+  Controller.buscaRegistroCount
+);
+
 module.exports = router;
