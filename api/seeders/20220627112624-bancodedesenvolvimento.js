@@ -219,5 +219,83 @@ module.exports = {
       ],
       {}
     );
+
+    await queryInterface.bulkInsert(
+      "PEDCOMPRA_CABS",
+      [
+        {
+          CLIENTE: 2,
+          LOJA: 1,
+          VENDEDOR: 1,
+          USUARIO: 1,
+          STATUS: 1,
+          VALIDADE: "20220827",
+          DESCONTOPERC: 0,
+          DESCONTOVALOR: 0,
+          TOTAL: 619.8,
+          OBS: "COTAÇÃO TESTE",
+        },
+      ],
+      {}
+    );
+
+    await queryInterface.bulkInsert(
+      "PEDCOMPRA_ITENS",
+      [
+        {
+          COTACAO_ID: 1,
+          PRODUTO: 1,
+          PRODUTOCOD: "PD01",
+          PRODUTODESC: "TPH REP. 4g A1",
+          PRODUTOUND: "UND",
+          QUANTIDADE: 5,
+          VALORORIGINAL: 43.6,
+          VALORUNT: 43.6,
+          VALORTOTAL: 218,
+          DESCONTOPERC: 0,
+          DESCONTOVALOR: 0,
+        },
+        {
+          COTACAO_ID: 1,
+          PRODUTO: 2,
+          PRODUTOCOD: "PD12",
+          PRODUTODESC: "BROQUEIRO 21 F FAVA (MF162)",
+          PRODUTOUND: "UND",
+          QUANTIDADE: 2,
+          VALORORIGINAL: 24.2,
+          VALORUNT: 24.2,
+          VALORTOTAL: 48.4,
+          DESCONTOPERC: 0,
+          DESCONTOVALOR: 0,
+        },
+        {
+          COTACAO_ID: 1,
+          PRODUTO: 3,
+          PRODUTOCOD: "PD54",
+          PRODUTODESC: "SIGNUM 3g OS1",
+          PRODUTOUND: "UND",
+          QUANTIDADE: 1,
+          VALORORIGINAL: 115.5,
+          VALORUNT: 115.5,
+          VALORTOTAL: 115.5,
+          DESCONTOPERC: 0,
+          DESCONTOVALOR: 0,
+        },
+        {
+          COTACAO_ID: 1,
+          PRODUTO: 4,
+          PRODUTOCOD: "PD92",
+          PRODUTODESC: "IPS DSIGN DEN. 20g A3",
+          PRODUTOUND: "UND",
+          QUANTIDADE: 2,
+          VALORORIGINAL: 118.95,
+          VALORUNT: 118.95,
+          VALORTOTAL: 237.9,
+          DESCONTOPERC: 0,
+          DESCONTOVALOR: 0,
+        },
+      ],
+      {}
+    );
   },
 };
