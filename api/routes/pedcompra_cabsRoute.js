@@ -53,7 +53,7 @@ const router = Router();
 router.post(
   "/pedcompracabs",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("pedcompra_visualizar"),
   Controller.pegaTodos
 );
 
@@ -82,7 +82,7 @@ router.post(
 router.get(
   "/pedcompracabs/apagados",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("pedcompra_visualizar"),
   Controller.pegaApagados
 );
 
@@ -119,7 +119,7 @@ router.get(
 router.get(
   "/pedcompracabs/apagados/:id",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("pedcompra_visualizar"),
   Controller.pegaApagado
 );
 /**
@@ -155,7 +155,7 @@ router.get(
 router.get(
   "/pedcompracabs/:id",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("pedcompra_visualizar"),
   Controller.pega
 );
 
@@ -222,7 +222,7 @@ router.post(
   "/pedcompracabs/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
-  helper.checkPermission("pedidos_criar"),
+  helper.checkPermission("pedcompra_criar"),
   Controller.cria
 );
 /**
@@ -258,7 +258,7 @@ router.post(
   "/pedcompracabs/:id/restaura",
   LicencaController.Verifica,
   JWTController.Verifica,
-  helper.checkPermission("pedidos_alterar"),
+  helper.checkPermission("pedcompra_alterar"),
   Controller.restaura
 );
 /**
@@ -331,7 +331,7 @@ router.put(
   "/pedcompracabs/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
-  helper.checkPermission("pedidos_alterar"),
+  helper.checkPermission("pedcompra_alterar"),
   Controller.atualiza
 );
 /**
@@ -367,7 +367,7 @@ router.delete(
   "/pedcompracabs/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
-  helper.checkPermission("pedidos_apagar"),
+  helper.checkPermission("pedcompra_apagar"),
   Controller.apaga
 );
 
@@ -404,7 +404,7 @@ router.delete(
 router.get(
   "/pedcompracabs/updatetotal/:id",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_alterar"),
+  helper.checkPermission("pedcompra_alterar"),
   Controller.updateTotal
 );
 
@@ -441,7 +441,7 @@ router.get(
 router.get(
   "/pedcompracabs/visualiza/:id",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("pedcompra_visualizar"),
   Controller.carregacotacao
 );
 
@@ -478,7 +478,7 @@ router.get(
 router.get(
   "/pedcompracabs/imprimir/:id",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("pedcompra_visualizar"),
   Controller.imprimir
 );
 

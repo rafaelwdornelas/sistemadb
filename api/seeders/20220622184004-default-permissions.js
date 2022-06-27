@@ -89,6 +89,38 @@ module.exports = {
           perm_name: "pedidos_visualizar",
           perm_description: "Permite visualizar pedidos",
         },
+        {
+          perm_name: "cotacao_criar",
+          perm_description: "Permite criar novos cotacao",
+        },
+        {
+          perm_name: "cotacao_apagar",
+          perm_description: "Permite apagar cotacao",
+        },
+        {
+          perm_name: "cotacao_alterar",
+          perm_description: "Permite alterar cotacao",
+        },
+        {
+          perm_name: "cotacao_visualizar",
+          perm_description: "Permite visualizar cotacao",
+        },
+        {
+          perm_name: "pedcompra_criar",
+          perm_description: "Permite criar novos pedcompra",
+        },
+        {
+          perm_name: "pedcompra_apagar",
+          perm_description: "Permite apagar pedcompra",
+        },
+        {
+          perm_name: "pedcompra_alterar",
+          perm_description: "Permite alterar pedcompra",
+        },
+        {
+          perm_name: "pedcompra_visualizar",
+          perm_description: "Permite visualizar pedcompra",
+        },
       ],
       {}
     );

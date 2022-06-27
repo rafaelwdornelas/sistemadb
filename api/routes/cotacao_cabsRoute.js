@@ -53,7 +53,7 @@ const router = Router();
 router.post(
   "/cotacaocabs",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("cotacao_visualizar"),
   Controller.pegaTodos
 );
 
@@ -82,7 +82,7 @@ router.post(
 router.get(
   "/cotacaocabs/apagados",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("cotacao_visualizar"),
   Controller.pegaApagados
 );
 
@@ -119,7 +119,7 @@ router.get(
 router.get(
   "/cotacaocabs/apagados/:id",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("cotacao_visualizar"),
   Controller.pegaApagado
 );
 /**
@@ -155,7 +155,7 @@ router.get(
 router.get(
   "/cotacaocabs/:id",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("cotacao_visualizar"),
   Controller.pega
 );
 
@@ -222,7 +222,7 @@ router.post(
   "/cotacaocabs/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
-  helper.checkPermission("pedidos_criar"),
+  helper.checkPermission("cotacao_criar"),
   Controller.cria
 );
 /**
@@ -258,7 +258,7 @@ router.post(
   "/cotacaocabs/:id/restaura",
   LicencaController.Verifica,
   JWTController.Verifica,
-  helper.checkPermission("pedidos_alterar"),
+  helper.checkPermission("cotacao_alterar"),
   Controller.restaura
 );
 /**
@@ -331,7 +331,7 @@ router.put(
   "/cotacaocabs/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
-  helper.checkPermission("pedidos_alterar"),
+  helper.checkPermission("cotacao_alterar"),
   Controller.atualiza
 );
 /**
@@ -367,7 +367,7 @@ router.delete(
   "/cotacaocabs/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
-  helper.checkPermission("pedidos_apagar"),
+  helper.checkPermission("cotacao_apagar"),
   Controller.apaga
 );
 
@@ -404,7 +404,7 @@ router.delete(
 router.get(
   "/cotacaocabs/updatetotal/:id",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_alterar"),
+  helper.checkPermission("cotacao_alterar"),
   Controller.updateTotal
 );
 
@@ -441,7 +441,7 @@ router.get(
 router.get(
   "/cotacaocabs/visualiza/:id",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("cotacao_visualizar"),
   Controller.carregacotacao
 );
 
@@ -478,7 +478,7 @@ router.get(
 router.get(
   "/cotacaocabs/imprimir/:id",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("cotacao_visualizar"),
   Controller.imprimir
 );
 

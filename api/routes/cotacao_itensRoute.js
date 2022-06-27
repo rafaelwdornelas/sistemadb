@@ -46,7 +46,7 @@ const router = Router();
 router.get(
   "/cotacaoitens/todos/:id",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("cotacao_visualizar"),
   Controller.pegaTodos
 );
 
@@ -83,7 +83,7 @@ router.get(
 router.get(
   "/cotacaoitens/:id",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("cotacao_visualizar"),
   Controller.pega
 );
 
@@ -153,7 +153,7 @@ router.post(
   "/cotacaoitens/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
-  helper.checkPermission("pedidos_criar"),
+  helper.checkPermission("cotacao_criar"),
   Controller.cria
 );
 
@@ -230,7 +230,7 @@ router.put(
   "/cotacaoitens/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
-  helper.checkPermission("pedidos_alterar"),
+  helper.checkPermission("cotacao_alterar"),
   Controller.atualiza
 );
 /**
@@ -266,7 +266,7 @@ router.delete(
   "/cotacaoitens/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
-  helper.checkPermission("pedidos_apagar"),
+  helper.checkPermission("cotacao_apagar"),
   Controller.apaga
 );
 

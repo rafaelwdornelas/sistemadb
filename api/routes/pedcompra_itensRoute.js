@@ -46,7 +46,7 @@ const router = Router();
 router.get(
   "/pedcompraitens/todos/:id",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("pedcompra_visualizar"),
   Controller.pegaTodos
 );
 
@@ -83,7 +83,7 @@ router.get(
 router.get(
   "/pedcompraitens/:id",
   JWTController.Verifica,
-  helper.checkPermission("pedidos_visualizar"),
+  helper.checkPermission("pedcompra_visualizar"),
   Controller.pega
 );
 
@@ -150,7 +150,7 @@ router.post(
   "/pedcompraitens/novo",
   LicencaController.Verifica,
   JWTController.Verifica,
-  helper.checkPermission("pedidos_criar"),
+  helper.checkPermission("pedcompra_criar"),
   Controller.cria
 );
 
@@ -224,7 +224,7 @@ router.put(
   "/pedcompraitens/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
-  helper.checkPermission("pedidos_alterar"),
+  helper.checkPermission("pedcompra_alterar"),
   Controller.atualiza
 );
 /**
@@ -260,7 +260,7 @@ router.delete(
   "/pedcompraitens/:id",
   LicencaController.Verifica,
   JWTController.Verifica,
-  helper.checkPermission("pedidos_apagar"),
+  helper.checkPermission("pedcompra_apagar"),
   Controller.apaga
 );
 
