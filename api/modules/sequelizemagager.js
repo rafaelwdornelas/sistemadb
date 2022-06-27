@@ -41,9 +41,7 @@ class sequelizemanager {
       raw: true,
       limit: 1000,
       offset: 0,
-      order: [
-        ["arquivo", "ASC"]
-      ],
+      order: [["arquivo", "ASC"]],
     });
     seedslists.push(dados);
     seedslists = seedslists[0].rows;
@@ -51,7 +49,7 @@ class sequelizemanager {
     return new Promise((resolve, reject) => {
       try {
         fs.readdir(dir, (err, arquivos) => {
-          arquivos.forEach(async(arquivo) => {
+          arquivos.forEach(async (arquivo) => {
             if (seedslists.indexOf(arquivo) === -1) {
               let retorno = await this.seedid(arquivo);
               if (retorno.indexOf("migrated") > -1) {
@@ -82,7 +80,9 @@ class sequelizemanager {
 
   //carregar seed específica de um arquivo
   async seedid(seed) {
-    var child = shell.exec("yarn sequelize db:seed --seed " + seed);
+    var child = shell.exec(
+      "yarn sequelize db:seed --seed " + seed + " --debug"
+    );
     if (child.code !== 0) {
       return child.stdout;
     } else {
