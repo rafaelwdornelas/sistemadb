@@ -31,9 +31,11 @@ const moduloglobais = new globais();
  *            USERNAME:
  *              description: Nome de usuário
  *              type: string
+ *              example: rafael
  *            SENHA:
  *              description: Senha do usuário
  *              type: string
+ *              example: rafael
  *    responses:
  *      '200':
  *        description: Função executada com sucesso
